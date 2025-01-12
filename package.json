@@ -16,10 +16,13 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
+    "clsx": "^2.1.1",
     "font-awesome": "^4.7.0",
+    "framer-motion": "^11.17.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1",
-    "styled-components": "^6.1.14"
+    "styled-components": "^6.1.14",
+    "tailwind-merge": "^2.6.0"
   }
 }

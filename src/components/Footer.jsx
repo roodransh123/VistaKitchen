@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-left">
           <p>&copy; 2025 My Kitchen Design</p>
-          <p>Crafting beautiful kitchen spaces</p>
+          <p>Crafting your dreams.</p>
         </div>
 
         <div className="footer-links">

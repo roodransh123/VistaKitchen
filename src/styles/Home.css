@@ -9,12 +9,19 @@
   width: 100%;
   height: 100vh; /* Carousel takes up full viewport height */
   overflow: hidden;
+
 }
 
 .carousel {
   display: flex;
   height: 100%; /* Full height of the carousel */
   transition: transform 1s ease-in-out;
+
+}
+
+.carousel-slide {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+ 
 }
 
 .carousel-slide {
@@ -60,7 +67,7 @@
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 100;
 }
 
 .sticky-icon img {
@@ -68,24 +75,42 @@
   height: 70px;
   border-radius: 50%;
   border: 2px solid white;
+ 
 }
 
 /* Estimate Section */
+
 .estimate-div {
-  background-color: none;
+  background: none;
   padding: 20px;
-  margin-top: 30px;
   border-radius: 10px;
   text-align: center;
+  box-shadow: none; /* Remove any shadow */
+  border: none; /* Ensure there is no border */
+  background-clip: border-box; /* Keep the gradient within the padding area */
+  margin-left: auto; /* Center-align horizontally if needed */
+  margin-right: auto; /* Center-align horizontally if needed */
+  max-width: 100%; /* Ensure it adapts to parent width */
+  background:none;
 }
 
-/* Text */
+/* Estimate Text Section */
+.estimate-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Centers text inside the elements */
+}
+
+/* Heading */
 .estimate-text h2 {
   font-size: 2rem;
   color: #214f4b; /* Dark green */
   margin-bottom: 10px;
 }
 
+/* Paragraph */
 .estimate-text p {
   font-size: 1rem;
   color: #8491a3; /* Cool gray */
@@ -93,33 +118,19 @@
   margin-bottom: 20px;
 }
 
-.estimate-text button {
-  background-color: #2de1fc; /* Mint */
-  color: white;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.estimate-text button:hover {
-  background-color: #16c172; /* Darker mint green */
-}
 
 /* Cards Container */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 30px;
   padding-top: 20px;
 }
 
-/* Individual Cards */
 .estimate-card {
   background-color: white;
   padding: 20px;
+  width: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -127,6 +138,13 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.estimate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
 }
 
 .card-icon {
@@ -149,25 +167,25 @@
 }
 
 .estimate-card button {
-  background-color: #2de1fc; /* Mint */
+  background-color:  rgb(12, 244, 221);
   color: white;
   font-size: 1rem;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .estimate-card button:hover {
-  background-color: #16c172; /* Darker mint green */
+  background-color: #09e85e; /* Darker mint green */
 }
 
 
-/* Container for layout */
 .layout-container {
   padding: 20px;
-  background-color: rgb(228, 230, 228); /* Background color for the section */
+  background: linear-gradient(90deg, rgba(200, 255, 235, 0.85), rgba(185, 255, 225, 0.85), rgba(160, 250, 210, 0.85)); /* Lightened gradient */
+
 }
 
 /* Heading Section */
@@ -190,6 +208,49 @@
   font-size: 1rem;
   color: #8491a3; /* Cool gray */
   line-height: 1.6;
+}
+
+
+.last-section {
+  background: none;
+  padding: 20px;
+}
+
+
+.last-text  {
+  text-align: center;
+  margin: 50px 0 30px;
+  background-color:none;
+  border-radius: 10px;
+
+}
+
+.last-text h2 {
+  font-size: 3rem;
+  color: #214f4b; /* Dark green */
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.last-text p {
+  font-size: 1rem;
+  color: #8491a3; /* Cool gray */
+  line-height: 1.6;
+}
+
+.last-text button {
+  background-color:  rgb(12, 244, 221);
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.last-text button:hover {
+  background-color: #09e85e; /* Darker mint green */
 }
 
 /* Layout Grid */
@@ -257,6 +318,70 @@
   opacity: 1;
 }
 
+.why-choose-us {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(90deg, rgba(200, 255, 235, 0.85), rgba(185, 255, 225, 0.85), rgba(160, 250, 210, 0.85)); /* Lightened gradient */
+}
+
+.why-choose-us h2 {
+  font-size: 2rem;
+  color: #214f4b; /* Optional: color from your palette */
+  margin-bottom: 20px;
+}
+
+.testimonial-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center;
+  overflow: hidden; /* Hide the overflowing content */
+  position: relative;
+  width: 100%; /* Full width for responsiveness */
+}
+
+.testimonial-card {
+  width: 250px; /* Make the card square */
+  height: 250px; /* Equal width and height */
+  flex: 0 0 auto;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Optional: for rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.testimonial-card img {
+  width: 50px; /* Icon size */
+  height: 50px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.testimonial-card p {
+  font-size: 0.9rem;
+  color: #8491a3;
+  margin: 0;
+}
+
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.testimonial-container {
+  animation: scrollRightToLeft 25s linear infinite; /* Adjust duration for scroll speed */
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .carousel-text h1 {
@@ -268,14 +393,16 @@
     font-size: 1rem;
   }
 }
-
 @media (max-width: 480px) {
   .carousel-text h1 {
     font-size: 1.5rem;
   }
-
   .carousel-text button {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
 }
+
+
+
+

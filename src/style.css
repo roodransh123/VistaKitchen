@@ -77,7 +77,7 @@ button {
 }
 
 button:hover {
-    background-color: #87d68d; /* Light green for hover effect */
+    background-color:rgb(152, 243, 159); /* Light green for hover effect */
     transform: translateY(-2px);
 }
 

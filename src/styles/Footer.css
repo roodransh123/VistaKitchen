@@ -1,7 +1,8 @@
 /* Footer container */
 footer {
     width: 100%;
-    background-color:rgb(158, 255, 223); /* Background color */
+    background: linear-gradient(90deg, rgba(200, 255, 235, 0.85), rgba(185, 255, 225, 0.85), rgba(160, 250, 210, 0.85)); /* Lightened gradient */
+
     padding: 20px 40px;
     border-top: 2px solid #ccc;
     box-shadow: 0 -4px 4px -4px rgba(0, 0, 0, 0.1);
@@ -23,7 +24,8 @@ footer {
     color: #333;
     justify-content: space-between;
     gap: 40px; /* Added space between sections */
-    background-color:rgb(158, 255, 223);
+    background: linear-gradient(90deg, rgba(200, 255, 235, 0.85), rgba(185, 255, 225, 0.85), rgba(160, 250, 210, 0.85)); /* Lightened gradient */
+
   }
   
   /* Footer sections */
@@ -49,7 +51,7 @@ footer {
   }
   
   .footer-links a:hover, .footer-socials a:hover {
-    color: rgb(32, 145, 122);
+    color: #5a9d5c; /* Darker green for links on hover */
     transform: scale(1.05); /* Subtle scale effect on hover */
   }
   

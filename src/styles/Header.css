@@ -9,6 +9,7 @@ html, body {
 }
 
 /* Header container */
+/* Header container with gradient background */
 header {
   width: 100%;
   background: white;
@@ -29,9 +30,11 @@ header {
 
 .dropdown-wrapper {
   position: relative;
-  width: 100px;
+  width: 150px;
   /* Add this to create a new stacking context */
   z-index: 1000;
+  font-weight: 400;
+  
 }
 
 .dropdown-button {
@@ -47,6 +50,12 @@ header {
   font-size: 0.8rem;
   position: relative;
   z-index: 1001;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-button:hover {
+    transform: translateY(-2px);
 }
 
 .dropdown-arrow {
@@ -123,7 +132,8 @@ header {
 
 h2 {
   font-family: 'Exo 2', sans-serif;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
+  color: black;
   font-weight: 700;
   margin: 0;
   max-width: 100%;
@@ -142,17 +152,18 @@ h2 {
 .nav-links li {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #333;
   padding: 8.5px 17px;
-  transition: color 0.3s;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .nav-links a:hover {
-  color: rgb(102, 250, 181);
+  color: rgb(42, 255, 84);
 }
 /* Profile section */
 .profile {
@@ -187,7 +198,7 @@ h2 {
 }
 
 .consult-button button:hover {
-  background-color: rgb(86, 223, 159);
+  background-color: #09e85e;
 }
 
 /* Mobile-specific Styles */

@@ -34,10 +34,11 @@ function Header() {
 
         <nav>
           <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-            <li><Link to="/interior">Interior</Link></li>
-            <li><Link to="/floors">Floors</Link></li>
-            <li><Link to="/ceilings">Ceilings</Link></li>
-            <li><Link to="/panels">Panels</Link></li>
+            <li><Link to="/interior">Kitchens</Link></li>
+            <li><Link to="/interior">Wardrobes</Link></li>
+            <li><Link to="/floors">Vanities</Link></li>
+            <li><Link to="/ceilings">Floorings</Link></li>
+            <li><Link to="/panels">Ceilings</Link></li>
           </ul>
         </nav>
 
@@ -52,7 +53,7 @@ function Header() {
             onClick={toggleDropdown}
             className="dropdown-button"
           >
-            <span>All</span>
+            <span style={{fontWeight: 'bold'}}>Price Calculators</span>
             <svg 
               className={`dropdown-arrow ${dropdownOpen ? 'rotate' : ''}`}
               width="10" 
@@ -66,10 +67,11 @@ function Header() {
           </button>
           
           <div className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
-            <div className="dropdown-option">All</div>
-            <div className="dropdown-option">Option 1</div>
-            <div className="dropdown-option">Option 2</div>
-            <div className="dropdown-option">Option 3</div>
+            <div className="dropdown-option">Kitchen price calculator</div>
+            <div className="dropdown-option">Wardrobe price calculator</div>
+            <div className="dropdown-option">Vanity price calculator</div>
+            <div className="dropdown-option">Flooring price calculator</div>
+            <div className="dropdown-option">Ceiling price calculator</div>
           </div>
         </div>
 

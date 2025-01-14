@@ -1,7 +1,7 @@
 /* Footer container */
 footer {
     width: 100%;
-    background: linear-gradient(90deg, rgba(200, 255, 235, 0.85), rgba(185, 255, 225, 0.85), rgba(160, 250, 210, 0.85)); /* Lightened gradient */
+    background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8)); /* Lightened and darkened parrot green gradient */
 
     padding: 20px 40px;
     border-top: 2px solid #ccc;
@@ -24,7 +24,7 @@ footer {
     color: #333;
     justify-content: space-between;
     gap: 40px; /* Added space between sections */
-    background: linear-gradient(90deg, rgba(200, 255, 235, 0.85), rgba(185, 255, 225, 0.85), rgba(160, 250, 210, 0.85)); /* Lightened gradient */
+    background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8)); /* Lightened and darkened parrot green gradient */
 
   }
   

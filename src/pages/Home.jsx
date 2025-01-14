@@ -114,6 +114,41 @@ export default function Home() {
           />
         </a>
       </div>
+      <div className="brands-we-work-with">
+  <h2 style={{ fontSize: "40px" }}>Brands We Work With</h2>
+  <div className="brand-container">
+    <div className="brand-card">
+      <a href="https://www.merinolaminates.com/en/" target="_blank" rel="noopener noreferrer">
+      <img src="/brands/merino.jpg" alt="Merino Brand" />
+      </a>
+    </div>
+    <div className="brand-card">
+    <a href="https://virgolam.com/" target="_blank" rel="noopener noreferrer">
+      <img src="/brands/virgo.jpg" alt="Wergo Brand" />
+      </a>
+    </div>
+    <div className="brand-card">
+    <a href="https://europratik.com/" target="_blank" rel="noopener noreferrer">
+      <img src="/brands/europratik.jpg" alt="Euro Pratik Brand" />
+      </a>
+    </div>
+    <div className="brand-card">
+    <a href="https://www.neff-home.com/" target="_blank" rel="noopener noreferrer">
+      <img src="/brands/neff.jpg" alt="Neff Brand" />
+      </a>
+    </div>
+    <div className="brand-card">
+    <a href="https://kaff.in/?srsltid=AfmBOoq23yQul4bOyUOY4HR4n5lU8e0zIUsAAGk_kFVBqv-n8YDFxpg- " target="_blank" rel="noopener noreferrer">
+      <img src="/brands/kaff.jpg" alt="Kaff Brand" />
+      </a>
+    </div>
+    <div className="brand-card">
+    <a href="https://web.hettich.com/en-in/home" target="_blank" rel="noopener noreferrer">
+      <img src="/brands/hecttic.jpg" alt="Hatic Brand" />
+      </a>
+    </div>
+  </div>
+</div>
 
       <div className="layout-container">
         <div className="grid-heading">
@@ -207,24 +242,24 @@ export default function Home() {
         <h2 style={{ fontSize: "40px" }}>Why Choose Us?</h2>
         <div className="testimonial-container">
           <div className="testimonial-card">
-            <img src="/path/to/warranty-icon.png" alt="Warranty" />
-            <p style={{ fontSize: "25px" }}>Flat 10-year warranty</p>
+            <img src="/others/2_y_service.jpg" alt="Warranty" height={"180px"} width={"180px"} style={{height:"160px",width:"160px"}} />
+            <p style={{ fontSize: "20px", fontWeight: "bold" }}>2 year free service warranty</p>
           </div>
           <div className="testimonial-card">
-            <img src="/path/to/emi-icon.png" alt="EMIs" />
-            <p style={{ fontSize: "25px" }}>Easy EMIs</p>
+            <img src="/others/after_sales.jpg" alt="after_sales" />
+            <p style={{ fontSize: "20px", fontWeight: "bold" }}>Good after-sale services</p>
           </div>
           <div className="testimonial-card">
-            <img src="/path/to/support-icon.png" alt="Support" />
-            <p style={{ fontSize: "25px" }}>24/7 Support</p>
+            <img src="/others/amc.jpg" alt="Support" />
+            <p style={{ fontSize: "20px", fontWeight: "bold" }}>Annual maintainance contract</p>
           </div>
           <div className="testimonial-card">
-            <img src="/path/to/design-icon.png" alt="Custom Designs" />
-            <p style={{ fontSize: "25px" }}>Custom Designs</p>
+          <img src="/others/custom_design.jpg" alt="cd" height={"180px"} width={"180px"} style={{height:"160px",width:"160px"}} />
+            <p style={{ fontSize: "20px", fontWeight: "bold" }}>CustomIzed Designs</p>
           </div>
           <div className="testimonial-card">
-            <img src="/path/to/quality-icon.png" alt="Quality" />
-            <p style={{ fontSize: "25px" }}>High-Quality</p>
+          <img src="/others/best_quality.jpg" alt="Quality" height={"140px"} width={"140px"} style={{height:"160px",width:"160px"}} />
+          <p style={{ fontSize: "20px" , fontWeight: "bold"}}>High-Quality material</p>
           </div>
         </div>
       </div>

@@ -91,7 +91,6 @@
   margin-left: auto; /* Center-align horizontally if needed */
   margin-right: auto; /* Center-align horizontally if needed */
   max-width: 100%; /* Ensure it adapts to parent width */
-  background:none;
 }
 
 /* Estimate Text Section */
@@ -184,7 +183,7 @@
 
 .layout-container {
   padding: 20px;
-  background: linear-gradient(90deg, rgba(200, 255, 235, 0.85), rgba(185, 255, 225, 0.85), rgba(160, 250, 210, 0.85)); /* Lightened gradient */
+  background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8)); /* Lightened and darkened parrot green gradient */
 
 }
 
@@ -317,11 +316,72 @@
 .grid-card:hover .card-overlay {
   opacity: 1;
 }
+.brands-we-work-with {
+  text-align: center;
+  padding: 40px 20px;
+  background: none;
+}
+
+.brands-we-work-with h2 {
+  font-size: 2rem;
+  color: #214f4b; /* Color from your palette */
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.brand-container {
+  margin-top: 50px;
+  display: flex;
+  gap: 110px;
+  justify-content: flex-start; /* Align items to the left to enable scrolling */
+  align-items: center;
+  width: 100%;
+  overflow: hidden; /* Hide overflow */
+  position: relative;
+  animation: scrollLeftToRight 20s linear infinite; /* Apply scrolling animation */
+  margin-bottom: 30px;
+}
+
+.brand-card {
+  width: 150px; /* Adjust size for brand icons */
+  height: 150px;
+  flex: 0 0 auto;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: scale(1.1);
+}
+
+.brand-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Infinite scroll animation */
+@keyframes scrollLeftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 
 .why-choose-us {
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(90deg, rgba(200, 255, 235, 0.85), rgba(185, 255, 225, 0.85), rgba(160, 250, 210, 0.85)); /* Lightened gradient */
+  background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8)); /* Lightened and darkened parrot green gradient */
 }
 
 .why-choose-us h2 {
@@ -332,7 +392,7 @@
 
 .testimonial-container {
   display: flex;
-  gap: 20px;
+  gap: 55px;
   justify-content: center; /* Center the items horizontally */
   align-items: center;
   overflow: hidden; /* Hide the overflowing content */
@@ -354,18 +414,19 @@
   justify-content: center;
   text-align: center;
   padding: 10px;
+  
 }
 
 .testimonial-card img {
-  width: 50px; /* Icon size */
-  height: 50px;
-  margin-bottom: 10px;
+  width: 120px; /* Icon size */
+  height: 120px;
+  margin-bottom: 25px;
   object-fit: contain;
 }
 
 .testimonial-card p {
   font-size: 0.9rem;
-  color: #8491a3;
+  color: black;
   margin: 0;
 }
 
@@ -379,7 +440,7 @@
 }
 
 .testimonial-container {
-  animation: scrollRightToLeft 25s linear infinite; /* Adjust duration for scroll speed */
+  animation: scrollRightToLeft 20s linear infinite; /* Adjust duration for scroll speed */
 }
 
 /* Media Queries */

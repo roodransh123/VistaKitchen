@@ -14,11 +14,10 @@ function Header() {
       <div className="header-top">
         <div className="logo-and-title">
           <div className="logo-placeholder">
-            <img src="/path-to-logo.png" alt="Logo" width="50" height="50" />
-          </div>
           <a href="/" style={{ textDecoration: 'none', marginBottom: '10px' }}>
-            <h2>VistaKitchen</h2>
-          </a>
+            <img src="/logo.jpg" alt="Logo" width="180" height="80" />
+            </a>
+          </div>
         </div>
 
         <div className="hamburger-menu" onClick={toggleMenu}>

@@ -129,7 +129,7 @@ export default function Home() {
     </div>
     <div className="brand-card">
     <a href="https://europratik.com/" target="_blank" rel="noopener noreferrer">
-      <img src="/brands/europratik.jpg" alt="Euro Pratik Brand" />
+      <img src="/brands/europratik.jpg" alt="Euro Pratik Brand" height={"210px"}/>
       </a>
     </div>
     <div className="brand-card">
@@ -200,37 +200,37 @@ export default function Home() {
         <div className="card-container">
         <div className="card-container">
   <div className="estimate-card">
-    <img src="/path/to/kitchen-icon.png" alt="Kitchen Icon" className="card-icon" />
+    <img src="/calculate-section/kitchen.jpg" alt="Kitchen Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%"}} />
     <h3>Kitchen</h3>
     <p>Design your dream kitchen with custom options.</p>
     <button onClick={() => alert("Redirecting to kitchen calculator page")}>Calculate</button>
   </div>
 
   <div className="estimate-card">
-    <img src="/path/to/vanities-icon.png" alt="Vanities Icon" className="card-icon" />
+    <img src="/calculate-section/vanity.jpg" alt="Vanities Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%",objectPosition:"center"}} />
     <h3>Vanities</h3>
     <p>Custom vanities designed for your personal style.</p>
     <button onClick={() => alert("Redirecting to vanities calculator page")}>Calculate</button>
   </div>
 
   <div className="estimate-card">
-    <img src="/path/to/flooring-icon.png" alt="Flooring Icon" className="card-icon" />
+    <img src="/calculate-section/flooring.jpg" alt="Flooring Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%"}} />
     <h3>Flooring</h3>
     <p>Experience the comfort of modern and stylish floors.</p>
     <button onClick={() => alert("Redirecting to flooring calculator page")}>Calculate</button>
   </div>
 
   <div className="estimate-card">
-    <img src="/path/to/ceiling-icon.png" alt="Ceiling Icon" className="card-icon" />
+    <img src="/calculate-section/ceiling.jpg" alt="Ceiling Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%"}} />
     <h3>Ceiling</h3>
     <p>Add elegance and style with premium ceiling designs.</p>
     <button onClick={() => alert("Redirecting to ceiling calculator page")}>Calculate</button>
   </div>
 
   <div className="estimate-card">
-    <img src="/path/to/wardrobe-icon.png" alt="Wardrobe Icon" className="card-icon" />
+    <img src="/calculate-section/wardrobe.jpg" alt="Wardrobe Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%",objectPosition:"center"}} />
     <h3>Wardrobe</h3>
-    <p>Choose the perfect wardrobe for your unique space.</p>
+    <p>Choose the perfect wardrobe for your space.</p>
     <button onClick={() => alert("Redirecting to wardrobe calculator page")}>Calculate</button>
   </div>
 </div>

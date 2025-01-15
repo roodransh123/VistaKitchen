@@ -343,8 +343,8 @@
 }
 
 .brand-card {
-  width: 150px; /* Adjust size for brand icons */
-  height: 150px;
+  width: 200px; /* Adjust size for brand icons */
+  height: 200px;
   flex: 0 0 auto;
   background: #ffffff;
   border: 1px solid #ddd;
@@ -363,8 +363,8 @@
 }
 
 .brand-card img {
-  width: 100px;
-  height: 100px;
+  width: 180px;
+  height: 180px;
   object-fit: contain;
 }
 

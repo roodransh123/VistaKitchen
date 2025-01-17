@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
 import { FlipWords } from "../components/ui/flip-words";
-import { style } from "framer-motion/client";
+import { useNavigate } from "react-router-dom";
+
 
 const carouselImages = [
   "/carousel_images/1.jpg",
@@ -18,6 +19,12 @@ const synonyms = [
 ];
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const redirectToWardrobeForm = () => {
+    navigate("/wardrobe-form");
+  };
+
   const imagesWithDuplicates = [
     carouselImages[carouselImages.length - 1],
     ...carouselImages,
@@ -202,7 +209,7 @@ export default function Home() {
   <div className="estimate-card">
     <img src="/calculate-section/kitchen.jpg" alt="Kitchen Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%"}} />
     <h3>Kitchen</h3>
-    <p>Design your dream kitchen with custom options.</p>
+    <p>Design your dream kitchen.</p>
     <button onClick={() => alert("Redirecting to kitchen calculator page")}>Calculate</button>
   </div>
 
@@ -223,7 +230,7 @@ export default function Home() {
   <div className="estimate-card">
     <img src="/calculate-section/ceiling.jpg" alt="Ceiling Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%"}} />
     <h3>Ceiling</h3>
-    <p>Add elegance and style with premium ceiling designs.</p>
+    <p>Add elegance and style with premium ceilings.</p>
     <button onClick={() => alert("Redirecting to ceiling calculator page")}>Calculate</button>
   </div>
 
@@ -231,7 +238,7 @@ export default function Home() {
     <img src="/calculate-section/wardrobe.jpg" alt="Wardrobe Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%",objectPosition:"center"}} />
     <h3>Wardrobe</h3>
     <p>Choose the perfect wardrobe for your space.</p>
-    <button onClick={() => alert("Redirecting to wardrobe calculator page")}>Calculate</button>
+    <button onClick={redirectToWardrobeForm}>Calculate</button>
   </div>
 </div>
 
@@ -285,4 +292,5 @@ export default function Home() {
     </div>
   );
 }
+
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/header.css';
 
@@ -9,13 +9,30 @@ function Header() {
     setMenuOpen(!menuOpen);
   };
 
+  // Close the menu if the screen width is above 1024px
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setMenuOpen(false);
+      }
+    };
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <header>
       <div className="header-top">
         <div className="logo-and-title">
           <div className="logo-placeholder">
-          <a href="/" style={{ textDecoration: 'none', marginBottom: '10px' }}>
-            <img src="/logo.jpg" alt="Logo" width="180" height="80" />
+            <a href="/" style={{ textDecoration: 'none', marginBottom: '10px' }}>
+              <img src="/logo.jpg" alt="Logo" width="180" height="80" />
             </a>
           </div>
         </div>
@@ -29,8 +46,8 @@ function Header() {
         <nav>
           <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
             <li><Link to="/interior">Kitchens</Link></li>
-            <li><Link to="/interior">Wardrobes</Link></li>
-            <li><Link to="/floors">Vanities</Link></li>
+            <li><Link to="/wardrobes">Wardrobes</Link></li>
+            <li><Link to="/vanities">Vanities</Link></li>
             <li><Link to="/ceilings">Floorings</Link></li>
             <li><Link to="/panels">Ceilings</Link></li>
           </ul>

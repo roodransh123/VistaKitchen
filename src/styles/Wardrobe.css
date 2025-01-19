@@ -1,0 +1,325 @@
+/* Wardrobe Page */
+.wardrobe {
+    position: relative;
+    height: auto; 
+    overflow-x: hidden; 
+    background: white;
+  }
+  
+  /* Carousel Section */
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .carousel-image {
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-text {
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+  }
+  
+  .carousel-text h1 {
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    color: white;
+    margin: 0 400px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .carousel-text button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: rgb(12, 244, 221);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .carousel-text button:hover {
+    background-color: #09e85e;
+  }
+  
+  /* What is Wardrobe Calculator Section */
+  .what-is-wardrobe-calculator {
+    padding: 40px 10px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .what-is-wardrobe-calculator h2 {
+    font-size: 40px;
+  }
+  
+  .what-is-wardrobe-calculator p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .what-is-wardrobe-calculator button {
+    background-color: rgb(12, 244, 221);
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .what-is-wardrobe-calculator button:hover {
+    background-color: #09e85e;
+  }
+  
+  /* Steps to Get Quote Section */
+  .steps-to-get-quote {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8)); /* Lightened and darkened parrot green gradient */
+
+  }
+  
+  .steps-to-get-quote h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .steps-to-get-quote p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-top: 20px;
+  }
+  
+  .step {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .step img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    color: #8491a3;
+  }
+  
+  .step h3 {
+    font-size: 1.2rem;
+    color: #214f4b;
+  }
+  
+  .step p {
+    font-size: 1rem;
+    color: #8491a3;
+  }
+  
+  /* Wardrobe Types Section */
+  .wardrobe-types {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .wardrobe-types h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .wardrobe-images {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .wardrobe-type {
+    text-align: center;
+  }
+  
+  .wardrobe-type img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .wardrobe-type h3 {
+    font-size: 1.5rem;
+    color: #214f4b;
+    margin-top: 10px;
+  }
+  
+  .wardrobe-type p {
+    font-size: 1rem;
+    color: #8491a3;
+  }
+  
+  /* Last Section */
+  .last-section {
+    background: none;
+    padding: 20px;
+  }
+  
+  .last-text {
+    text-align: center;
+    margin: 50px 0 30px;
+  }
+  
+  .last-text h2 {
+    font-size: 3rem;
+    color: #214f4b;
+    margin-bottom: 10px;
+  }
+  
+  .last-text p {
+    font-size: 1rem;
+    color: #8491a3;
+    line-height: 1.6;
+  }
+  
+  .last-text button {
+    background-color: rgb(12, 244, 221);
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .last-text button:hover {
+    background-color: #09e85e;
+  }
+  
+  /* Styling for General Layout */
+  .layout-container {
+    padding: 20px;
+    background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8));
+  }
+  
+  .grid-heading {
+    text-align: center;
+    margin: 50px 0 30px;
+  }
+  
+  .grid-heading h2 {
+    font-size: 2rem;
+    color: #214f4b;
+    margin-bottom: 10px;
+  }
+  
+  .grid-heading p {
+    font-size: 1rem;
+    color: #8491a3;
+    line-height: 1.6;
+  }
+  
+  /* How It Works Section */
+.how-it-works {
+  padding: 40px 20px;
+  background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8)); /* Lightened and darkened parrot green gradient */
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2.5rem;
+  color: #214f4b; /* Deep green for titles */
+  margin-bottom: 20px;
+}
+
+.how-it-works p {
+  font-size: 1rem;
+  color: #8491a3; /* Cool gray for text */
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+}
+
+.how-it-works-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+}
+
+.how-it-works-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background:white;
+}
+
+.how-it-works-step span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #214f4b; /* Deep green for step numbers */
+  background-color:rgb(210, 245, 201); /* Cambridge blue for step number background */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.how-it-works-step p {
+  font-size: 1rem;
+  color: #214f4b;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .how-it-works-steps {
+    flex-direction: column;
+  }
+
+  .how-it-works h2 {
+    font-size: 2rem;
+  }
+
+  .how-it-works p {
+    font-size: 0.9rem;
+  }
+
+  .how-it-works-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .how-it-works-step span {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .how-it-works-step p {
+    font-size: 0.9rem;
+  }
+}

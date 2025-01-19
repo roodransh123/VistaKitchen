@@ -67,10 +67,10 @@ export default function Home() {
                 backgroundImage: `url(${image})`,
               }}
             >
-              <div className="carousel-text">
+              <span className="carousel-text">
                 {index === 1 && (
                   <>
-                    <h1 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white", margin: "0 400px", textAlign: "center", marginBottom: "5px" }}>Home to Beautiful Interiors</h1>
+                    <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white" }}>Home to Beautiful Interiors</p>
                     <button onClick={() => alert("Redirecting to contact page")}>
                       Book Free Consultation
                     </button>
@@ -78,7 +78,7 @@ export default function Home() {
                 )}
                 {index === 2 && (
                   <>
-                    <h1 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white", margin: "0 400px", textAlign: "center" ,marginBottom: "5px"}}>Estimate the cost hassle-free</h1>
+                    <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white"}}>Estimate the cost hassle-free</p>
                     <button onClick={() => alert("Redirecting to calculator page")}>
                       Calculate Now
                     </button>
@@ -86,13 +86,13 @@ export default function Home() {
                 )}
                 {index === 3 && (
                   <>
-                    <h1 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px",marginBottom: "5px", color: "white", margin: "0 400px", textAlign: "center" }}>Come say hi to a new life</h1>
+                    <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px"}}>Come say hi to a new life</p>
                     <button onClick={() => alert("Redirecting to contact page")}>
                       Visit Us
                     </button>
                   </>
                 )}
-              </div>
+              </span>
             </div>
           ))}
         </div>
@@ -207,35 +207,35 @@ export default function Home() {
         <div className="card-container">
         <div className="card-container">
   <div className="estimate-card">
-    <img src="/calculate-section/kitchen.jpg" alt="Kitchen Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%"}} />
+    <img src="/calculate-section/kitchen.jpg" alt="Kitchen Icon" className="card-icon" style={{objectFit:"cover"}} />
     <h3>Kitchen</h3>
-    <p>Design your dream kitchen.</p>
+    <p>Design your dream kitchen with us.</p>
     <button onClick={() => alert("Redirecting to kitchen calculator page")}>Calculate</button>
   </div>
 
   <div className="estimate-card">
-    <img src="/calculate-section/vanity.jpg" alt="Vanities Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%",objectPosition:"center"}} />
+    <img src="/calculate-section/vanity.jpg" alt="Vanities Icon" className="card-icon" style={{objectFit:"cover",objectPosition:"center"}} />
     <h3>Vanities</h3>
     <p>Custom vanities designed for your personal style.</p>
     <button onClick={() => alert("Redirecting to vanities calculator page")}>Calculate</button>
   </div>
 
   <div className="estimate-card">
-    <img src="/calculate-section/flooring.jpg" alt="Flooring Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%"}} />
+    <img src="/calculate-section/flooring.jpg" alt="Flooring Icon" className="card-icon" style={{objectFit:"cover",objectPosition:"center"}} />
     <h3>Flooring</h3>
     <p>Experience the comfort of modern and stylish floors.</p>
     <button onClick={() => alert("Redirecting to flooring calculator page")}>Calculate</button>
   </div>
 
   <div className="estimate-card">
-    <img src="/calculate-section/ceiling.jpg" alt="Ceiling Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%"}} />
+    <img src="/calculate-section/ceiling.jpg" alt="Ceiling Icon" className="card-icon" style={{objectFit:"cover"}} />
     <h3>Ceiling</h3>
     <p>Add elegance and style with premium ceilings.</p>
     <button onClick={() => alert("Redirecting to ceiling calculator page")}>Calculate</button>
   </div>
 
   <div className="estimate-card">
-    <img src="/calculate-section/wardrobe.jpg" alt="Wardrobe Icon" className="card-icon" style={{objectFit:"cover",height:"100%",width:"100%",objectPosition:"center"}} />
+    <img src="/calculate-section/wardrobe.jpg" alt="Wardrobe Icon" className="card-icon" style={{objectFit:"cover",objectPosition:"center"}} />
     <h3>Wardrobe</h3>
     <p>Choose the perfect wardrobe for your space.</p>
     <button onClick={redirectToWardrobeForm}>Calculate</button>
@@ -249,7 +249,7 @@ export default function Home() {
         <h2 style={{ fontSize: "40px" }}>Why Choose Us?</h2>
         <div className="testimonial-container">
           <div className="testimonial-card">
-            <img src="/others/2_y_service.jpg" alt="Warranty" height={"180px"} width={"180px"} style={{height:"160px",width:"160px"}} />
+            <img src="/others/2_y_service.jpg" alt="Warranty" />
             <p style={{ fontSize: "20px", fontWeight: "bold" }}>2 year free service warranty</p>
           </div>
           <div className="testimonial-card">
@@ -261,11 +261,11 @@ export default function Home() {
             <p style={{ fontSize: "20px", fontWeight: "bold" }}>Annual maintainance contract</p>
           </div>
           <div className="testimonial-card">
-          <img src="/others/custom_design.jpg" alt="cd" height={"180px"} width={"180px"} style={{height:"160px",width:"160px"}} />
+          <img src="/others/custom_design.jpg" alt="cd" />
             <p style={{ fontSize: "20px", fontWeight: "bold" }}>CustomIzed Designs</p>
           </div>
           <div className="testimonial-card">
-          <img src="/others/best_quality.jpg" alt="Quality" height={"140px"} width={"140px"} style={{height:"160px",width:"160px"}} />
+          <img src="/others/best_quality.jpg" alt="Quality" />
           <p style={{ fontSize: "20px" , fontWeight: "bold"}}>High-Quality material</p>
           </div>
         </div>

@@ -1,9 +1,11 @@
 .step-container {
     margin: 20px auto;
-    max-width: 600px;
+    width: 800px;
+    height: 700px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    overflow-y: auto;
   }
   
   

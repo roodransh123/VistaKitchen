@@ -19,6 +19,11 @@ const WardrobeForm = () => {
     setCurrentStep((prev) => prev + 1);
   };
 
+  /**
+   * Handles the "Back" button click. Decrements the current step by 1.
+   * @function
+   * @returns {void}
+   */
   const handleBack = () => {
     setCurrentStep((prev) => prev - 1);
   };
@@ -32,26 +37,26 @@ const WardrobeForm = () => {
   return (
     <div style={{ marginTop: '200px', textAlign: 'center' }}>
       {currentStep === 1 && (
-        <Step1 onNext={(data) => handleNext(data)} />
+        <Step1 currentData={formData} onNext={handleNext} />
       )}
       {currentStep === 2 && (
-        <Step2 onNext={(data) => handleNext(data)} onBack={handleBack} />
+        <Step2 currentData={formData} onNext={handleNext} onBack={handleBack} />
       )}
       {currentStep === 3 && (
-        <Step3 onNext={(data) => handleNext(data)} onBack={handleBack} />
+        <Step3 currentData={formData} onNext={handleNext} onBack={handleBack} />
       )}
       {currentStep === 4 && (
-        <Step4 onNext={(data) => handleNext(data)} onBack={handleBack} />
+        <Step4 currentData={formData} onNext={handleNext} onBack={handleBack} />
       )}
       {currentStep === 5 && (
-        <Step5 onBack={handleBack} onSubmit={handleSubmit} />
+        <Step5 currentData={formData} onBack={handleBack} onSubmit={handleSubmit} />
       )}
     </div>
   );
 };
 
-const Step1 = ({ onNext }) => {
-  const [length, setLength] = useState('');
+const Step1 = ({ currentData, onNext }) => {
+  const [length, setLength] = useState(currentData.length || '');
 
   return (
     <div className="step-container">
@@ -62,7 +67,7 @@ const Step1 = ({ onNext }) => {
           <button
             key={option}
             onClick={() => onNext({ length: option })}
-            className="option-btn"
+            className={`option-btn ${length === option ? 'selected' : ''}`}
           >
             {option}
           </button>
@@ -72,8 +77,9 @@ const Step1 = ({ onNext }) => {
   );
 };
 
-const Step2 = ({ onNext, onBack }) => {
-  const [type, setType] = useState('');
+
+const Step2 = ({ currentData, onNext, onBack }) => {
+  const [type, setType] = useState(currentData.type || '');
 
   return (
     <div className="step-container">
@@ -81,7 +87,11 @@ const Step2 = ({ onNext, onBack }) => {
       <p>Choose the type of wardrobe door you prefer:</p>
       <div className="card-container">
         {['Sliding', 'Swing'].map((option) => (
-          <div key={option} className="card" onClick={() => setType(option)}>
+          <div
+            key={option}
+            className={`card ${type === option ? 'selected' : ''}`}
+            onClick={() => setType(option)}
+          >
             <img src="https://via.placeholder.com/150" alt={option} />
             <h3>{option}</h3>
           </div>
@@ -171,10 +181,7 @@ const Step5 = ({ onBack, onSubmit }) => {
           ))}
         </div>
         <button onClick={onBack}>Back</button>
-        <button
-          onClick={() => onSubmit({ accessories: selectedAccessories })}
-          disabled={selectedAccessories.length === 0}
-        >
+        <button onClick={() => onSubmit({ accessories: selectedAccessories })}>
           Submit
         </button>
       </div>

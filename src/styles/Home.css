@@ -41,10 +41,16 @@
   width: 100%;
 }
 
-.carousel-text h1 {
+.carousel-text p {
   font-size: 3rem;
   margin-bottom: 20px;
   color: white;
+  font-weight: 600px;
+  align-self: center;
+  margin-right:250px;
+  margin-left:250px;
+  height: "100px";
+  width: "800px";
 }
 
 .carousel-text button {
@@ -129,18 +135,25 @@
 .estimate-card {
   background-color: white;
   padding: 20px;
-  width: 250px; /* or any specific width */
-  height: 300px;
+  width: 100%; /* Allow card width to adapt to parent container */
+  max-width: 250px; /* Optional: set a maximum width */
+  height: auto; /* Let height adjust based on content */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.estimate-card img {
+  width: 100%; /* Scale image based on the card's width */
+  height: 100%; /* Maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0 auto; /* Center the image */
+}
 
 .estimate-card:hover {
   transform: translateY(-5px);
@@ -391,19 +404,10 @@
   margin-bottom: 20px;
 }
 
-.testimonial-container {
-  display: flex;
-  gap: 55px;
-  justify-content: center; /* Center the items horizontally */
-  align-items: center;
-  overflow: hidden; /* Hide the overflowing content */
-  position: relative;
-  width: 100%; /* Full width for responsiveness */
-}
-
 .testimonial-card {
-  width: 250px; /* Make the card square */
-  height: 250px; /* Equal width and height */
+  width: 90%; /* Use a percentage for responsive width */
+  max-width: 250px; /* Keep a max width for larger screens */
+  height: 250px; /* Allow the height to adjust dynamically */
   flex: 0 0 auto;
   background: #ffffff;
   border: 1px solid #ddd;
@@ -415,14 +419,23 @@
   justify-content: center;
   text-align: center;
   padding: 10px;
-  
 }
 
 .testimonial-card img {
-  width: 120px; /* Icon size */
-  height: 120px;
-  margin-bottom: 25px;
+  width: 50%; /* Use percentage to ensure scalability */
+  height: 200px;
+  width: 150px; /* Maintain aspect ratio */
+  margin-bottom: 15px; /* Add spacing below the image */
   object-fit: contain;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px; /* Spacing between cards */
+  justify-content: center; /* Center-align the cards */
+  align-items: center;
+  width: 100%; /* Full width for responsiveness */
 }
 
 .testimonial-card p {
@@ -444,27 +457,105 @@
   animation: scrollRightToLeft 20s linear infinite; /* Adjust duration for scroll speed */
 }
 
-/* Media Queries */
+@media (max-width: 1024px) {
+
+  .brand-card {
+    width: 150px; /* Adjust size for tablets */
+    height: 150px;
+  }
+
+  .brand-card img {
+    width: 120px;
+    height: 120px;
+  }
+  .estimate-card {
+    max-width: 220px; /* Adjust size for tablets */
+  }
+
+  .carousel-text p {
+    font-size: 1.8rem; /* Smaller font for medium-sized screens */
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.testimonial-card {
+  width: 180px; /* Slightly reduce size for tablets */
+  height: auto; /* Allow flexible height */
+  padding: 10px; /* Add padding for better spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Center-align text */
+}
+
+.testimonial-card img {
+  width: 80px; /* Adjust icon size for tablets */
+  height: 80px;
+  margin-bottom: 10px; /* Add spacing below the icon */
+}
+
+.testimonial-card p {
+  font-size: 0.8rem; /* Keep font size readable */
+  margin: 5px 0; /* Adjust margins for spacing */
+}
+
 @media (max-width: 768px) {
-  .carousel-text h1 {
-    font-size: 2rem;
+  .estimate-card {
+    max-width: 180px; /* Further reduce size for smaller screens */
+    padding: 15px; /* Reduce padding */
+  }
+  .estimate-card img {
+    width: 70%; /* Adjust image size */
   }
 
-  .carousel-text button {
-    padding: 10px 20px;
-    font-size: 1rem;
+  .carousel-text p {
+    font-size: 1.4rem; /* Smaller font for tablets */
   }
 }
+
+.testimonial-card {
+  width: 80%; /* Adjust size for smaller screens */
+  max-width: 200px; /* Reduce max width */
+}
+
+.testimonial-card img {
+  width: 60%; /* Adjust image size for smaller screens */
+}
+
+.testimonial-card p {
+  font-size: 0.7rem; /* Adjust font size for better readability */
+  margin: 5px 0;
+}
+
 @media (max-width: 480px) {
-  .carousel-text h1 {
-    font-size: 1.5rem;
+  .estimate-card {
+    max-width: 150px; /* Reduce size for very small screens */
+    padding: 10px; /* Further reduce padding */
   }
-  .carousel-text button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+  .estimate-card img {
+    width: 60%; /* Adjust image size */
+  }
+
+  .carousel-text p {
+    font-size: 1.2rem; /* Smaller font for small phones */
+    margin-bottom: 12px;
+    padding: 0 10px; /* Add padding to prevent text from touching screen edges */
   }
 }
 
+.testimonial-card {
+  width: 100%; /* Take full width on very small screens */
+  max-width: 150px; /* Further reduce max width */
+  padding: 10px; /* Reduce padding */
+}
 
+.testimonial-card img {
+  width: 70%; /* Scale image appropriately */
+}
 
+.testimonial-card p {
+  font-size: 0.6rem; /* Reduce font size slightly */
+  margin: 4px 0;
+}
 

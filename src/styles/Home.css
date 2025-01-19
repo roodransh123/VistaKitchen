@@ -330,6 +330,7 @@
 .grid-card:hover .card-overlay {
   opacity: 1;
 }
+
 .brands-we-work-with {
   text-align: center;
   padding: 40px 20px;
@@ -346,14 +347,13 @@
 .brand-container {
   margin-top: 50px;
   display: flex;
-  gap: 110px;
+  gap: 30px;
   justify-content: flex-start; /* Align items to the left to enable scrolling */
   align-items: center;
   width: 100%;
   overflow: hidden; /* Hide overflow */
   position: relative;
   animation: scrollLeftToRight 20s linear infinite; /* Apply scrolling animation */
-  margin-bottom: 30px;
 }
 
 .brand-card {
@@ -369,11 +369,6 @@
   justify-content: center;
   text-align: center;
   padding: 10px;
-  transition: transform 0.3s ease;
-}
-
-.brand-card:hover {
-  transform: scale(1.1);
 }
 
 .brand-card img {
@@ -459,15 +454,24 @@
 
 @media (max-width: 1024px) {
 
+  .brand-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px; /* Adjust spacing for tablets */
+   
+  }
+
   .brand-card {
-    width: 150px; /* Adjust size for tablets */
-    height: 150px;
+    width: calc(33.33% - 10px); /* Three cards per row with gap */
+    height: 200px;
+    margin-bottom: 20px; /* Add margin to separate rows */
   }
 
   .brand-card img {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
   }
+  
   .estimate-card {
     max-width: 220px; /* Adjust size for tablets */
   }
@@ -477,28 +481,25 @@
     margin-right: 0;
     margin-left: 0;
   }
+
+  .testimonial-card {
+    width: calc(33.33% - 10px); /* Three cards per row with gap */
+    height: 200px;
+    margin-bottom: 20px; /* Add margin to separate rows */
+  }
+  
+  .testimonial-card img {
+    width: 150px;
+    height: 100px;
+  }
+  
+  .testimonial-card p {
+    font-size: 0.8rem; /* Keep font size readable */
+    margin: 5px 0; /* Adjust margins for spacing */
+  }
 }
 
-.testimonial-card {
-  width: 180px; /* Slightly reduce size for tablets */
-  height: auto; /* Allow flexible height */
-  padding: 10px; /* Add padding for better spacing */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center; /* Center-align text */
-}
 
-.testimonial-card img {
-  width: 80px; /* Adjust icon size for tablets */
-  height: 80px;
-  margin-bottom: 10px; /* Add spacing below the icon */
-}
-
-.testimonial-card p {
-  font-size: 0.8rem; /* Keep font size readable */
-  margin: 5px 0; /* Adjust margins for spacing */
-}
 
 @media (max-width: 768px) {
   .estimate-card {
@@ -509,24 +510,53 @@
     width: 70%; /* Adjust image size */
   }
 
+  .brand-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing for tablets */
+    justify-content: space-between;
+  }
+
+  .brand-card {
+    width: calc(50% - 10px); /* Two cards per row with gap */
+    height: 200px;
+    margin-bottom: 20px; /* Add margin to separate rows */
+  }
+
+  .brand-card img {
+    width: 150px;
+    height: 150px;
+  }
+
   .carousel-text p {
     font-size: 1.4rem; /* Smaller font for tablets */
   }
+
+  .testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing for tablets */
+    justify-content: space-between;
+  }
+
+  .testimonial-card {
+    width: calc(50% - 10px); /* Two cards per row with gap */
+    height: 200px;
+    margin-bottom: 20px; /* Add margin to separate rows */
+  }
+
+  .testimonial-card img {
+    width: 150px;
+    height: 80px;
+  }
+
+  .testimonial-card p {
+    font-size: 0.9rem; /* Adjust font size for mobile */
+    margin: 5px 0; /* Adjust margins for better spacing */
+  }
 }
 
-.testimonial-card {
-  width: 80%; /* Adjust size for smaller screens */
-  max-width: 200px; /* Reduce max width */
-}
-
-.testimonial-card img {
-  width: 60%; /* Adjust image size for smaller screens */
-}
-
-.testimonial-card p {
-  font-size: 0.7rem; /* Adjust font size for better readability */
-  margin: 5px 0;
-}
+  
 
 @media (max-width: 480px) {
   .estimate-card {
@@ -544,18 +574,5 @@
   }
 }
 
-.testimonial-card {
-  width: 100%; /* Take full width on very small screens */
-  max-width: 150px; /* Further reduce max width */
-  padding: 10px; /* Reduce padding */
-}
 
-.testimonial-card img {
-  width: 70%; /* Scale image appropriately */
-}
-
-.testimonial-card p {
-  font-size: 0.6rem; /* Reduce font size slightly */
-  margin: 4px 0;
-}
 

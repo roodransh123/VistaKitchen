@@ -30,7 +30,7 @@
     width: 100%;
   }
   
-  .carousel-text h1 {
+  .carousel-text p {
     font-size: 3rem;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
@@ -290,8 +290,22 @@
     line-height: 1.6;
   }
   
+  @media (max-width: 1024px) 
+  {
+    .carousel-text p {
+      font-size: 1.8rem; /* Smaller font for medium-sized screens */
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
   /* Responsive Design */
   @media (max-width: 768px) {
+    .carousel-text p {
+      font-size: 1.4rem; /* Smaller font for tablets */
+      margin: 0;
+    }
+
     .how-it-works-steps {
       flex-direction: column;
     }

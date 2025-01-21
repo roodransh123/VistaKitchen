@@ -67,17 +67,17 @@ a:hover {
 
 /* Buttons */
 button {
-    background-color: #bcebcb; /* Celadon for primary button */
-    color: #214F4B;
+    background-color:rgb(23, 220, 86); /* Celadon for primary button */
+    color:white;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color:rgb(152, 243, 159); /* Light green for hover effect */
+    background-color:rgb(98, 200, 106); /* Light green for hover effect */
     transform: translateY(-2px);
 }
 

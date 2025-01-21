@@ -54,18 +54,26 @@
 }
 
 .carousel-text button {
-  padding: 12px 24px;
-  font-size: 1.2rem;
-  border: none;
-  background-color: rgb(12, 244, 221);
+  padding: 14px 28px;
   color: white;
-  border-radius: 5px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s;
+  font-size: 1.2rem;
 }
 
-.carousel-text button:hover {
-  background-color: #09e85e;
+@media (max-width: 768px) {
+  .carousel-text button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-text button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 .sticky-icon {
@@ -179,26 +187,9 @@
   margin-bottom: 20px;
 }
 
-.estimate-card button {
-  background-color:  rgb(12, 244, 221);
-  color: white;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-.estimate-card button:hover {
-  background-color: #09e85e; /* Darker mint green */
-}
-
-
 .layout-container {
   padding: 20px;
   background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8)); /* Lightened and darkened parrot green gradient */
-
 }
 
 /* Heading Section */
@@ -249,21 +240,6 @@
   font-size: 1rem;
   color: #8491a3; /* Cool gray */
   line-height: 1.6;
-}
-
-.last-text button {
-  background-color:  rgb(12, 244, 221);
-  color: white;
-  font-size: 1rem;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-.last-text button:hover {
-  background-color: #09e85e; /* Darker mint green */
 }
 
 /* Layout Grid */
@@ -412,7 +388,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  margin: 0 auto; /* Center horizontally */
   padding: 10px;
 }
 
@@ -439,17 +415,19 @@
   margin: 0;
 }
 
-@keyframes scrollRightToLeft {
-  0% {
-    transform: translateX(100%);
+@media (min-width: 1920px) {
+  .testimonial-container {
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: space-between; /* Distribute cards evenly */
   }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 
-.testimonial-container {
-  animation: scrollRightToLeft 20s linear infinite; /* Adjust duration for scroll speed */
+  .testimonial-card:nth-child(3n) {
+    margin-right: 0; /* Remove margin from every third card */
+  }
+
+  .testimonial-card:nth-child(3n+1) {
+    margin-left: 0; /* Remove margin from every first card of the row */
+  }
 }
 
 @media (max-width: 1024px) {

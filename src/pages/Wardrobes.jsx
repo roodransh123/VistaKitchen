@@ -15,7 +15,7 @@ export default function Wardrobe() {
           }}
         >
           <div className="carousel-text">
-            <h1 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)", borderRadius: "20px", color: "white", margin: "0 400px", textAlign: "center", marginBottom: "5px" }}>Wardrobe Price Calculator</h1>
+            <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)", borderRadius: "20px", color: "white"}}>Wardrobe Price Calculator</p>
             <button onClick={() => alert("Redirecting to wardrobe form")}>Get Started</button>
           </div>
         </div>

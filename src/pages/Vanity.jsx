@@ -15,7 +15,7 @@ export default function Vanities() {
           }}
         >
           <div className="carousel-text">
-            <h1 style={{ backgroundColor: "rgba(0, 0, 0, 0.3)", borderRadius: "20px", color: "white", margin: "0 400px", textAlign: "center", marginBottom: "5px" }}>Vanities Price Calculator</h1>
+            <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)", borderRadius: "20px", color: "white"}}>Vanities Price Calculator</p>
             <button onClick={() => alert("Redirecting to vanities form")}>Get Started</button>
           </div>
         </div>

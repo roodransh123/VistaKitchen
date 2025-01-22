@@ -53,10 +53,13 @@ function Header() {
           </ul>
         </nav>
 
-        <div className="profile">
-          {/* Profile content here */}
+        <div className="profile" style={{ textAlign: 'right' }}>
+          <a href="tel:+91 944 444 1111" target="_blank" rel="noopener noreferrer">
+            <i className="fas fa-phone" style={{ fontSize: '25px', color: 'black' }}></i>
+          </a>
         </div>
       </div>
+
 
       {/* Header bottom retained only for styling */}
       <div className="header-bottom"></div>

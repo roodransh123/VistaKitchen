@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
 import { FlipWords } from "../components/ui/flip-words";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 
 
 const carouselImages = [
@@ -24,6 +24,22 @@ export default function Home() {
   const redirectToWardrobeForm = () => {
     navigate("/wardrobe-form");
   };
+
+  const redirectToVanitiesForm = () => {
+    navigate("/vanities-form");
+  };
+
+  const redirectToFlooringForm = () => {
+    navigate("/flooring-form");
+  }
+
+  const redirectToKitchenForm = () => {
+    navigate("/kitchen-form");
+  }
+
+  const redirectToCeilingForm = () => {
+    navigate("/ceiling-form");
+  }
 
   const imagesWithDuplicates = [
     carouselImages[carouselImages.length - 1],
@@ -71,7 +87,8 @@ export default function Home() {
                 {index === 1 && (
                   <>
                     <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white" }}>Home to Beautiful Interiors</p>
-                    <button onClick={() => alert("Redirecting to contact page")}>
+                    <button
+                    >
                       Book Free Consultation
                     </button>
                   </>
@@ -79,9 +96,16 @@ export default function Home() {
                 {index === 2 && (
                   <>
                     <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white"}}>Estimate the cost hassle-free</p>
-                    <button onClick={() => alert("Redirecting to calculator page")}>
-                      Calculate Now
-                    </button>
+                    <button
+                      onClick={() => {
+                      document.querySelector('.estimate-div').scrollIntoView({
+                       behavior: 'smooth',
+                      block: 'start',
+    });
+  }}
+>
+  Calculate Now
+</button>
                   </>
                 )}
                 {index === 3 && (
@@ -111,6 +135,8 @@ export default function Home() {
           paddingRight: "10px",
           fontSize: "30px",
           zIndex: 100,
+          backgroundColor: null,
+          
         }}
       >
         <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
@@ -210,28 +236,28 @@ export default function Home() {
     <img src="/calculate-section/kitchen.jpg" alt="Kitchen Icon" className="card-icon" style={{objectFit:"cover"}} />
     <h3>Kitchen</h3>
     <p>Design your dream kitchen with us.</p>
-    <button onClick={() => alert("Redirecting to kitchen calculator page")}>Calculate</button>
+    <button onClick={redirectToKitchenForm}>Calculate</button>
   </div>
 
   <div className="estimate-card">
     <img src="/calculate-section/vanity.jpg" alt="Vanities Icon" className="card-icon" style={{objectFit:"cover",objectPosition:"center"}} />
     <h3>Vanities</h3>
     <p>Custom vanities designed for your personal style.</p>
-    <button onClick={() => alert("Redirecting to vanities calculator page")}>Calculate</button>
+    <button onClick={redirectToVanitiesForm}>Calculate</button>
   </div>
 
   <div className="estimate-card">
     <img src="/calculate-section/flooring.jpg" alt="Flooring Icon" className="card-icon" style={{objectFit:"cover",objectPosition:"center"}} />
     <h3>Flooring</h3>
     <p>Experience the comfort of modern and stylish floors.</p>
-    <button onClick={() => alert("Redirecting to flooring calculator page")}>Calculate</button>
+    <button onClick={redirectToFlooringForm}>Calculate</button>
   </div>
 
   <div className="estimate-card">
     <img src="/calculate-section/ceiling.jpg" alt="Ceiling Icon" className="card-icon" style={{objectFit:"cover"}} />
     <h3>Ceiling</h3>
     <p>Add elegance and style with premium ceilings.</p>
-    <button onClick={() => alert("Redirecting to ceiling calculator page")}>Calculate</button>
+    <button onClick={redirectToCeilingForm}>Calculate</button>
   </div>
 
   <div className="estimate-card">

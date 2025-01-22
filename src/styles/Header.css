@@ -34,6 +34,7 @@ header {
   padding-right: 40px;
   padding-left: 40px;
   width: 100%;
+  justify-content: space-between; /* Send the profile to the right */
 }
 
 /* Logo and Title */
@@ -128,6 +129,33 @@ h2 {
   text-align: center;
 }
 
+/* Profile Section */
+.profile {
+  text-align: left;
+}
+
+.profile a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  display: inline-block;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.profile a:hover {
+  color: rgb(42, 255, 84);
+}
+
+.profile i {
+  font-size: 25px;
+  color: black;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.profile i:hover {
+  color: rgb(42, 255, 84);
+  transform: scale(1.2);
+}
 /* Media Queries for Responsiveness */
 
 /* For screens smaller than 1024px */
@@ -145,6 +173,11 @@ h2 {
     height: 2.55px;
     margin: 4.25px;
     background-color: #000;
+  }
+
+  .profile {
+    margin-left: auto; /* Ensure profile stays to the right of the hamburger */
+    text-align: right;
   }
 
   /* Mobile Menu (Hamburger) */
@@ -199,4 +232,23 @@ h2 {
     flex-direction: column;
     align-items: center;
   }
+
+  .profile {
+    margin-left: 10px; /* Slight margin to separate from the hamburger menu */
+  }
 }
+
+@media (max-width: 480px) {
+  .profile {
+    margin-left: 5px;
+  }
+
+  .profile i {
+    font-size: 20px;
+  }
+
+  .hamburger-menu {
+    margin-right: 10px;
+  }
+}
+

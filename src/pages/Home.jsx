@@ -129,14 +129,12 @@ export default function Home() {
           top: "50%",
           transform: "translateY(-50%)",
           borderRadius: "40%",
-          backgroundColor: "white",
           paddingTop: "10px",
           paddingLeft: "10px",
           paddingRight: "10px",
           fontSize: "30px",
           zIndex: 100,
           backgroundColor: null,
-          
         }}
       >
         <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">

@@ -9,6 +9,7 @@ import VanitiesForm from './pages/Forms/Vanity_Form';
 import KitchenForm from './pages/Forms/Kitchen_Form';
 import FlooringForm from './pages/Forms/Flooring_Form';
 import CeilingForm from './pages/Forms/Ceiling_Form';
+import BuildYourOwnPackage from './pages/Forms/Build_Your_Own_Package';
 import Vanities from './pages/Vanity';
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/vanities-form" element={<VanitiesForm />} />
           <Route path="/flooring-form" element={<FlooringForm />} />
           <Route path="/ceiling-form" element={<CeilingForm />} />
+          <Route path="/Build-Your-Own-Package" element={<BuildYourOwnPackage />} />
         </Routes>
       </main>
       <Footer />

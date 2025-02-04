@@ -1,5 +1,5 @@
-/* Wardrobe Page */
-.wardrobe {
+/* Kitchen Page */
+.kitchen {
     position: relative;
     height: auto; 
     overflow-x: hidden; 
@@ -41,43 +41,44 @@
     margin-bottom: 5px;
   }
   
-  /* Wardrobe Types Section */
-  .wardrobe-types {
+  /* Kitchen Types Section */
+  .kitchen-types {
     padding: 40px 20px;
     text-align: center;
-
+    background-color: #f5f5f5;
   }
   
-  .wardrobe-types h2 {
+  .kitchen-types h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #2e4c3c; /* Dark green for kitchen theme */
   }
   
-  .wardrobe-images {
+  .kitchen-images {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
   
-  .wardrobe-type {
+  .kitchen-type {
     text-align: center;
   }
   
-  .wardrobe-type img {
+  .kitchen-type img {
     width: 300px;
     height: 300px;
     border-radius: 10px;
     object-fit: cover;
   }
   
-  .wardrobe-type h3 {
+  .kitchen-type h3 {
     font-size: 1.5rem;
     color: #214f4b;
     margin-top: 10px;
   }
   
-  .wardrobe-type p {
+  .kitchen-type p {
     font-size: 1rem;
     color: #8491a3;
   }
@@ -86,6 +87,7 @@
   .last-section {
     background: none;
     padding: 20px;
+    background-color: #f0f0f0;
   }
   
   .last-text {
@@ -95,7 +97,7 @@
   
   .last-text h2 {
     font-size: 3rem;
-    color: #214f4b;
+    color: #214f4b; /* Deep green for kitchen vibe */
     margin-bottom: 10px;
   }
   
@@ -128,57 +130,56 @@
     line-height: 1.6;
   }
   
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .carousel-text p {
+      font-size: 1.8rem; /* Smaller font for medium-sized screens */
+      margin-right: 0;
+      margin-left: 0;
+    }
   
-
-@media (max-width: 1024px) 
-{
-  .carousel-text p {
-    font-size: 1.8rem; /* Smaller font for medium-sized screens */
-    margin-right: 0;
-    margin-left: 0;
+    .kitchen-type {
+      flex: 1 1 calc(50% - 20px);
+    }
   }
-
-  .wardrobe-type {
-    flex: 1 1 calc(50% - 20px);
+  
+  /* Responsive Design for Tablets */
+  @media (max-width: 768px) {
+    .carousel-text p {
+      font-size: 1.4rem; /* Smaller font for tablets */
+      margin: 0;
+    }
+  
+    .kitchen-type {
+      flex: 1 1 calc(100% - 20px);
+    }
   }
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-  .carousel-text p {
-    font-size: 1.4rem; /* Smaller font for tablets */
-    margin: 0;
+  
+  @media (max-width: 480px) {
+    .carousel-text p {
+      font-size: 1.2rem;
+      padding: 5px 10px;
+    }
+  
+    .carousel-text button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  
+    .kitchen-type h3 {
+      font-size: 1.2rem;
+    }
+  
+    .kitchen-type p {
+      font-size: 0.8rem;
+    }
+  
+    .last-text h2 {
+      font-size: 1.5rem;
+    }
+  
+    .last-text p {
+      font-size: 0.8rem;
+    }
   }
-
-  .wardrobe-type {
-    flex: 1 1 calc(100% - 20px);
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-text p {
-    font-size: 1.2rem;
-    padding: 5px 10px;
-  }
-
-  .carousel-text button {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  .wardrobe-type h3 {
-    font-size: 1.2rem;
-  }
-
-  .wardrobe-type p {
-    font-size: 0.8rem;
-  }
-
-  .last-text h2 {
-    font-size: 1.5rem;
-  }
-
-  .last-text p {
-    font-size: 0.8rem;
-  }
-}
-
+  

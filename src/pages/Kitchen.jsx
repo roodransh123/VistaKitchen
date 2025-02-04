@@ -1,44 +1,44 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Wardrobe.css";
+import "../styles/Kitchen.css";  // Assuming you have a Kitchen-specific CSS file
 
 const carouselImages = [
-  "/carousel_images/W1.jpg",
-  "/carousel_images/W2.jpg",
-  "/carousel_images/W3.jpg",
+  "/carousel_images/Kitchen1.jpg",
+  "/carousel_images/Kitchen2.jpg",
+  "/carousel_images/Kitchen3.jpg",
 ];
 
-export default function Wardrobe() {
+export default function Kitchen() {
   const navigate = useNavigate();
 
   const imagesWithDuplicates = [
-      carouselImages[carouselImages.length - 1],
-      ...carouselImages,
-      carouselImages[0],
-    ];
-  
-    const [currentImageIndex, setCurrentImageIndex] = useState(1);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prevIndex) => prevIndex + 1);
-      }, 5000);
-  
-      return () => clearInterval(interval);
-    }, []);
-  
-    useEffect(() => {
-      if (currentImageIndex === imagesWithDuplicates.length - 1) {
-        setTimeout(() => {
-          setCurrentImageIndex(1);
-        }, 1000);
-      }
-    }, [currentImageIndex]);
+    carouselImages[carouselImages.length - 1],
+    ...carouselImages,
+    carouselImages[0],
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => prevIndex + 1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (currentImageIndex === imagesWithDuplicates.length - 1) {
+      setTimeout(() => {
+        setCurrentImageIndex(1);
+      }, 1000);
+    }
+  }, [currentImageIndex]);
 
   return (
-    <div className="wardrobe">
+    <div className="kitchen">
       <div className="carousel-wrapper">
-      <div
+        <div
           className="carousel"
           style={{
             transform: `translateX(-${currentImageIndex * 100}%)`,
@@ -63,7 +63,7 @@ export default function Wardrobe() {
                         color: "white",
                       }}
                     >
-                      Home to Beautiful Interiors
+                      Beautiful Kitchen Interiors
                     </p>
                     <button onClick={() => navigate("/consultation")}>
                       Book Free Consultation
@@ -95,9 +95,9 @@ export default function Wardrobe() {
                         color: "white",
                       }}
                     >
-                      Craft Your Dream Wardrobe
+                      Design Your Dream Kitchen
                     </p>
-                    <button onClick={() => navigate("/wardrobe-form")}>
+                    <button onClick={() => navigate("/kitchen-form")}>
                       Get Started
                     </button>
                   </>
@@ -108,30 +108,31 @@ export default function Wardrobe() {
         </div>
       </div>
 
-      <div className="wardrobe-types">
-        <h2>Since One Type Doesn't Fit All</h2>
-        <p>No matter your style, our wardrobe price calculator has got you covered.</p>
+      <div className="kitchen-types">
+        <h2>Since One Style Doesn't Fit All</h2>
+        <p>Whether you prefer a modern or classic look, we have the right kitchen solution for you.</p>
 
-        <div className="wardrobe-images">
-          <div className="wardrobe-type">
-            <img src="/others/swing_wardrobe.jpg" alt="Swing Wardrobe" />
-            <h3>Swing Wardrobe</h3>
-            <p>Built with hinged doors to offer more space for storage and visibility.</p>
+        <div className="kitchen-images">
+          <div className="kitchen-type">
+            <img src="/others/island_kitchen.jpg" alt="Island Kitchen" />
+            <h3>Island Kitchen</h3>
+            <p>Perfect for open spaces with a functional and stylish central island.</p>
           </div>
 
-          <div className="wardrobe-type">
-            <img src="/others/sliding_wardrobe.jpg" alt="Sliding Wardrobe" />
-            <h3>Sliding Wardrobe</h3>
-            <p>Modern designs with horizontally movable doors to save floor space.</p>
+          <div className="kitchen-type">
+            <img src="/others/gally_kitchen.jpg" alt="Galley Kitchen" />
+            <h3>Galley Kitchen</h3>
+            <p>Efficient design ideal for smaller spaces with great functionality.</p>
           </div>
         </div>
-        <button style={{ padding: "10px 20px", fontSize: "20px" }} onClick={() => alert("Redirecting to form")}>Calculate Now</button>
+        <button style={{ padding: "10px 20px", fontSize: "20px" }} onClick={() => alert("Redirecting to form")}>
+          Calculate Now
+        </button>
       </div>
-      
-      
+
       <div className="last-section">
         <div className="last-text">
-          <h2>Let's get you the perfect wardrobe?</h2>
+          <h2>Let's Create Your Perfect Kitchen!</h2>
           <p>Get started with calculating your price.</p>
           <button
             onClick={() => alert("Redirecting to contact page")}
@@ -148,3 +149,4 @@ export default function Wardrobe() {
     </div>
   );
 }
+

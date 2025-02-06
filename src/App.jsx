@@ -11,6 +11,7 @@ import FlooringForm from './pages/Forms/Flooring_Form';
 import CeilingForm from './pages/Forms/Ceiling_Form';
 import BuildYourOwnPackage from './pages/Forms/Build_Your_Own_Package';
 import Vanities from './pages/Vanity';
+import Kitchen from './pages/Kitchen';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/kitchen" element={<Kitchen />} />
           <Route path="/wardrobes" element={<Wardrobe />} />
           <Route path="/vanities" element={<Vanities />} />
           <Route path="/wardrobe-form" element={<WardrobeForm />} />

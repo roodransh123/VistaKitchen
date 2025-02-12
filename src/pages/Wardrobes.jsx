@@ -12,33 +12,33 @@ export default function Wardrobe() {
   const navigate = useNavigate();
 
   const imagesWithDuplicates = [
-      carouselImages[carouselImages.length - 1],
-      ...carouselImages,
-      carouselImages[0],
-    ];
-  
-    const [currentImageIndex, setCurrentImageIndex] = useState(1);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prevIndex) => prevIndex + 1);
-      }, 5000);
-  
-      return () => clearInterval(interval);
-    }, []);
-  
-    useEffect(() => {
-      if (currentImageIndex === imagesWithDuplicates.length - 1) {
-        setTimeout(() => {
-          setCurrentImageIndex(1);
-        }, 1000);
-      }
-    }, [currentImageIndex]);
+    carouselImages[carouselImages.length - 1],
+    ...carouselImages,
+    carouselImages[0],
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => prevIndex + 1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (currentImageIndex === imagesWithDuplicates.length - 1) {
+      setTimeout(() => {
+        setCurrentImageIndex(1);
+      }, 1000);
+    }
+  }, [currentImageIndex]);
 
   return (
     <div className="wardrobe">
       <div className="carousel-wrapper">
-      <div
+        <div
           className="carousel"
           style={{
             transform: `translateX(-${currentImageIndex * 100}%)`,
@@ -108,8 +108,60 @@ export default function Wardrobe() {
         </div>
       </div>
 
+      <div className="wardrobe-layout-container">
+        <div className="grid-heading">
+          <h2 style={{ fontSize: "40px" }}>Transform Your Wardrobe</h2>
+          <p>
+            Create a wardrobe that reflects your style with our range of custom
+            designs, storage solutions, and more.
+          </p>
+        </div>
+
+        <div id="layout-grid">
+          <div className="grid-item">
+            <div className="card-icon">
+              <i className="fas fa-tshirt" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+            </div>
+            <div className="card-content">
+              <h3>Custom Wardrobe Design</h3>
+              <p>Design your dream wardrobe with tailored features.</p>
+            </div>
+          </div>
+
+          <div className="grid-item">
+            <div className="card-icon">
+              <i className="fas fa-boxes" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+            </div>
+            <div className="card-content">
+              <h3>Storage Solutions</h3>
+              <p>Maximize space with innovative storage options.</p>
+            </div>
+          </div>
+
+          <div className="grid-item">
+            <div className="card-icon">
+              <i className="fas fa-clipboard-list" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+            </div>
+            <div className="card-content">
+              <h3>Wardrobe Planner</h3>
+              <p>Plan your wardrobe with our free wardrobe planner.</p>
+            </div>
+          </div>
+
+          <div className="grid-item">
+            <div className="card-icon">
+              <i className="fas fa-calculator" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+            </div>
+            <div className="card-content">
+              <h3>Wardrobe Cost Calculator</h3>
+              <p>Estimate the cost of your dream wardrobe.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="wardrobe-types">
-        <h2>Since One Type Doesn't Fit All</h2>
+      <h2 style={{ fontSize: "40px" }}>Since One Type Doesn't Fit All</h2>
         <p>No matter your style, our wardrobe price calculator has got you covered.</p>
 
         <div className="wardrobe-images">
@@ -120,15 +172,14 @@ export default function Wardrobe() {
           </div>
 
           <div className="wardrobe-type">
-            <img src="/others/sliding_wardrobe.jpg" alt="Sliding Wardrobe" />
+            <img src="/others/sliding_wardrobe2.jpg" alt="Sliding Wardrobe" />
             <h3>Sliding Wardrobe</h3>
             <p>Modern designs with horizontally movable doors to save floor space.</p>
           </div>
         </div>
         <button style={{ padding: "10px 20px", fontSize: "20px" }} onClick={() => alert("Redirecting to form")}>Calculate Now</button>
       </div>
-      
-      
+
       <div className="last-section">
         <div className="last-text">
           <h2>Let's get you the perfect wardrobe?</h2>

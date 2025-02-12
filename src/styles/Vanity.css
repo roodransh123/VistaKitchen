@@ -1,4 +1,12 @@
-/* Vanities Page */
+.vanity-layout-container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .vanities {
     position: relative;
     height: auto;

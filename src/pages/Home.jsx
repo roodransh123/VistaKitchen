@@ -229,7 +229,7 @@ export default function Home() {
         </div>
 
         <div className="card-container">
-        <div className="card-container">
+        
   <div className="estimate-card">
     <img src="/calculate-section/kitchen.jpg" alt="Kitchen Icon" className="card-icon" style={{objectFit:"cover"}} />
     <h3>Kitchen</h3>
@@ -263,7 +263,7 @@ export default function Home() {
     <h3>Wardrobe</h3>
     <p>Choose the perfect wardrobe for your space.</p>
     <button onClick={redirectToWardrobeForm}>Calculate</button>
-  </div>
+
 </div>
 
   </div>

@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Kitchen.css";  // Assuming you have a Kitchen-specific CSS file
 
 const carouselImages = [
-  "/carousel_images/Kitchen1.jpg",
-  "/carousel_images/Kitchen2.jpg",
-  "/carousel_images/Kitchen3.jpg",
+  "/kitchen/kitchen1.jpg",
+  "/kitchen/kitchen2.jpg",
+  "/kitchen/kitchen3.jpg",
 ];
 
 export default function Kitchen() {
@@ -107,35 +107,101 @@ export default function Kitchen() {
           ))}
         </div>
       </div>
+      <div className="kitchen-layout-container">
+  <div className="grid-heading">
+    <h2 style={{ fontSize: "40px" }}>One-stop shop for all things interiors</h2>
+    <p>
+      Be it end-to-end interiors, renovation, or modular solutions, we have it
+      all for your home or office. With a wide range of furniture & decor, we
+      have your back from start to finish.
+    </p>
+  </div>
 
-      <div className="kitchen-types">
-        <h2>Since One Style Doesn't Fit All</h2>
-        <p>Whether you prefer a modern or classic look, we have the right kitchen solution for you.</p>
+  <div id="layout-grid">
+  <div className="grid-item">
+    <div className="card-icon">
+      <i className="fas fa-utensils" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+    </div>
+    <div className="card-content">
+      <h3>Kitchen Essentials</h3>
+      <p>Discover the essential tools and appliances for your kitchen.</p>
+    </div>
+  </div>
 
-        <div className="kitchen-images">
-          <div className="kitchen-type">
-            <img src="/others/island_kitchen.jpg" alt="Island Kitchen" />
-            <h3>Island Kitchen</h3>
-            <p>Perfect for open spaces with a functional and stylish central island.</p>
-          </div>
+  <div className="grid-item">
+    <div className="card-icon">
+      <i className="fas fa-blender" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+    </div>
+    <div className="card-content">
+      <h3>Appliances</h3>
+      <p>Explore top-quality appliances for a functional kitchen.</p>
+    </div>
+  </div>
 
-          <div className="kitchen-type">
-            <img src="/others/gally_kitchen.jpg" alt="Galley Kitchen" />
-            <h3>Galley Kitchen</h3>
-            <p>Efficient design ideal for smaller spaces with great functionality.</p>
-          </div>
-        </div>
-        <button style={{ padding: "10px 20px", fontSize: "20px" }} onClick={() => alert("Redirecting to form")}>
-          Calculate Now
-        </button>
+  <div className="grid-item">
+    <div className="card-icon">
+      <i className="fas fa-cogs" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+    </div>
+    <div className="card-content">
+      <h3>Custom Design</h3>
+      <p>Design your dream kitchen with tailored features.</p>
+    </div>
+  </div>
+
+  <div className="grid-item">
+    <div className="card-icon">
+      <i className="fas fa-archive" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+    </div>
+    <div className="card-content">
+      <h3>Storage Solutions</h3>
+      <p>Maximize space with innovative storage options.</p>
+    </div>
+  </div>
+</div>
+
+  <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <span style={{ color: "#8491a3", fontSize: "20px" }}>and many more..</span>
+  </div>
+</div>
+
+      <div className="kitchen-inspiration-section">
+    <h2>Get Inspired by Our Stunning Kitchen Designs</h2>
+    <p>Discover modern, elegant, and functional kitchen designs that elevate your space.</p>
+
+  <div className="inspiration-grid">
+    <div className="inspiration-card" style={{ backgroundImage: "url(/kitchen/kitchen4.jpg)" }}>
+      <div className="inspiration-overlay">
+        <h3 style={{ background: "linear-gradient(90deg, rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Minimalist Charm</h3>
+        <p>Clean, sleek, and functional designs that focus on simplicity and style.</p>
       </div>
+    </div>
+    <div className="inspiration-card" style={{ backgroundImage: "url(/kitchen/kitchen5.jpg)" }}>
+      <div className="inspiration-overlay">
+        <h3 style={{ background: "linear-gradient(90deg, rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Modern Luxury</h3>
+        <p>Luxury meets functionality in our most elegant kitchen designs.</p>
+      </div>
+    </div>
+    <div className="inspiration-card" style={{ backgroundImage: "url(/kitchen/kitchen6.jpg)" }}>
+      <div className="inspiration-overlay">
+        <h3 style={{ background: "linear-gradient(90deg, rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Cozy & Inviting</h3>
+        <p>Transform your kitchen into a welcoming space for family and friends.</p>
+      </div>
+    </div>
+  </div>
+
+  <div className="inspiration-footer">
+    <p>Get inspired and start creating your perfect kitchen today.</p>
+    <button onClick={() => navigate("/kitchen-form")}>Design Your Dream Kitchen
+    </button>
+  </div>
+</div>
 
       <div className="last-section">
         <div className="last-text">
           <h2>Let's Create Your Perfect Kitchen!</h2>
           <p>Get started with calculating your price.</p>
           <button
-            onClick={() => alert("Redirecting to contact page")}
+            onClick={() => navigate("/kitchen-form")}
             style={{
               width: "200px",
               padding: "12px 24px",

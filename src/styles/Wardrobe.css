@@ -1,4 +1,11 @@
-/* Wardrobe Page */
+.wardrobe-layout-container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .wardrobe {
     position: relative;
     height: auto; 
@@ -45,12 +52,14 @@
   .wardrobe-types {
     padding: 40px 20px;
     text-align: center;
+    background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8));
 
   }
   
   .wardrobe-types h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #214f4b;
   }
   
   .wardrobe-images {

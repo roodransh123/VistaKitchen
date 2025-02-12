@@ -1,185 +1,183 @@
-/* Kitchen Page */
-.kitchen {
-    position: relative;
-    height: auto; 
-    overflow-x: hidden; 
-    background: white;
-  }
-  
-  /* Carousel Section */
-  .carousel-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .carousel-image {
-    min-height: 100%;
-    width: 100%; /* Ensures that the image takes up full width */
-    background-size: cover; /* Keeps the image from stretching */
-    background-position: center; /* Centers the image */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .carousel-text {
-    text-align: center;
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-  }
-  
-  .carousel-text p {
-    font-size: 3rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-    color: white;
-    margin: 0 400px;
-    text-align: center;
-    margin-bottom: 5px;
-  }
-  
-  /* Kitchen Types Section */
-  .kitchen-types {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #f5f5f5;
-  }
-  
-  .kitchen-types h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #2e4c3c; /* Dark green for kitchen theme */
-  }
-  
-  .kitchen-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.kitchen-layout-container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.grid-heading h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#layout-grid {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.card-icon {
+  margin-bottom: 20px;
+}
+
+.card-content h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 16px;
+  color: #666;
+}
+
+.grid-item:hover .card-content h3 {
+  color: #3dff95;
+}
+
+@media (max-width: 1024px) {
+  .layout-grid {
     gap: 20px;
   }
-  
-  .kitchen-type {
-    text-align: center;
-  }
-  
-  .kitchen-type img {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-  
-  .kitchen-type h3 {
-    font-size: 1.5rem;
-    color: #214f4b;
-    margin-top: 10px;
-  }
-  
-  .kitchen-type p {
-    font-size: 1rem;
-    color: #8491a3;
-  }
-  
-  /* Last Section */
-  .last-section {
-    background: none;
-    padding: 20px;
-    background-color: #f0f0f0;
-  }
-  
-  .last-text {
-    text-align: center;
-    margin: 50px 0 30px;
-  }
-  
-  .last-text h2 {
-    font-size: 3rem;
-    color: #214f4b; /* Deep green for kitchen vibe */
-    margin-bottom: 10px;
-  }
-  
-  .last-text p {
-    font-size: 1rem;
-    color: #8491a3;
-    line-height: 1.6;
-  }
-  
-  /* Styling for General Layout */
-  .layout-container {
-    padding: 20px;
-    background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8));
-  }
-  
-  .grid-heading {
-    text-align: center;
-    margin: 50px 0 30px;
-  }
-  
+}
+
+@media (max-width: 768px) {
   .grid-heading h2 {
+    font-size: 30px;
+  }
+
+  .layout-grid {
+    gap: 15px;
+  }
+
+  .grid-item {
+    max-width: 100%;
+  }
+}
+
+.kitchen-inspiration-section {
+  padding: 60px 20px;
+  background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8));
+  text-align: center;
+}
+
+.kitchen-inspiration-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.kitchen-inspiration-section p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.inspiration-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.inspiration-card {
+  position: relative;
+  width: 30%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.inspiration-card:hover {
+  transform: scale(1.05);
+}
+
+.inspiration-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.inspiration-overlay h3 {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.inspiration-overlay p {
+  font-size: 1.1rem;
+  color: white;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .inspiration-grid {
+    gap: 20px;
+  }
+
+  .inspiration-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .kitchen-inspiration-section h2 {
     font-size: 2rem;
-    color: #214f4b;
-    margin-bottom: 10px;
   }
-  
-  .grid-heading p {
-    font-size: 1rem;
-    color: #8491a3;
-    line-height: 1.6;
+
+  .kitchen-inspiration-section p {
+    font-size: 1.1rem;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .carousel-text p {
-      font-size: 1.8rem; /* Smaller font for medium-sized screens */
-      margin-right: 0;
-      margin-left: 0;
-    }
-  
-    .kitchen-type {
-      flex: 1 1 calc(50% - 20px);
-    }
+
+  .inspiration-grid {
+    flex-direction: column;
+    align-items: center; /* Center items for smaller screens */
+    gap: 15px;
   }
-  
-  /* Responsive Design for Tablets */
-  @media (max-width: 768px) {
-    .carousel-text p {
-      font-size: 1.4rem; /* Smaller font for tablets */
-      margin: 0;
-    }
-  
-    .kitchen-type {
-      flex: 1 1 calc(100% - 20px);
-    }
+
+  .inspiration-card {
+    width: 80%;
+    height: 250px;
   }
-  
-  @media (max-width: 480px) {
-    .carousel-text p {
-      font-size: 1.2rem;
-      padding: 5px 10px;
-    }
-  
-    .carousel-text button {
-      padding: 8px 16px;
-      font-size: 0.9rem;
-    }
-  
-    .kitchen-type h3 {
-      font-size: 1.2rem;
-    }
-  
-    .kitchen-type p {
-      font-size: 0.8rem;
-    }
-  
-    .last-text h2 {
-      font-size: 1.5rem;
-    }
-  
-    .last-text p {
-      font-size: 0.8rem;
-    }
-  }
-  
+}
+
+.inspiration-footer {
+  margin-top: 40px;
+}
+
+.inspiration-footer p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.inspiration-footer button {
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+

@@ -6,14 +6,6 @@
   justify-content: center;
   text-align: center;
 }
-
-.vanities {
-    position: relative;
-    height: auto;
-    overflow-x: hidden;
-    background: white;
-    margin-top: 100px;
-  }
   
   /* Carousel Section */
   .carousel-wrapper {

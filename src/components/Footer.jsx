@@ -12,8 +12,6 @@ function Footer() {
 
         <div className="footer-links">
           <ul>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms-of-service">Terms of Service</a></li>
             <li><a href="/contact-us">Contact Us</a></li>
           </ul>
         </div>

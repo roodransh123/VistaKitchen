@@ -65,7 +65,7 @@ export default function Kitchen() {
                     >
                       Beautiful Kitchen Interiors
                     </p>
-                    <button onClick={() => navigate("/consultation")}>
+                    <button onClick={() => navigate("/contact")}>
                       Book Free Consultation
                     </button>
                   </>
@@ -81,7 +81,7 @@ export default function Kitchen() {
                     >
                       Estimate the cost hassle-free
                     </p>
-                    <button onClick={() => navigate("/calculator")}>
+                    <button onClick={() => navigate("/kitchen-form")}>
                       Calculate Now
                     </button>
                   </>
@@ -109,7 +109,7 @@ export default function Kitchen() {
       </div>
       <div className="kitchen-layout-container">
   <div className="grid-heading">
-    <h2 style={{ fontSize: "40px" }}>One-stop shop for all things interiors</h2>
+    <h2 style={{ fontSize: "40px" }}>Your Kitchen, Your Style</h2>
     <p>
       Be it end-to-end interiors, renovation, or modular solutions, we have it
       all for your home or office. With a wide range of furniture & decor, we

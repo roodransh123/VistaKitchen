@@ -87,8 +87,7 @@ export default function Home() {
                 {index === 1 && (
                   <>
                     <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white" }}>Home to Beautiful Interiors</p>
-                    <button
-                    >
+                    <button onClick={() => navigate("/contact")}>
                       Book Free Consultation
                     </button>
                   </>
@@ -101,17 +100,17 @@ export default function Home() {
                       document.querySelector('.estimate-div').scrollIntoView({
                        behavior: 'smooth',
                       block: 'start',
-    });
-  }}
->
-  Calculate Now
-</button>
+                      });
+                    }}
+                  >
+                    Calculate Now
+                  </button>
                   </>
                 )}
                 {index === 3 && (
                   <>
                     <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px"}}>Come say hi to a new life</p>
-                    <button onClick={() => alert("Redirecting to contact page")}>
+                    <button onClick={() => navigate("/contact")}>
                       Visit Us
                     </button>
                   </>
@@ -137,13 +136,15 @@ export default function Home() {
           backgroundColor: null,
         }}
       >
-        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
-          <img
-            src="/whatsapp.png"
-            alt="whatsapp"
-            style={{ width: "60px", height: "60px", borderRadius: "40%" }}
-          />
-        </a>
+        <img
+          src="/whatsapp.png"
+          alt="whatsapp"
+          style={{ width: "60px", height: "60px", borderRadius: "40%", cursor: "pointer" }}
+          onClick={() => {
+            navigator.clipboard.writeText("1234567890");
+            alert("Phone number copied! Please open WhatsApp and start a new chat with the number.");
+          }}
+        />
       </div>
       <div className="brands-we-work-with">
   <h2 style={{ fontSize: "40px" }}>Brands We Work With</h2>
@@ -302,7 +303,7 @@ export default function Home() {
             Your dream is just a click away.
           </p>
           <button 
-            onClick={() => alert("Redirecting to contact page")}
+            onClick={() => navigate("/contact")}
             style={{
               width: "200px",
               padding: "12px 24px",

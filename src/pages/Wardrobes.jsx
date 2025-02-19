@@ -65,7 +65,7 @@ export default function Wardrobe() {
                     >
                       Home to Beautiful Interiors
                     </p>
-                    <button onClick={() => navigate("/consultation")}>
+                    <button onClick={() => navigate("/contact")}>
                       Book Free Consultation
                     </button>
                   </>
@@ -81,7 +81,7 @@ export default function Wardrobe() {
                     >
                       Estimate the cost hassle-free
                     </p>
-                    <button onClick={() => navigate("/calculator")}>
+                    <button onClick={() => navigate("/wardrobe-form")}>
                       Calculate Now
                     </button>
                   </>
@@ -177,7 +177,7 @@ export default function Wardrobe() {
             <p>Modern designs with horizontally movable doors to save floor space.</p>
           </div>
         </div>
-        <button style={{ padding: "10px 20px", fontSize: "20px" }} onClick={() => alert("Redirecting to form")}>Calculate Now</button>
+        <button style={{ padding: "10px 20px", fontSize: "20px" }} onClick={() => navigate("/wardrobe-form")}>Calculate Now</button>
       </div>
 
       <div className="last-section">
@@ -185,7 +185,7 @@ export default function Wardrobe() {
           <h2>Let's get you the perfect wardrobe?</h2>
           <p>Get started with calculating your price.</p>
           <button
-            onClick={() => alert("Redirecting to contact page")}
+            onClick={() => navigate("/wardrobe-form")}
             style={{
               width: "200px",
               padding: "12px 24px",

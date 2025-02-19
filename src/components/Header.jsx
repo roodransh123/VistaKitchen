@@ -45,18 +45,18 @@ function Header() {
 
         <nav>
           <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-            <li><Link to="/kitchen">Kitchens</Link></li>
             <li><Link to="/wardrobes">Wardrobes</Link></li>
+            <li><Link to="/kitchen">Kitchens</Link></li>
             <li><Link to="/vanities">Vanities</Link></li>
-            <li><Link to="/ceilings">Floorings</Link></li>
-            <li><Link to="/panels">Ceilings</Link></li>
+            <li><Link to="/floorings">Floorings</Link></li>
+            <li><Link to="/ceilings">Ceilings</Link></li>
           </ul>
         </nav>
 
         <div className="profile" style={{ textAlign: 'right' }}>
-          <a href="tel:+91 944 444 1111" target="_blank" rel="noopener noreferrer">
+          <Link to="/contact">
             <i className="fas fa-phone" style={{ fontSize: '25px', color: 'black' }}></i>
-          </a>
+          </Link>
         </div>
       </div>
 

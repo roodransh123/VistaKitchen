@@ -14,7 +14,7 @@ const KitchenForm = () => {
   });
 
   const [currentStep, setCurrentStep] = useState(0); // Start at Step 0
-
+  
   const handleNext = (stepData) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -65,13 +65,57 @@ const KitchenForm = () => {
   );
 };
 
-// Step 0: Choose Catalogue or Build Your Own Kitchen
 const Step0 = ({ onChoice }) => {
   return (
-    <div className="step-container">
-      <h2>Do you want to choose from our catalogue or build your own kitchen?</h2>
-      <button onClick={() => onChoice('catalogue')}>Choose from our catalogue</button>
-      <button onClick={() => onChoice('build-your-own')}>Build Your Own Kitchen</button>
+    <div className="step-container" style={{ backgroundColor: 'white' }}>
+      <h2 style={{ fontSize: '30px', color: 'black', textAlign: 'center' }}>Do you want to choose from our catalogue or build your own kitchen?</h2>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '20px',
+          width: '100%'
+        }}
+      >
+        {[{ key: 'catalogue', img: 'EssentialKitchen.webp', text: 'Our catalogue' },
+          { key: 'build-your-own', img: 'LuxuryKitchen.webp', text: 'Build Your Own Kitchen' }].map(({ key, img, text }) => (
+          <div
+            key={key}
+            onClick={() => onChoice(key)}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              background: 'white',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+              width: '90%',
+              maxWidth: '300px',
+              textAlign: 'center',
+              cursor: 'pointer',
+              color: 'black',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)'
+            }}
+          >
+            <img 
+              src={`/forms_images/${img}`} 
+              alt={text} 
+              style={{
+                width: '100%',
+                height: '250px',
+                objectFit: 'cover',
+                borderRadius: '8px'
+              }} 
+            />
+            <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'black', margin: '10px 0' }}>
+              {text}
+            </h3>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -80,30 +124,56 @@ const Step1 = ({ currentData, onNext }) => {
   const [layout, setLayout] = useState(currentData.layout || '');
 
   return (
-    <div className="step-container">
-      <h2>Select Kitchen Layout</h2>
-      <p>Choose the layout for your kitchen:</p>
-      <div className="options">
+    <div className="step-container" style={{ backgroundColor: 'white' }}>
+      <h2 style={{ fontSize: '30px', color: 'black', textAlign: 'center' }}>Select Kitchen Layout</h2>
+      <p style={{ fontSize: '16px', color: 'black', textAlign: 'center' }}>Choose the layout for your kitchen:</p>
+      <div className="options" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
         {['L-Shaped', 'Straight', 'U-Shaped', 'Parallel'].map((option) => (
-          <button
+          <div
             key={option}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              background: 'white',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+              width: '90%',
+              maxWidth: '300px',
+              textAlign: 'center',
+              cursor: 'pointer',
+              color: 'black',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              boxShadow: layout === option ? '0px 4px 10px rgba(0, 0, 0, 0.2)' : 'none'
+            }}
             onClick={() => {
               setLayout(option);
               onNext({ layout: option });
             }}
-            className={`option-btn ${layout === option ? 'selected' : ''}`}
           >
             <img
-              src={`https://via.placeholder.com/150?text=${option}`}
+              src={`/forms_images/${option}.webp`}
               alt={option}
+              style={{
+                width: '100%',
+                height: '250px',
+                objectFit: 'cover',
+                borderRadius: '8px',
+                filter: layout === option ? 'brightness(0.6)' : 'brightness(1)'
+              }}
             />
-            {option}
-          </button>
+            <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'black', margin: '10px 0' }}>
+              {option}
+            </h3>
+          </div>
         ))}
       </div>
     </div>
   );
 };
+
+
 
 const Step2 = ({ currentData, onNext, onBack }) => {
   const [length, setLength] = useState(currentData.layout === 'U-Shaped' ? 10 : 8);
@@ -176,9 +246,9 @@ const Step2 = ({ currentData, onNext, onBack }) => {
   };
 
   return (
-    <div className="step-container">
-      <h2>Review Measurements for Accuracy (in feet)</h2>
-      <p>Please review and update your kitchen dimensions:</p>
+    <div className="step-container" style={{ backgroundColor: 'white' }}>
+      <h2 style={{ color: 'black' }}>Review Measurements for Accuracy (in feet)</h2>
+      <p style={{ color: 'black' }}>Please review and update your kitchen dimensions:</p>
       {getDropdowns()}
       <button onClick={onBack}>Back</button>
       <button
@@ -195,37 +265,102 @@ const Step3 = ({ currentData, onNext, onBack }) => {
   const [selectedPackage, setSelectedPackage] = useState(currentData.package || '');
 
   return (
-    <div className="step-container">
-      <h2>Pick Your Package</h2>
-      <p>Select a package for your kitchen:</p>
-      <div className="card-container">
-        {['Essential', 'Premium', 'Luxe'].map((option) => (
+    <div 
+      style={{
+        margin: '20px auto',
+        marginTop: '100px',
+        width: '500px',
+        height: '700px',
+        padding: '20px',
+        border: '1px solid #ddd',
+        borderRadius: '8px',
+        overflowY: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        background: 'white'
+      }}
+    >
+      <h2 style={{ fontSize: '30px', color: 'black', textAlign: 'center' }}>Pick Your Package</h2>
+      <p style={{ fontSize: '16px', color: 'black' }}>Select a package for your kitchen:</p>
+      
+      <div 
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '20px',
+          width: '100%'
+        }}
+      >
+        {['EssentialKitchen', 'PremiumKitchen', 'LuxuryKitchen'].map((option) => (
           <div
             key={option}
-            className={`card ${selectedPackage === option ? 'selected' : ''}`}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              background: 'white',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+             
+              width: '90%',
+              maxWidth: '600px',
+              textAlign: 'center',
+              cursor: 'pointer',
+              color: 'black',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              boxShadow: selectedPackage === option ? '0px 4px 10px rgba(0, 0, 0, 0.2)' : 'none'
+            }}
             onClick={() => {
               setSelectedPackage(option);
               onNext({ package: option });
             }}
           >
-            <img src={`https://via.placeholder.com/150?text=${option}`} alt={option} />
-            <h3>{option}</h3>
-            <p>{option === 'Build Your Own' ? 'Customize your kitchen' : `The ${option} package`}</p>
+            <img 
+              src={`/forms_images/${option}.webp`} 
+              alt={option} 
+              style={{
+                width: '100%',
+                height: '250px',
+                objectFit: 'cover',
+                borderRadius: '8px'
+              }} 
+            />
+            
+            <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'black', margin: '10px 0' }}>
+              {option.replace('Kitchen', ' Kitchen')}
+            </h3>
+            
+            <p style={{ fontSize: '16px', color: 'black', padding: '0 15px', textAlign: 'center' }}>
+              {option === 'EssentialKitchen' && 'Budget-friendly kitchen with essential features.'}
+              {option === 'PremiumKitchen' && 'Balanced kitchen with high-quality finishes and durability.'}
+              {option === 'LuxuryKitchen' && 'High-end kitchen with premium materials and advanced features.'}
+            </p>
           </div>
         ))}
       </div>
-      <button onClick={onBack}>Back</button>
-      <button
-        onClick={() => {
-          onNext({ package: selectedPackage });
-        }}
+
+      <button 
+        onClick={onBack}
+        
+      >
+        Back
+      </button>
+
+      <button 
+        onClick={() => onNext({ package: selectedPackage })}
         disabled={!selectedPackage}
+      
       >
         Next
       </button>
     </div>
   );
 };
+
+
 
 const Step4 = ({ currentData, onNext, onBack }) => {
   const [name, setName] = useState('');
@@ -234,9 +369,9 @@ const Step4 = ({ currentData, onNext, onBack }) => {
   const [propertyName, setPropertyName] = useState('');
 
   return (
-    <div className="step-container">
-      <h2>Your Kitchen is Almost Ready!</h2>
-      <p>Fill in your details to get an estimate:</p>
+    <div className="step-container" style={{ backgroundColor: 'white' }}>
+      <h2 style={{color: 'black'}}>Your Kitchen is Almost Ready!</h2>
+      <p style={{color: 'black'}}>Fill in your details to get an estimate:</p>
       <input
         type="text"
         placeholder="Full Name"
@@ -283,3 +418,5 @@ const Step5 = ({ onSubmit }) => {
 };
 
 export default KitchenForm;
+
+

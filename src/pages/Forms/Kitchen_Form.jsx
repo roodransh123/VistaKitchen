@@ -78,7 +78,7 @@ const Step0 = ({ onChoice }) => {
           width: '100%'
         }}
       >
-        {[{ key: 'catalogue', img: 'EssentialKitchen.webp', text: 'Our catalogue' },
+        {[{ key: 'catalogue', img: 'PremiumKitchen.webp', text: 'Our catalogue' },
           { key: 'build-your-own', img: 'LuxuryKitchen.webp', text: 'Build Your Own Kitchen' }].map(({ key, img, text }) => (
           <div
             key={key}

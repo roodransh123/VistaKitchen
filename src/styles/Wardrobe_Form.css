@@ -9,8 +9,8 @@
   }
   
   
-  .options button,
-  .card-container .card {
+  .wardrobe-options button,
+  .wardrobe-card-container .wardrobe-card {
     margin: 10px;
     padding: 10px;
     cursor: pointer;
@@ -20,30 +20,30 @@
     width: 150px;
   }
   
-  .card-container {
+  .wardrobe-card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
   
-  .card img {
+  .wardrobe-card img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     margin-bottom: 8px;
   }
   
-  .card h3 {
+  .wardrobe-card h3 {
     font-size: 16px;
     color: #333;
   }
   
-  .accessory-list label {
+  .wardrobe-accessory-list label {
     display: block;
     margin: 5px 0;
   }
   
-  button {
+  .wardrobe-next-button {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #2de1fc;
@@ -53,7 +53,6 @@
     cursor: pointer;
   }
   
-  button:disabled {
+  .wardrobe-next-button:disabled {
     background-color: #ccc;
   }
-  

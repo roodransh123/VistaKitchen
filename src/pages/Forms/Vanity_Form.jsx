@@ -51,10 +51,10 @@ const Step0 = ({ onNext }) => {
 
   return (
     <div className="step-container">
-      <h2>Select Your Vanity Style</h2>
-      <p>Choose from our range of vanity styles:</p>
+      <h2 style={{ color: 'black' }}>Select Your Vanity Style</h2>
+      <p style={{ color: 'grey' }}>Choose from our range of vanity styles:</p>
       <div className="options">
-        {['Modern', 'Traditional', 'Rustic', 'Minimalist'].map((option) => (
+        {['modernvanity', 'traditionalvanity', 'rusticvanity', 'minimalistvanity'].map((option) => (
           <button
             key={option}
             onClick={() => {
@@ -64,7 +64,7 @@ const Step0 = ({ onNext }) => {
             className={`option-btn ${style === option ? 'selected' : ''}`}
           >
             <img
-              src={`https://via.placeholder.com/150?text=${option}`}
+              src={`/others/${option}.webp`}
               alt={option}
             />
             {option}
@@ -83,8 +83,8 @@ const Step1 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Specify Vanity Dimensions (in feet)</h2>
-      <p>Set the dimensions for your vanity:</p>
+      <h2 style={{ color: 'black' }}>Specify Vanity Dimensions (in feet)</h2>
+      <p style={{ color: 'grey' }}>Set the dimensions for your vanity:</p>
       <div>
         <label>Length</label>
         <select value={length} onChange={(e) => setLength(e.target.value)}>
@@ -121,10 +121,10 @@ const Step2 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Select Material</h2>
-      <p>Pick the material for your vanity:</p>
+      <h2 style={{ color: 'black' }}>Select Material</h2>
+      <p style={{ color: 'grey' }}>Pick the material for your vanity:</p>
       <div className="options">
-        {['Marble', 'Granite', 'Wood', 'Laminate'].map((option) => (
+        {['marblev', 'woodv' , 'granitev'].map((option) => (
           <button
             key={option}
             onClick={() => {
@@ -134,7 +134,7 @@ const Step2 = ({ currentData, onNext, onBack }) => {
             className={`option-btn ${material === option ? 'selected' : ''}`}
           >
             <img
-              src={`https://via.placeholder.com/150?text=${option}`}
+              src={`others/${option}.webp`}
               alt={option}
             />
             {option}
@@ -155,8 +155,8 @@ const Step3 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Provide Your Details</h2>
-      <p>Fill out your contact information:</p>
+      <h2 style={{ color: 'black' }}>Provide Your Details</h2>
+      <p style={{ color: 'grey' }}>Fill out your contact information:</p>
       <input
         type="text"
         placeholder="Full Name"
@@ -196,8 +196,8 @@ const Step3 = ({ currentData, onNext, onBack }) => {
 const Step4 = ({ onSubmit }) => {
   return (
     <div className="step-container">
-      <h2>Thank You!</h2>
-      <p>Your vanity design is almost ready. We will contact you soon with the details.</p>
+      <h2 style={{ color: 'black' }}>Thank You!</h2>
+      <p style={{ color: 'black' }}>Your vanity design is almost ready. We will contact you soon with the details.</p>
       <button onClick={onSubmit}>Finish</button>
     </div>
   );

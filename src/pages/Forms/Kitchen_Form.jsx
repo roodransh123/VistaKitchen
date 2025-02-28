@@ -371,7 +371,7 @@ const Step4 = ({ currentData, onNext, onBack }) => {
   return (
     <div className="step-container" style={{ backgroundColor: 'white' }}>
       <h2 style={{color: 'black'}}>Your Kitchen is Almost Ready!</h2>
-      <p style={{color: 'black'}}>Fill in your details to get an estimate:</p>
+      <p style={{color: 'grey'}}>Fill in your details to get an estimate:</p>
       <input
         type="text"
         placeholder="Full Name"
@@ -410,8 +410,8 @@ const Step4 = ({ currentData, onNext, onBack }) => {
 const Step5 = ({ onSubmit }) => {
   return (
     <div className="step-container">
-      <h2>Thank You!</h2>
-      <p>Your kitchen design is almost ready. We will get back to you soon.</p>
+      <h2 style={{color: 'black'}}>Thank You!</h2>
+      <p  style={{color: 'black'}}>Your kitchen design is almost ready. We will get back to you soon.</p>
       <button onClick={onSubmit}>Finish</button>
     </div>
   );

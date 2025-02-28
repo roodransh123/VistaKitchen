@@ -53,10 +53,10 @@ const Step0 = ({ onNext }) => {
 
   return (
     <div className="step-container">
-      <h2>Select Room Type</h2>
-      <p>Choose the room where the ceiling will be installed:</p>
+      <h2 style={{ color: 'black' }}>Select Room Type</h2>
+      <p style={{ color: 'grey' }}>Choose the room where the ceiling will be installed:</p>
       <div className="options">
-        {['Living Room', 'Bedroom', 'Kitchen', 'Bathroom'].map((room) => (
+        {['livingroom', 'bedroom', 'kitchen', 'bathroom'].map((room) => (
           <button
             key={room}
             onClick={() => {
@@ -65,6 +65,7 @@ const Step0 = ({ onNext }) => {
             }}
             className={`option-btn ${roomType === room ? 'selected' : ''}`}
           >
+            <img src={`/others/${room}.webp`} alt={room} className="option-img" />
             {room}
           </button>
         ))}
@@ -79,8 +80,8 @@ const Step1 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Enter Room Dimensions</h2>
-      <p>Provide the length and width of the room (in feet) for ceiling installation:</p>
+      <h2 style={{ color: 'black' }}>Enter Room Dimensions</h2>
+      <p style={{ color: 'grey' }}>Provide the length and width of the room (in feet) for ceiling installation:</p>
       <div>
         <label>Length (ft)</label>
         <input
@@ -110,17 +111,17 @@ const Step2 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Select Ceiling Type</h2>
-      <p>Choose your preferred ceiling type:</p>
+      <h2 style={{ color: 'black' }}>Select Ceiling Type</h2>
+      <p style={{ color: 'grey' }}>Choose your preferred ceiling type:</p>
       <div className="card-container">
-        {['Drywall', 'Suspended', 'Wood Panel', 'Popcorn', 'Acoustic'].map((type) => (
+        {['drywall', 'suspended', 'woodpanel', 'popcornceiling', 'acoustic'].map((type) => (
           <div
             key={type}
             className={`card ${ceilingType === type ? 'selected' : ''}`}
             onClick={() => setCeilingType(type)}
           >
             <img
-              src={`https://via.placeholder.com/120?text=${type}`}
+              src={`/others/${type}.webp`}
               alt={type}
             />
             <h3>{type}</h3>
@@ -142,8 +143,8 @@ const Step3 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Your Ceiling Installation Details</h2>
-      <p>Fill in your contact information to receive a quote:</p>
+      <h2 style={{ color: 'black' }}>Your Ceiling Installation Details</h2>
+      <p style={{ color: 'grey' }}>Fill in your contact information to receive a quote:</p>
       <input
         type="text"
         placeholder="Full Name"
@@ -176,8 +177,8 @@ const Step3 = ({ currentData, onNext, onBack }) => {
 const Step4 = ({ currentData, onSubmit, onBack }) => {
   return (
     <div className="step-container">
-      <h2>Thank You!</h2>
-      <p>Your ceiling installation request has been submitted. We will get back to you shortly!</p>
+      <h2 style={{ color: 'black' }}>Thank You!</h2>
+      <p style={{ color: 'black' }}>Your ceiling installation request has been submitted. We will get back to you shortly!</p>
       <button onClick={onBack}>Back</button>
       <button onClick={onSubmit}>Finish</button>
     </div>

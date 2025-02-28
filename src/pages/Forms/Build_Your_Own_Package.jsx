@@ -99,7 +99,10 @@ const BuildYourOwnPackage = () => {
         <Step8 currentData={formData} onNext={handleNext} onBack={handleBack} />
       )}
       {currentStep === 9 && (
-        <Step9 onSubmit={handleSubmit} />
+        <Step9 currentData={formData} onNext={handleNext} onBack={handleBack} />
+      )}
+      {currentStep === 10 && (
+        <Step10 onSubmit={handleSubmit} />
       )}
     </div>
   );
@@ -362,7 +365,7 @@ const Step5 = ({ currentData, onNext, onBack }) => {
       description: 'Is a smooth, durable finish which gives a clean and rich look.',
       price: '₹₹',
       proTip: 'Going for that muted, smooth look for your kitchen?',
-      imageSrc: '/others/MattLaminate.webp',
+      imageSrc: '/others/Membrane.webp',
     },
     {
       name: 'HGL Laminate',
@@ -504,11 +507,6 @@ const Step7 = ({ currentData, onNext, onBack }) => {
       imgSrc: "others/Platform.png", // Replace with actual image path
       description: "Customizable platform design to match your kitchen layout.",
     },
-    {
-      name: "Dado",
-      imgSrc: "others/Dado.png", // Replace with actual image path
-      description: "Decorative dado work for a stylish and functional backsplash.",
-    },
   ];
 
   const [selectedServices, setSelectedServices] = useState(currentData.services || []);
@@ -530,10 +528,10 @@ const Step7 = ({ currentData, onNext, onBack }) => {
           <div
             key={service.name}
             className={`card ${selectedServices.includes(service.name) ? "selected" : ""}`}
-            style={{ height: '400px', width: '350px' }}
+            style={{ height: '350px', width: '350px' }}
             onClick={() => toggleService(service.name)}
           >
-            <img src={service.imgSrc} alt={service.name} style={{ width: '200px', height: '190px', objectFit: 'cover' }} />
+            <img src={service.imgSrc} alt={service.name} style={{ width: '300px', height: '250px', objectFit: 'cover' }} />
             <h3>{service.name}</h3>
             <p>{service.description}</p>
           </div>
@@ -556,32 +554,32 @@ const Step8 = ({ currentData, onNext, onBack }) => {
   const appliances = [
     {
       name: "Hob",
-      imgSrc: "path/to/hob-image.jpg", // Replace with actual image path
+      imgSrc: "others/hobs.jpg", // Replace with actual image path
       description: "Modern hobs for a seamless cooking experience.",
     },
     {
       name: "Chimney",
-      imgSrc: "path/to/chimney-image.jpg",
-      description: "Efficient chimneys to keep your kitchen smoke-free.",
+      imgSrc: "others/chimney.jpg", // Replace with actual image path
+      description: "Smoke-free kitchens.",
     },
     {
       name: "Faucets & Sink",
-      imgSrc: "path/to/faucets-sink-image.jpg",
-      description: "Premium faucets and sinks for your modular kitchen.",
+      imgSrc: "others/faucet.jpg", 
+      description: "Premium faucets and sinks",
     },
     {
       name: "Built-in Microwave",
-      imgSrc: "path/to/microwave-image.jpg",
+      imgSrc: "others/microwave.jpg",
       description: "Compact built-in microwaves for quick meal prep.",
     },
     {
       name: "Built-in Oven",
-      imgSrc: "path/to/oven-image.jpg",
+      imgSrc: "others/oven.jpg", // Replace with actual image path
       description: "Stylish ovens for baking and grilling needs.",
     },
     {
       name: "Refrigerator",
-      imgSrc: "path/to/refrigerator-image.jpg",
+      imgSrc: "others/fridge.jpg",
       description: "Spacious and energy-efficient refrigerators.",
     },
   ];
@@ -599,14 +597,16 @@ const Step8 = ({ currentData, onNext, onBack }) => {
   return (
     <div className="step-container">
       <h2 style={{ color: 'black' }}>Here come the appliances. Your pick?</h2>
-      <div className="appliance-cards">
+      <div className="appliance-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(300px, 1fr))', gap: '20px' }}>
         {appliances.map((appliance) => (
           <div
             key={appliance.name}
             className={`card ${selectedAppliances.includes(appliance.name) ? "selected" : ""}`}
+            style={{ height: '350px', width: '350px' }}
             onClick={() => toggleAppliance(appliance.name)}
           >
-            <img src={appliance.imgSrc} alt={appliance.name} />
+            <img src={appliance.imgSrc} alt={appliance.name} style={{ width: '300px', height: '250px', objectFit: 'cover' }} />
+           
             <h3>{appliance.name}</h3>
             <p>{appliance.description}</p>
           </div>
@@ -624,11 +624,56 @@ const Step8 = ({ currentData, onNext, onBack }) => {
   );
 };
 
-const Step9 = ({ onSubmit }) => {
+const Step9 = ({ currentData, onNext, onBack }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [propertyName, setPropertyName] = useState('');
+
+  return (
+    <div className="step-container" style={{ backgroundColor: 'white' }}>
+      <h2 style={{color: 'black'}}>Your Kitchen is Almost Ready!</h2>
+      <p style={{color: 'black'}}>Fill in your details to get an estimate:</p>
+      <input
+        type="text"
+        placeholder="Full Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="email"
+        placeholder="Email Address"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Property Name"
+        value={propertyName}
+        onChange={(e) => setPropertyName(e.target.value)}
+      />
+      <button onClick={onBack}>Back</button>
+      <button
+        onClick={() => onNext({ name, email, phone, propertyName })}
+        disabled={!name || !email || !phone || !propertyName}
+      >
+        Get Estimate
+      </button>
+    </div>
+  );
+};
+
+const Step10 = ({ onSubmit }) => {
   return (
     <div className="step-container">
-      <h2 style={{ color: 'black' }}>Thank You!</h2>
-      <p style={{ color: 'grey'}}>Your kitchen design is almost ready. We will get back to you soon.</p>
+      <h2>Thank You!</h2>
+      <p>Your kitchen design is almost ready. We will get back to you soon.</p>
       <button onClick={onSubmit}>Finish</button>
     </div>
   );

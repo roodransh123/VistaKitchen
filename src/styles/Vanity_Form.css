@@ -13,6 +13,12 @@
     background-color: #f9f9f9;
   }
 
+  .options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
   .options button,
   .card-container .card {
     margin: 10px;

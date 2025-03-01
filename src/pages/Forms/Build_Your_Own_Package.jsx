@@ -20,28 +20,28 @@ const BuildYourOwnPackage = () => {
       description: 'Has high strength and density, and a solid screw-holding capacity.',
       price: '₹₹₹',
       proTip: 'Makes for a good choice as it has load-bearing capacity at a lower cost.',
-      imgSrc: 'https://via.placeholder.com/150?text=HDFHMR',
+      imgSrc: 'others/HDHMR.webp',
     },
     {
       name: 'MDF',
       description: 'Is seamless, free of knots, and has high resistance for wear & tear.',
       price: '₹₹',
       proTip: 'Ideal for cabinets because of their smooth, seamless surface.',
-      imgSrc: 'https://via.placeholder.com/150?text=MDF',
+      imgSrc: 'others/MDF.webp',
     },
     {
       name: 'MR Plywood',
       description: 'Is moisture and termite resistant and does not wear off easily.',
       price: '₹₹',
       proTip: 'Works well if you’re on a budget and looking for a durable material.',
-      imgSrc: 'https://via.placeholder.com/150?text=MR+Plywood',
+      imgSrc: 'others/MR_Plywood.webp',
     },
     {
       name: 'BWP Plywood',
       description: 'Is waterproof and withstands prolonged exposure to water and moisture.',
       price: '₹₹₹',
       proTip: 'Looking for a waterproof material? Then consider this one!',
-      imgSrc: 'https://via.placeholder.com/150?text=BWP+Plywood',
+      imgSrc: 'others/BWPPlywood.webp',
     },
   ];
   
@@ -99,7 +99,10 @@ const BuildYourOwnPackage = () => {
         <Step8 currentData={formData} onNext={handleNext} onBack={handleBack} />
       )}
       {currentStep === 9 && (
-        <Step9 onSubmit={handleSubmit} />
+        <Step9 currentData={formData} onNext={handleNext} onBack={handleBack} />
+      )}
+      {currentStep === 10 && (
+        <Step10 onSubmit={handleSubmit} />
       )}
     </div>
   );
@@ -108,25 +111,49 @@ const BuildYourOwnPackage = () => {
 const Step0 = ({ currentData, onNext }) => {
   const [layout, setLayout] = useState(currentData?.layout || '');
   return (
-    <div className="step-container">
-      <h2>Select Kitchen Layout</h2>
-      <p>Choose the layout for your kitchen:</p>
-      <div className="options">
+    <div className="step-container" style={{ backgroundColor: 'white' }}>
+      <h2 style={{ fontSize: '30px', color: 'black', textAlign: 'center' }}>Select Kitchen Layout</h2>
+      <p style={{ fontSize: '16px', color: 'grey', textAlign: 'center' }}>Choose the layout for your kitchen:</p>
+      <div className="options" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
         {['L-Shaped', 'Straight', 'U-Shaped', 'Parallel'].map((option) => (
-          <button
+          <div
             key={option}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              background: 'white',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+              width: '90%',
+              maxWidth: '300px',
+              textAlign: 'center',
+              cursor: 'pointer',
+              color: 'black',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              boxShadow: layout === option ? '0px 4px 10px rgba(0, 0, 0, 0.2)' : 'none'
+            }}
             onClick={() => {
               setLayout(option);
               onNext({ layout: option });
             }}
-            className={`option-btn ${layout === option ? 'selected' : ''}`}
           >
             <img
-              src={`https://via.placeholder.com/150?text=${option}`}
+              src={`/forms_images/${option}.webp`}
               alt={option}
+              style={{
+                width: '100%',
+                height: '250px',
+                objectFit: 'cover',
+                borderRadius: '8px',
+                filter: layout === option ? 'brightness(0.6)' : 'brightness(1)'
+              }}
             />
-            {option}
-          </button>
+            <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: 'black', margin: '10px 0' }}>
+              {option}
+            </h3>
+          </div>
         ))}
       </div>
     </div>
@@ -205,8 +232,8 @@ const Step1 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Review Measurements for Accuracy (in feet)</h2>
-      <p>Please review and update your kitchen dimensions:</p>
+      <h2 style={{ color: 'black' }}>Review Measurements for Accuracy (in feet)</h2>
+      <p style={{ color: 'grey' }}>Please review and update your kitchen dimensions:</p>
       {getDropdowns()}
       <button onClick={onBack}>Back</button>
       <button
@@ -223,16 +250,17 @@ const Step2 = ({ currentData, materialsData, onNext, onBack }) => {
   const [selectedMaterial, setSelectedMaterial] = useState(currentData.material || '');
   return (
     <div className="step-container">
-      <h2>Materials for Cabinets and Shutters</h2>
-      <p>Take your pick.</p>
+      <h2 style={{ color: 'black' }}>Materials for Cabinets and Shutters</h2>
+      <p style={{ color: 'grey' }}>Take your pick.</p>
         <div className="material-cards">
         {materialsData.map((material) => (
           <div
             key={material.name}
             className={`card ${selectedMaterial === material.name ? 'selected' : ''}`}
+            style={{ width: '350px', height: '400px' }}
             onClick={() => setSelectedMaterial(material.name)}
           >
-            <img src={material.imgSrc} alt={material.name} />
+            <img src={material.imgSrc} alt={material.name} style={{ width: '100%', height: '150px', objectFit: 'cover' }} />
             <h3>{material.name}</h3>
             <p>{material.description}</p>
             <p><strong>Price:</strong> {material.price}</p>
@@ -258,21 +286,25 @@ const Step3 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Would you like to add a granite countertop?</h2>
-      <p>Choose your preference:</p>
+      <h2 style={{ color: 'black' }}>Would you like to add a granite countertop?</h2>
+      <p style={{ color: 'grey' }}>Choose your preference:</p>
       <div className="options">
-        <button
-          onClick={() => setCountertopChoice('Yes')}
-          className={`option-btn ${countertopChoice === 'Yes' ? 'selected' : ''}`}
-        >
-          Yes
-        </button>
-        <button
-          onClick={() => setCountertopChoice('No')}
-          className={`option-btn ${countertopChoice === 'No' ? 'selected' : ''}`}
-        >
-          No
-        </button>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+          <button
+            onClick={() => setCountertopChoice('Yes')}
+            className={`option-btn ${countertopChoice === 'Yes' ? 'selected' : ''}`}
+            style={{ padding: '5px 10px', width: '100px', height: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '1.2rem' }}
+          >
+            Yes
+          </button>
+          <button
+            onClick={() => setCountertopChoice('No')}
+            className={`option-btn ${countertopChoice === 'No' ? 'selected' : ''}`}
+            style={{ padding: '10px 20px', width: '100px', height: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '1.2rem' }}
+          >
+            No
+          </button>
+        </div>
       </div>
       <div className="navigation-buttons">
         <button onClick={onBack}>Back</button>
@@ -293,18 +325,22 @@ const Step4 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Do you want to add a loft?</h2>
-      <p>Choose your preference:</p>
+      <h2 style={{ color: 'black' }}>Do you want to add a loft?</h2>
+      <p style={{ color: 'grey' }}>Choose your preference:</p>
       <div className="options">
         <button
           onClick={() => setLoftChoice('Yes')}
           className={`option-btn ${loftChoice === 'Yes' ? 'selected' : ''}`}
+          style={{ padding: '5px 10px', width: '100px', height: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '1.2rem' }}
+
         >
           Yes
         </button>
         <button
           onClick={() => setLoftChoice('No')}
           className={`option-btn ${loftChoice === 'No' ? 'selected' : ''}`}
+          style={{ padding: '5px 10px', width: '100px', height: '100px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '1.2rem' }}
+
         >
           No
         </button>
@@ -328,37 +364,29 @@ const Step5 = ({ currentData, onNext, onBack }) => {
       name: 'Matte Laminate',
       description: 'Is a smooth, durable finish which gives a clean and rich look.',
       price: '₹₹',
-      proTip: 'Going for that muted, smooth look for your kitchen? This one’s for you.',
+      proTip: 'Going for that muted, smooth look for your kitchen?',
+      imageSrc: '/others/Membrane.webp',
     },
     {
       name: 'HGL Laminate',
       description: 'Is glossy with solid colours that uplifts a space with its shiny finish.',
       price: '₹₹',
-      proTip: 'Always wanted magazine-like glossy kitchen cabinets? Choose this!',
+      proTip: 'Always wanted magazine-like glossy kitchen cabinets?',
+      imageSrc: '/others/MattLaminate.webp',
     },
     {
       name: 'Matte Membrane',
       description: 'Comes with a smooth surface and has better grooving ability.',
       price: '₹₹₹',
-      proTip: 'Go for this if you want a seamless finish that sits well in any kind of kitchen.',
+      proTip: 'Go for this if you want a seamless finish.',
+      imageSrc: '/others/Membrane.webp',
     },
     {
       name: 'HGL Membrane',
       description: 'Has a lustrous surface that enhances your modular kitchen.',
       price: '₹₹₹',
-      proTip: 'Want those strong, shiny cabinets with a pop of colour? Consider this!',
-    },
-    {
-      name: 'Anti-scratch Acrylic',
-      description: 'Is an elegant, reflective, glossy finish that is scratch resistant.',
-      price: '₹₹₹',
-      proTip: 'Dreaming of a chic kitchen with a touch of luxury? Go for this one.',
-    },
-    {
-      name: 'Glossy PU',
-      description: 'Comes with a slick look, high durability, and a polished finish.',
-      price: '₹₹₹',
-      proTip: 'Consider this if you want mirror-like cabinets that are easy to clean!',
+      proTip: 'Want those strong, shiny cabinets with a pop of colour?',
+      imageSrc: '/others/HGFinish.webp',
     },
   ];
 
@@ -366,15 +394,17 @@ const Step5 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Pick a Finish for Base & Wall Cabinets</h2>
-      <p>Select a finish that suits your kitchen style:</p>
+      <h2 style={{ color: 'black' }}>Pick a Finish for Base & Wall Cabinets</h2>
+      <p style={{ color: 'grey' }}>Select a finish that suits your kitchen style:</p>
       <div className="finish-cards">
         {finishes.map((finish) => (
           <div
             key={finish.name}
             className={`card ${selectedFinish === finish.name ? 'selected' : ''}`}
+            style={{ width: '350px', height: '400px' }}
             onClick={() => setSelectedFinish(finish.name)}
           >
+            <img src={finish.imageSrc} alt={finish.name} style={{ width: '100%', height: '150px', objectFit: 'cover' }} />
             <h3>{finish.name}</h3>
             <p>{finish.description}</p>
             <p><strong>Price:</strong> {finish.price}</p>
@@ -401,19 +431,22 @@ const Step6 = ({ currentData, onNext, onBack }) => {
       name: "Basic",
       description: "A basic range of accessories usually required to get your ideal kitchen started.",
       price: "₹₹",
-      proTip: "Consider this if you need basic units within a budget for a comfortable cooking experience.",
+      proTip: "Consider this if you need basic units within a budget",
+      imageSrc: '/others/BasicAccessory.png',
     },
     {
       name: "Intermediate",
       description: "A fine range of fittings, cabinets, and more for a smooth culinary experience.",
       price: "₹₹₹",
-      proTip: "Pick this if you experiment with cooking and need more units to ease your time in the kitchen.",
+      proTip: "Pick this if you experiment with cooking and need more units.",
+      imageSrc: '/others/IntermediateAccessory.png',
     },
     {
       name: "Premium",
       description: "A showstopper kitchen with an exclusive range you were always looking for.",
       price: "₹₹₹₹",
-      proTip: "If you're a passionate cook who needs an exclusive range of accessories, this one's for you.",
+      proTip: "If you're a passionate cook who needs an exclusive range.",
+      imageSrc: '/others/PremiumAccessory.png',
     },
   ];
 
@@ -421,15 +454,17 @@ const Step6 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Now choose the accessories for your kitchen</h2>
-      <p>Pick an accessory package that matches your needs:</p>
+      <h2 style={{ color: 'black' }}>Now choose the accessories for your kitchen</h2>
+      <p style={{ color: 'grey' }}>Pick an accessory package that matches your needs:</p>
       <div className="accessory-cards">
         {accessories.map((accessory) => (
           <div
             key={accessory.name}
             className={`card ${selectedAccessory === accessory.name ? 'selected' : ''}`}
+            style={{ width: '350px', height: '400px' }}
             onClick={() => setSelectedAccessory(accessory.name)}
           >
+            <img src={accessory.imageSrc} alt={accessory.name} style={{ width: '100%', height: '150px', objectFit: 'cover' }} />
             <h3>{accessory.name}</h3>
             <p>{accessory.description}</p>
             <p><strong>Price:</strong> {accessory.price}</p>
@@ -454,28 +489,23 @@ const Step7 = ({ currentData, onNext, onBack }) => {
   const services = [
     {
       name: "Painting",
-      imgSrc: "path/to/painting-image.jpg", // Replace with actual image path
+      imgSrc: "others/Painting.png", // Replace with actual image path
       description: "Professional painting for your kitchen walls and ceiling.",
     },
     {
       name: "Plumbing",
-      imgSrc: "path/to/plumbing-image.jpg",
+      imgSrc: "others/Plumbing.png", // Replace with actual image path
       description: "Efficient plumbing solutions to ensure proper water flow.",
     },
     {
       name: "Electrical",
-      imgSrc: "path/to/electrical-image.jpg",
+      imgSrc: "others/Electrical.png", // Replace with actual image path
       description: "Expert electrical services for lighting and appliances.",
     },
     {
       name: "Platform",
-      imgSrc: "path/to/platform-image.jpg",
+      imgSrc: "others/Platform.png", // Replace with actual image path
       description: "Customizable platform design to match your kitchen layout.",
-    },
-    {
-      name: "Dado",
-      imgSrc: "path/to/dado-image.jpg",
-      description: "Decorative dado work for a stylish and functional backsplash.",
     },
   ];
 
@@ -491,16 +521,17 @@ const Step7 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Select the on-site services you would require</h2>
-      <p>Want to know more? Check here.</p>
-      <div className="service-cards">
+      <h2 style={{ color: 'black' }}>Select the on-site services you would require</h2>
+      <p style={{ color: 'grey'}}>Want to know more? Check here.</p>
+      <div className="service-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(300px, 1fr))', gap: '20px' }}>
         {services.map((service) => (
           <div
             key={service.name}
             className={`card ${selectedServices.includes(service.name) ? "selected" : ""}`}
+            style={{ height: '350px', width: '350px' }}
             onClick={() => toggleService(service.name)}
           >
-            <img src={service.imgSrc} alt={service.name} />
+            <img src={service.imgSrc} alt={service.name} style={{ width: '300px', height: '250px', objectFit: 'cover' }} />
             <h3>{service.name}</h3>
             <p>{service.description}</p>
           </div>
@@ -523,32 +554,32 @@ const Step8 = ({ currentData, onNext, onBack }) => {
   const appliances = [
     {
       name: "Hob",
-      imgSrc: "path/to/hob-image.jpg", // Replace with actual image path
+      imgSrc: "others/hobs.jpg", // Replace with actual image path
       description: "Modern hobs for a seamless cooking experience.",
     },
     {
       name: "Chimney",
-      imgSrc: "path/to/chimney-image.jpg",
-      description: "Efficient chimneys to keep your kitchen smoke-free.",
+      imgSrc: "others/chimney.jpg", // Replace with actual image path
+      description: "Smoke-free kitchens.",
     },
     {
       name: "Faucets & Sink",
-      imgSrc: "path/to/faucets-sink-image.jpg",
-      description: "Premium faucets and sinks for your modular kitchen.",
+      imgSrc: "others/faucet.jpg", 
+      description: "Premium faucets and sinks",
     },
     {
       name: "Built-in Microwave",
-      imgSrc: "path/to/microwave-image.jpg",
+      imgSrc: "others/microwave.jpg",
       description: "Compact built-in microwaves for quick meal prep.",
     },
     {
       name: "Built-in Oven",
-      imgSrc: "path/to/oven-image.jpg",
+      imgSrc: "others/oven.jpg", // Replace with actual image path
       description: "Stylish ovens for baking and grilling needs.",
     },
     {
       name: "Refrigerator",
-      imgSrc: "path/to/refrigerator-image.jpg",
+      imgSrc: "others/fridge.jpg",
       description: "Spacious and energy-efficient refrigerators.",
     },
   ];
@@ -565,15 +596,17 @@ const Step8 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2>Here come the appliances. Your pick?</h2>
-      <div className="appliance-cards">
+      <h2 style={{ color: 'black' }}>Here come the appliances. Your pick?</h2>
+      <div className="appliance-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(300px, 1fr))', gap: '20px' }}>
         {appliances.map((appliance) => (
           <div
             key={appliance.name}
             className={`card ${selectedAppliances.includes(appliance.name) ? "selected" : ""}`}
+            style={{ height: '350px', width: '350px' }}
             onClick={() => toggleAppliance(appliance.name)}
           >
-            <img src={appliance.imgSrc} alt={appliance.name} />
+            <img src={appliance.imgSrc} alt={appliance.name} style={{ width: '300px', height: '250px', objectFit: 'cover' }} />
+           
             <h3>{appliance.name}</h3>
             <p>{appliance.description}</p>
           </div>
@@ -591,7 +624,52 @@ const Step8 = ({ currentData, onNext, onBack }) => {
   );
 };
 
-const Step9 = ({ onSubmit }) => {
+const Step9 = ({ currentData, onNext, onBack }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [propertyName, setPropertyName] = useState('');
+
+  return (
+    <div className="step-container" style={{ backgroundColor: 'white' }}>
+      <h2 style={{color: 'black'}}>Your Kitchen is Almost Ready!</h2>
+      <p style={{color: 'black'}}>Fill in your details to get an estimate:</p>
+      <input
+        type="text"
+        placeholder="Full Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="email"
+        placeholder="Email Address"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Property Name"
+        value={propertyName}
+        onChange={(e) => setPropertyName(e.target.value)}
+      />
+      <button onClick={onBack}>Back</button>
+      <button
+        onClick={() => onNext({ name, email, phone, propertyName })}
+        disabled={!name || !email || !phone || !propertyName}
+      >
+        Get Estimate
+      </button>
+    </div>
+  );
+};
+
+const Step10 = ({ onSubmit }) => {
   return (
     <div className="step-container">
       <h2>Thank You!</h2>

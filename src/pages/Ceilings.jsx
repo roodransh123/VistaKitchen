@@ -80,7 +80,7 @@ export default function Ceilings() {
         </div>
       </div>
 
-      <div className="vanity-layout-container">
+      <div style={{ padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
         <div className="grid-heading">
           <h2>Transform Your Interiors with Stunning Ceilings</h2>
           <p>Discover ceiling designs that blend aesthetics and functionality.</p>

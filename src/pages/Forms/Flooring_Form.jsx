@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/Flooring_Form.css';
-
+import "../../style.css";
 const FlooringForm = () => {
   const [formData, setFormData] = useState({
     roomType: '',

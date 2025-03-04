@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/Wardrobe_Form.css';
+import "../../style.css";
 const WardrobeForm = () => {
   const [formData, setFormData] = useState({
     length: '',

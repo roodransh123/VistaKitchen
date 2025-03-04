@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import "../../style.css";
 
 const BuildYourOwnPackage = () => {
     const [formData, setFormData] = useState({

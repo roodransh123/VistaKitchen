@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Home.css";
 import { FlipWords } from "../components/ui/flip-words";
 import { redirect, useNavigate } from "react-router-dom";
-
+import "../style.css";
 
 const carouselImages = [
   "/carousel_images/1.jpg",
@@ -195,25 +195,25 @@ export default function Home() {
           <div className="grid-card" style={{ backgroundImage: "url(/feature-section/kitchen.jpg)" }}>
             <div className="card-overlay">
               <h3 style={{ background: "linear-gradient(90deg,rgb(101, 224, 198), #3dff95)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Dream Kitchen</h3>
-              <p>Design your dream kitchen with custom options.</p>
+              <p style={{ color: "grey" }}>Design your dream kitchen with custom options.</p>
             </div>
           </div>
           <div className="grid-card" style={{ backgroundImage: "url(/feature-section/ceiling.jpg)" }}>
             <div className="card-overlay">
               <h3 style={{ background: "linear-gradient(90deg,rgb(101, 224, 198), #3dff95)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Modern Ceilings</h3>
-              <p>Elevate your space with modern ceilings.</p>
+              <p style={{ color: "grey" }}>Elevate your space with modern ceilings.</p>
             </div>
           </div>
           <div className="grid-card" style={{ backgroundImage: "url(/feature-section/flooring.jpg)" }}>
             <div className="card-overlay">
               <h3 style={{ background: "linear-gradient(90deg,rgb(101, 224, 198), #3dff95)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Homey Flooring</h3>
-              <p>Experience the comfort of modern floors.</p>
+              <p style={{ color: "grey" }}>Experience the comfort of modern floors.</p>
             </div>
           </div>
           <div className="grid-card" style={{ backgroundImage: "url(/feature-section/living-room.jpg)" }}>
             <div className="card-overlay">
               <h3 style={{ background: "linear-gradient(90deg,rgb(101, 224, 198), #3dff95)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Cozy Living Room</h3>
-              <p>Relax and unwind in our cozy living room.</p>
+              <p style={{ color: "grey" }}>Relax and unwind in our cozy living room.</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css';
+import "../style.css";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

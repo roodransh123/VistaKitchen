@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/Kitchen_Form.css';
+import "../../style.css";
 const KitchenForm = () => {
   const [formData, setFormData] = useState({
     layout: '',
@@ -13,7 +15,8 @@ const KitchenForm = () => {
     propertyName: '',
   });
 
-  const [currentStep, setCurrentStep] = useState(0); // Start at Step 0
+  const [currentStep, setCurrentStep] = useState(0);
+  const navigate = useNavigate();
   
   const handleNext = (stepData) => {
     setFormData((prevData) => ({
@@ -35,11 +38,12 @@ const KitchenForm = () => {
 
   const handlePackageChoice = (choice) => {
     if (choice === 'catalogue') {
-      setCurrentStep(1); // Proceed with regular form flow
+      setCurrentStep(1);
     } else if (choice === 'build-your-own') {
-      window.location.href = '/Build-Your-Own-Package'; // Navigate to Build Your Own Package form
+      navigate('/Build-Your-Own-Package');
     }
   };
+
 
   return (
     <div>

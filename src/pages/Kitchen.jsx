@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Kitchen.css";  // Assuming you have a Kitchen-specific CSS file
-
+import "../style.css";
 const carouselImages = [
   "/kitchen/kitchen1.jpg",
   "/kitchen/kitchen2.jpg",

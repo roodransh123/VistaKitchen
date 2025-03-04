@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Wardrobe.css";
-
+import "../style.css";
 const carouselImages = [
   "/carousel_images/W1.jpg",
   "/carousel_images/W2.jpg",

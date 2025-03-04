@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/Ceiling_Form.css';
-
+import "../../style.css";
 const CeilingForm = () => {
   const [formData, setFormData] = useState({
     roomType: '',

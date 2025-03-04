@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/Vanity_Form.css';
-
+import "../../style.css";
 const VanitiesForm = () => {
   const [formData, setFormData] = useState({
     style: '',

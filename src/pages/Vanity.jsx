@@ -103,7 +103,7 @@ export default function Vanities() {
         </div>
       </div>
 
-      <div className="vanity-layout-container">
+      <div style={{ padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
         <div className="grid-heading">
           <h2 style={{ fontSize: "40px" }}>Transform your interiors with stunning vanities</h2>
           <p>

@@ -108,7 +108,7 @@ export default function Wardrobe() {
         </div>
       </div>
 
-      <div className="wardrobe-layout-container">
+      <div style={{ padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
         <div className="grid-heading">
           <h2 style={{ fontSize: "40px" }}>Transform Your Wardrobe</h2>
           <p>

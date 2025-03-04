@@ -107,7 +107,7 @@ export default function Kitchen() {
           ))}
         </div>
       </div>
-      <div className="kitchen-layout-container">
+      <div style={{ padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
   <div className="grid-heading">
     <h2 style={{ fontSize: "40px" }}>Your Kitchen, Your Style</h2>
     <p>

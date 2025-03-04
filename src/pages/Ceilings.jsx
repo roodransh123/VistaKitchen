@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Vanity.css";
+import "../styles/Kitchen.css";
 import "../style.css";
 
 const carouselImages = [

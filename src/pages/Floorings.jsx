@@ -79,7 +79,7 @@ export default function Floorings() {
         </div>
       </div>
 
-      <div className="vanity-layout-container">
+      <div style={{ padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
         <div className="grid-heading">
           <h2>Upgrade Your Space with Stunning Floorings</h2>
           <p>Discover flooring options that blend beauty and durability.</p>

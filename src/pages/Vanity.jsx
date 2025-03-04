@@ -222,31 +222,71 @@ export default function Vanities() {
     `}
   </style>
 
-      <div className="kitchen-inspiration-section">
-    <h2>Get Inspired by Our Stunning Vanity Designs</h2>
-    <p>Discover modern, elegant, and functional vanity designs that elevate your bathroom space.</p>
+  <div style={{ 
+    padding: "60px 20px", 
+    background: "linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8))", 
+    textAlign: "center" 
+  }}>
+    <h2 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "20px" }}>
+      Get Inspired by Our Stunning Vanity Designs
+    </h2>
+    <p style={{ fontSize: "1.2rem", color: "#555", marginBottom: "40px" }}>
+      Discover modern, elegant, and functional vanity designs that elevate your bathroom space.
+    </p>
 
-  <div className="inspiration-grid">
-    <div className="inspiration-card" style={{ backgroundImage: "url(/others/vanity1.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Floating Vanity</h3>
-        <p>Modern and sleek floating vanities that create a sense of openness.</p>
-      </div>
+    <div style={{ 
+      display: "flex", 
+      justifyContent: "center", 
+      gap: "40px", 
+      flexWrap: "wrap", 
+      maxWidth: "1200px", 
+      margin: "0 auto" 
+    }}>
+      {[ 
+        { image: "/others/vanity1.jpg", title: "Floating Vanity", gradient: "rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7)", desc: "Modern and sleek floating vanities that create a sense of openness." },
+        { image: "/others/vanity2.jpg", title: "Modular Vanity", gradient: "rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7)", desc: "Modular vanity designs that offer flexibility and customization options." },
+        { image: "/others/vanity3.jpg", title: "Wall-mounted Vanity", gradient: "rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7)", desc: "Wall-mounted vanities that create a clean and minimalist look." }
+      ].map((card, index) => (
+        <div key={index} style={{ 
+          position: "relative", 
+          width: "100%",  
+          maxWidth: "350px",  
+          height: "300px", 
+          backgroundSize: "cover", 
+          backgroundPosition: "center", 
+          borderRadius: "10px", 
+          overflow: "hidden", 
+          transition: "transform 0.3s ease, box-shadow 0.3s ease", 
+          backgroundImage: `url(${card.image})`,
+          cursor: "pointer"
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+        onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}>
+        
+          <div style={{ 
+            position: "absolute", 
+            bottom: "20px", 
+            left: "20px", 
+            right: "20px", 
+            backgroundColor: "rgba(0, 0, 0, 0.4)", 
+            padding: "20px", 
+            borderRadius: "10px" 
+          }}>
+            <h3 style={{ 
+              fontSize: "1.8rem", 
+              background: `linear-gradient(90deg, ${card.gradient})`, 
+              WebkitBackgroundClip: "text", 
+              WebkitTextFillColor: "transparent" 
+            }}>
+              {card.title}
+            </h3>
+            <p style={{ fontSize: "1.1rem", color: "white", marginTop: "10px" }}>
+              {card.desc}
+            </p>
+          </div>
+        </div>
+      ))}
     </div>
-    <div className="inspiration-card" style={{ backgroundImage: "url(/others/vanity2.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Modular Vanity</h3>
-        <p>Modular vanity designs that offer flexibility and customization options.</p>
-      </div>
-    </div>
-    <div className="inspiration-card" style={{ backgroundImage: "url(/others/vanity3.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Wall-mounted Vanity</h3>
-        <p>Wall-mounted vanities that create a clean and minimalist look.</p>
-      </div>
-    </div>
-  </div>
-
 </div>
 
 

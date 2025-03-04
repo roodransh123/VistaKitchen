@@ -144,25 +144,71 @@ export default function Floorings() {
 </div>
 
       
-      <div className="kitchen-inspiration-section">
-        <h2>Get Inspired by Our Flooring Designs</h2>
-        <p>Explore modern, stylish, and functional flooring options.</p>
+<div style={{ 
+    padding: "60px 20px", 
+    background: "linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8))", 
+    textAlign: "center" 
+  }}>
+    <h2 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "20px" }}>
+      Get Inspired by Our Flooring Designs
+    </h2>
+    <p style={{ fontSize: "1.2rem", color: "#555", marginBottom: "40px" }}>
+      Explore modern, stylish, and functional flooring options.
+    </p>
 
-        <div className="inspiration-grid">
-          <div className="inspiration-card" style={{ backgroundImage: "url(/others/wooden-flooring.webp)" }}>
-            <div className="inspiration-overlay">
-              <h3>Hardwood Flooring</h3>
-              <p>Timeless and elegant wooden flooring options.</p>
-            </div>
-          </div>
-          <div className="inspiration-card" style={{ backgroundImage: "url(/others/marble-flooring.webp)" }}>
-            <div className="inspiration-overlay">
-              <h3>Marble Flooring</h3>
-              <p>Luxurious marble textures for sophisticated spaces.</p>
-            </div>
+    <div style={{ 
+      display: "flex", 
+      justifyContent: "center", 
+      gap: "40px", 
+      flexWrap: "wrap", 
+      maxWidth: "1200px", 
+      margin: "0 auto" 
+    }}>
+      {[ 
+        { image: "/others/wooden-flooring.webp", title: "Hardwood Flooring", gradient: "rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7)", desc: "Timeless and elegant wooden flooring options." },
+        { image: "/others/marble-flooring.webp", title: "Marble Flooring", gradient: "rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7)", desc: "Luxurious marble textures for sophisticated spaces." }
+      ].map((card, index) => (
+        <div key={index} style={{ 
+          position: "relative", 
+          width: "100%",  
+          maxWidth: "350px",  
+          height: "300px", 
+          backgroundSize: "cover", 
+          backgroundPosition: "center", 
+          borderRadius: "10px", 
+          overflow: "hidden", 
+          transition: "transform 0.3s ease, box-shadow 0.3s ease", 
+          backgroundImage: `url(${card.image})`,
+          cursor: "pointer"
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+        onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}>
+        
+          <div style={{ 
+            position: "absolute", 
+            bottom: "20px", 
+            left: "20px", 
+            right: "20px", 
+            backgroundColor: "rgba(0, 0, 0, 0.4)", 
+            padding: "20px", 
+            borderRadius: "10px" 
+          }}>
+            <h3 style={{ 
+              fontSize: "1.8rem", 
+              background: `linear-gradient(90deg, ${card.gradient})`, 
+              WebkitBackgroundClip: "text", 
+              WebkitTextFillColor: "transparent" 
+            }}>
+              {card.title}
+            </h3>
+            <p style={{ fontSize: "1.1rem", color: "white", marginTop: "10px" }}>
+              {card.desc}
+            </p>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+</div>
       
       <div className="last-section">
         <div className="last-text">

@@ -146,31 +146,73 @@ export default function Ceilings() {
 </div>
 
       
-      <div className="kitchen-inspiration-section">
-        <h2>Get Inspired by Our Ceiling Designs</h2>
-        <p>Explore modern, elegant, and functional ceiling inspirations.</p>
+<div style={{ 
+    padding: "60px 20px", 
+    background: "linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8))", 
+    textAlign: "center" 
+  }}>
+    <h2 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "20px" }}>
+      Get Inspired by Our Ceiling Designs
+    </h2>
+    <p style={{ fontSize: "1.2rem", color: "#555", marginBottom: "40px" }}>
+      Explore modern, elegant, and functional ceiling inspirations.
+    </p>
 
-        <div className="inspiration-grid">
-          <div className="inspiration-card" style={{ backgroundImage: "url(/others/false-ceilings.webp)" }}>
-            <div className="inspiration-overlay">
-              <h3>False Ceiling</h3>
-              <p>Stylish and modern false ceiling designs.</p>
-            </div>
-          </div>
-          <div className="inspiration-card" style={{ backgroundImage: "url(/others/wooden-ceilings.webp)" }}>
-            <div className="inspiration-overlay">
-              <h3>Wooden Ceiling</h3>
-              <p>Elegant wooden textures.</p>
-            </div>
-          </div>
-          <div className="inspiration-card" style={{ backgroundImage: "url(/others/modern-ceilings.webp)" }}>
-            <div className="inspiration-overlay">
-              <h3>Modern Ceiling</h3>
-              <p>Stunning modern ceiling designs.</p>
-            </div>
+    <div style={{ 
+      display: "flex", 
+      justifyContent: "center", 
+      gap: "40px", 
+      flexWrap: "wrap", 
+      maxWidth: "1200px", 
+      margin: "0 auto" 
+    }}>
+      {[ 
+        { image: "/others/false-ceilings.webp", title: "False Ceiling", gradient: "rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7)", desc: "Stylish and modern false ceiling designs." },
+        { image: "/others/wooden-ceilings.webp", title: "Wooden Ceiling", gradient: "rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7)", desc: "Elegant wooden textures." },
+        { image: "/others/modern-ceilings.webp", title: "Modern Ceiling", gradient: "rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7)", desc: "Stunning modern ceiling designs." }
+      ].map((card, index) => (
+        <div key={index} style={{ 
+          position: "relative", 
+          width: "100%",  
+          maxWidth: "350px",  
+          height: "300px", 
+          backgroundSize: "cover", 
+          backgroundPosition: "center", 
+          borderRadius: "10px", 
+          overflow: "hidden", 
+          transition: "transform 0.3s ease, box-shadow 0.3s ease", 
+          backgroundImage: `url(${card.image})`,
+          cursor: "pointer"
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+        onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}>
+        
+          <div style={{ 
+            position: "absolute", 
+            bottom: "20px", 
+            left: "20px", 
+            right: "20px", 
+            backgroundColor: "rgba(0, 0, 0, 0.4)", 
+            padding: "20px", 
+            borderRadius: "10px" 
+          }}>
+            <h3 style={{ 
+              fontSize: "1.8rem", 
+              background: `linear-gradient(90deg, ${card.gradient})`, 
+              WebkitBackgroundClip: "text", 
+              WebkitTextFillColor: "transparent" 
+            }}>
+              {card.title}
+            </h3>
+            <p style={{ fontSize: "1.1rem", color: "white", marginTop: "10px" }}>
+              {card.desc}
+            </p>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+</div>
+
       
       <div className="last-section">
         <div className="last-text">

@@ -108,57 +108,103 @@ export default function Wardrobe() {
         </div>
       </div>
 
-      <div className="wardrobe-layout-container">
-  <div id="grid-heading">
-    <h2 style={{ fontSize: "40px" }}>Transform Your Wardrobe</h2>
+      <div style={{ 
+  padding: "40px", 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "center", 
+  justifyContent: "center", 
+  textAlign: "center" 
+}}>
+  <div>
+    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center" }}>Transform Your Wardrobe</h2>
     <p>
       Create a wardrobe that reflects your style with our range of custom
       designs, storage solutions, and more.
     </p>
   </div>
 
-  <div id="layout-grid" style={{ display: "flex", justifyContent: "space-around" }}>
-    <div id="grid-item-1">
-      <div id="card-icon-1">
-        <i className="fas fa-tshirt" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+  <div style={{ 
+    display: "flex", 
+    justifyContent: "space-around", 
+    flexWrap: "wrap", 
+    gap: "30px", 
+    marginTop: "30px" 
+  }}>
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-tshirt"></i>
       </div>
-      <div id="card-content-1">
-        <h3>Custom Wardrobe Design</h3>
-        <p>Design your dream wardrobe with tailored features.</p>
-      </div>
-    </div>
-
-    <div id="grid-item-2">
-      <div id="card-icon-2">
-        <i className="fas fa-boxes" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-      </div>
-      <div id="card-content-2">
-        <h3>Storage Solutions</h3>
-        <p>Maximize space with innovative storage options.</p>
-      </div>
-    </div>
-
-    <div id="grid-item-3">
-      <div id="card-icon-3">
-        <i className="fas fa-clipboard-list" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-      </div>
-      <div id="card-content-3">
-        <h3>Wardrobe Planner</h3>
-        <p>Plan your wardrobe with our free wardrobe planner.</p>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Custom Wardrobe Design</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Design your dream wardrobe with tailored features.</p>
       </div>
     </div>
 
-    <div id="grid-item-4">
-      <div id="card-icon-4">
-        <i className="fas fa-calculator" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-boxes"></i>
       </div>
-      <div id="card-content-4">
-        <h3>Wardrobe Cost Calculator</h3>
-        <p>Estimate the cost of your dream wardrobe.</p>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Storage Solutions</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Maximize space with innovative storage options.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-clipboard-list"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Wardrobe Planner</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Plan your wardrobe with our free wardrobe planner.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-calculator"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Wardrobe Cost Calculator</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Estimate the cost of your dream wardrobe.</p>
       </div>
     </div>
   </div>
 </div>
+
 
 
       <div className="wardrobe-types">

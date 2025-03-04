@@ -79,34 +79,70 @@ export default function Floorings() {
         </div>
       </div>
 
-      <div className="vanity-layout-container">
-        <div className="grid-heading">
-          <h2>Upgrade Your Space with Stunning Floorings</h2>
-          <p>Discover flooring options that blend beauty and durability.</p>
-        </div>
+      <div style={{ 
+  padding: "40px", 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "center", 
+  justifyContent: "center", 
+  textAlign: "center" 
+}}>
+  <div>
+    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center" }}>
+      Upgrade Your Space with Stunning Floorings
+    </h2>
+    <p>Discover flooring options that blend beauty and durability.</p>
+  </div>
 
-        <div id="layout-grid">
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-th-large" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Custom Flooring Designs</h3>
-              <p>Create floors that suit your style and needs.</p>
-            </div>
-          </div>
-          
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-ruler" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Efficient Space Utilization</h3>
-              <p>Smart flooring solutions for every room.</p>
-            </div>
-          </div>
-        </div>
+  <div style={{ 
+    display: "flex", 
+    justifyContent: "space-around", 
+    flexWrap: "wrap", 
+    gap: "30px", 
+    marginTop: "30px" 
+  }}>
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-th-large"></i>
       </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>
+          Custom Flooring Designs
+        </h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Create floors that suit your style and needs.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-ruler"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>
+          Efficient Space Utilization
+        </h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Smart flooring solutions for every room.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
       
       <div className="kitchen-inspiration-section">
         <h2>Get Inspired by Our Flooring Designs</h2>

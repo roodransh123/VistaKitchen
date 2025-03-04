@@ -209,37 +209,88 @@ export default function Kitchen() {
   </div>
 </div>
 
-      <div className="kitchen-inspiration-section">
-    <h2>Get Inspired by Our Stunning Kitchen Designs</h2>
-    <p>Discover modern, elegant, and functional kitchen designs that elevate your space.</p>
+<>
+  <style>
+    {`
+      .inspiration-card:hover {
+        transform: scale(1.05);
+      }
+    `}
+  </style>
 
-  <div className="inspiration-grid">
-    <div className="inspiration-card" style={{ backgroundImage: "url(/kitchen/kitchen4.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Minimalist Charm</h3>
-        <p>Clean, sleek, and functional designs that focus on simplicity and style.</p>
-      </div>
+  <div style={{ 
+    padding: "60px 20px", 
+    background: "linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8))", 
+    textAlign: "center" 
+  }}>
+    <h2 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "20px" }}>
+      Get Inspired by Our Stunning Kitchen Designs
+    </h2>
+    <p style={{ fontSize: "1.2rem", color: "#555", marginBottom: "40px" }}>
+      Discover modern, elegant, and functional kitchen designs that elevate your space.
+    </p>
+
+    <div style={{ 
+      display: "flex", 
+      justifyContent: "center", 
+      gap: "20px", 
+      flexWrap: "wrap" 
+    }}>
+      {[
+        { image: "/kitchen/kitchen4.jpg", title: "Minimalist Charm", gradient: "rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7)", desc: "Clean, sleek, and functional designs that focus on simplicity and style." },
+        { image: "/kitchen/kitchen5.jpg", title: "Modern Luxury", gradient: "rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7)", desc: "Luxury meets functionality in our most elegant kitchen designs." },
+        { image: "/kitchen/kitchen6.jpg", title: "Cozy & Inviting", gradient: "rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7)", desc: "Transform your kitchen into a welcoming space for family and friends." }
+      ].map((card, index) => (
+        <div key={index} className="inspiration-card" style={{ 
+          position: "relative", 
+          width: "30%", 
+          height: "300px", 
+          backgroundSize: "cover", 
+          backgroundPosition: "center", 
+          borderRadius: "10px", 
+          overflow: "hidden", 
+          transition: "transform 0.3s ease", 
+          backgroundImage: `url(${card.image})` 
+        }}>
+          <div style={{ 
+            position: "absolute", 
+            bottom: "20px", 
+            left: "20px", 
+            right: "20px", 
+            backgroundColor: "rgba(0, 0, 0, 0.4)", 
+            padding: "20px", 
+            borderRadius: "10px" 
+          }}>
+            <h3 style={{ 
+              fontSize: "1.8rem", 
+              background: `linear-gradient(90deg, ${card.gradient})`, 
+              WebkitBackgroundClip: "text", 
+              WebkitTextFillColor: "transparent" 
+            }}>
+              {card.title}
+            </h3>
+            <p style={{ fontSize: "1.1rem", color: "white", marginTop: "10px" }}>
+              {card.desc}
+            </p>
+          </div>
+        </div>
+      ))}
     </div>
-    <div className="inspiration-card" style={{ backgroundImage: "url(/kitchen/kitchen5.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Modern Luxury</h3>
-        <p>Luxury meets functionality in our most elegant kitchen designs.</p>
-      </div>
-    </div>
-    <div className="inspiration-card" style={{ backgroundImage: "url(/kitchen/kitchen6.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Cozy & Inviting</h3>
-        <p>Transform your kitchen into a welcoming space for family and friends.</p>
-      </div>
+
+    <div style={{ marginTop: "40px" }}>
+      <p style={{ fontSize: "1.2rem", color: "#555", marginBottom: "20px" }}>
+        Get inspired and start creating your perfect kitchen today.
+      </p>
+      <button 
+        onClick={() => navigate("/kitchen-form")} 
+        style={{ fontSize: "1.2rem", padding: "12px 24px", color: "white", border: "none", cursor: "pointer" }}
+      >
+        Design Your Dream Kitchen
+      </button>
     </div>
   </div>
+</>
 
-  <div className="inspiration-footer">
-    <p>Get inspired and start creating your perfect kitchen today.</p>
-    <button onClick={() => navigate("/kitchen-form")}>Design Your Dream Kitchen
-    </button>
-  </div>
-</div>
 
       <div className="last-section">
         <div className="last-text">

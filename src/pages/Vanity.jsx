@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Vanity.css";
-import "../style.css";
+
 const carouselImages = [
   "/carousel_images/V1.jpg",
   "/carousel_images/V2.webp",
@@ -103,56 +103,84 @@ export default function Vanities() {
         </div>
       </div>
 
-      <div style={{ padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
-        <div className="grid-heading">
-          <h2 style={{ fontSize: "40px" }}>Transform your interiors with stunning vanities</h2>
-          <p>
-            Discover vanities that blend style and function, designed to enhance your bathroom space.
-          </p>
-        </div>
+      <div style={{ 
+  padding: "40px", 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "center", 
+  justifyContent: "center", 
+  textAlign: "center" 
+}}>
+  <div>
+    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center" }}>Transform your interiors with stunning vanities</h2>
+    <p>
+      Discover vanities that blend style and function, designed to enhance your bathroom space.
+    </p>
+  </div>
 
-        <div id="layout-grid">
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-sink" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Custom Vanity Designs</h3>
-              <p>Create vanities that suit your space and style.</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-draw-polygon" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Space Optimization</h3>
-              <p>Innovative solutions to maximize your bathroom space.</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-pencil-ruler" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Vanity Planner</h3>
-              <p>Design your perfect vanity with our intuitive planner.</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-calculator" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Vanity Cost Calculator</h3>
-              <p>Quickly estimate the cost of your new vanity.</p>
-            </div>
-          </div>
-        </div>
+  <div style={{ 
+    display: "flex", 
+    justifyContent: "space-around", 
+    flexWrap: "wrap", 
+    gap: "30px", 
+    marginTop: "30px" 
+  }}>
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-sink"></i>
       </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Custom Vanity Designs</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Create vanities that suit your space and style.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-draw-polygon"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Space Optimization</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Innovative solutions to maximize your bathroom space.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-pencil-ruler"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Vanity Planner</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Design your perfect vanity with our intuitive planner.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
       <div className="kitchen-inspiration-section">
     <h2>Get Inspired by Our Stunning Vanity Designs</h2>
     <p>Discover modern, elegant, and functional vanity designs that elevate your bathroom space.</p>

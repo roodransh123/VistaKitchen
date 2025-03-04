@@ -108,57 +108,58 @@ export default function Wardrobe() {
         </div>
       </div>
 
-      <div style={{ padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
-        <div className="grid-heading">
-          <h2 style={{ fontSize: "40px" }}>Transform Your Wardrobe</h2>
-          <p>
-            Create a wardrobe that reflects your style with our range of custom
-            designs, storage solutions, and more.
-          </p>
-        </div>
+      <div className="wardrobe-layout-container">
+  <div id="grid-heading">
+    <h2 style={{ fontSize: "40px" }}>Transform Your Wardrobe</h2>
+    <p>
+      Create a wardrobe that reflects your style with our range of custom
+      designs, storage solutions, and more.
+    </p>
+  </div>
 
-        <div id="layout-grid">
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-tshirt" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Custom Wardrobe Design</h3>
-              <p>Design your dream wardrobe with tailored features.</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-boxes" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Storage Solutions</h3>
-              <p>Maximize space with innovative storage options.</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-clipboard-list" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Wardrobe Planner</h3>
-              <p>Plan your wardrobe with our free wardrobe planner.</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-calculator" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Wardrobe Cost Calculator</h3>
-              <p>Estimate the cost of your dream wardrobe.</p>
-            </div>
-          </div>
-        </div>
+  <div id="layout-grid" style={{ display: "flex", justifyContent: "space-around" }}>
+    <div id="grid-item-1">
+      <div id="card-icon-1">
+        <i className="fas fa-tshirt" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
       </div>
+      <div id="card-content-1">
+        <h3>Custom Wardrobe Design</h3>
+        <p>Design your dream wardrobe with tailored features.</p>
+      </div>
+    </div>
+
+    <div id="grid-item-2">
+      <div id="card-icon-2">
+        <i className="fas fa-boxes" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+      </div>
+      <div id="card-content-2">
+        <h3>Storage Solutions</h3>
+        <p>Maximize space with innovative storage options.</p>
+      </div>
+    </div>
+
+    <div id="grid-item-3">
+      <div id="card-icon-3">
+        <i className="fas fa-clipboard-list" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+      </div>
+      <div id="card-content-3">
+        <h3>Wardrobe Planner</h3>
+        <p>Plan your wardrobe with our free wardrobe planner.</p>
+      </div>
+    </div>
+
+    <div id="grid-item-4">
+      <div id="card-icon-4">
+        <i className="fas fa-calculator" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+      </div>
+      <div id="card-content-4">
+        <h3>Wardrobe Cost Calculator</h3>
+        <p>Estimate the cost of your dream wardrobe.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <div className="wardrobe-types">
       <h2 style={{ fontSize: "40px" }}>Since One Type Doesn't Fit All</h2>

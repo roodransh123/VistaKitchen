@@ -107,9 +107,18 @@ export default function Kitchen() {
           ))}
         </div>
       </div>
-      <div style={{ padding: "40px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center" }}>
-  <div className="grid-heading">
-    <h2 style={{ fontSize: "40px" }}>Your Kitchen, Your Style</h2>
+
+      <div style={{ 
+  padding: "40px", 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "center", 
+  justifyContent: "center", 
+  textAlign: "center", 
+  backgroundColor: "#f5f5f5",
+}}>
+  <div>
+    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center" }}>Your Kitchen, Your Style</h2>
     <p>
       Be it end-to-end interiors, renovation, or modular solutions, we have it
       all for your home or office. With a wide range of furniture & decor, we
@@ -117,48 +126,84 @@ export default function Kitchen() {
     </p>
   </div>
 
-  <div id="layout-grid">
-  <div className="grid-item">
-    <div className="card-icon">
-      <i className="fas fa-utensils" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+  <div style={{ 
+    display: "flex", 
+    gap: "30px", 
+    marginTop: "30px", 
+    flexWrap: "wrap" 
+  }}>
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-utensils"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Kitchen Essentials</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Discover the essential tools and appliances for your kitchen.</p>
+      </div>
     </div>
-    <div className="card-content">
-      <h3>Kitchen Essentials</h3>
-      <p>Discover the essential tools and appliances for your kitchen.</p>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-blender"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Appliances</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Explore top-quality appliances for a functional kitchen.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-cogs"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Custom Design</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Design your dream kitchen with tailored features.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-archive"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Storage Solutions</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Maximize space with innovative storage options.</p>
+      </div>
     </div>
   </div>
-
-  <div className="grid-item">
-    <div className="card-icon">
-      <i className="fas fa-blender" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-    </div>
-    <div className="card-content">
-      <h3>Appliances</h3>
-      <p>Explore top-quality appliances for a functional kitchen.</p>
-    </div>
-  </div>
-
-  <div className="grid-item">
-    <div className="card-icon">
-      <i className="fas fa-cogs" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-    </div>
-    <div className="card-content">
-      <h3>Custom Design</h3>
-      <p>Design your dream kitchen with tailored features.</p>
-    </div>
-  </div>
-
-  <div className="grid-item">
-    <div className="card-icon">
-      <i className="fas fa-archive" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-    </div>
-    <div className="card-content">
-      <h3>Storage Solutions</h3>
-      <p>Maximize space with innovative storage options.</p>
-    </div>
-  </div>
-</div>
-
   <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
     <span style={{ color: "#8491a3", fontSize: "20px" }}>and many more..</span>
   </div>

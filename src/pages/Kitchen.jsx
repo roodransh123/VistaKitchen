@@ -118,7 +118,7 @@ export default function Kitchen() {
   backgroundColor: "#f5f5f5",
 }}>
   <div>
-    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center" }}>Your Kitchen, Your Style</h2>
+    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center"}}>Your Kitchen, Your Style</h2>
     <p>
       Be it end-to-end interiors, renovation, or modular solutions, we have it
       all for your home or office. With a wide range of furniture & decor, we
@@ -213,7 +213,20 @@ export default function Kitchen() {
   <style>
     {`
       .inspiration-card:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
+      }
+
+      @media (max-width: 768px) {
+        .inspiration-grid {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .inspiration-card {
+          width: 80%;
+          height: 250px;
+        }
       }
     `}
   </style>
@@ -230,11 +243,13 @@ export default function Kitchen() {
       Discover modern, elegant, and functional kitchen designs that elevate your space.
     </p>
 
-    <div style={{ 
+    <div className="inspiration-grid" style={{ 
       display: "flex", 
       justifyContent: "center", 
-      gap: "20px", 
-      flexWrap: "wrap" 
+      gap: "40px", 
+      flexWrap: "wrap", 
+      maxWidth: "1200px", 
+      margin: "0 auto"
     }}>
       {[
         { image: "/kitchen/kitchen4.jpg", title: "Minimalist Charm", gradient: "rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7)", desc: "Clean, sleek, and functional designs that focus on simplicity and style." },
@@ -243,15 +258,20 @@ export default function Kitchen() {
       ].map((card, index) => (
         <div key={index} className="inspiration-card" style={{ 
           position: "relative", 
-          width: "30%", 
+          width: "100%",  
+          maxWidth: "350px",  
           height: "300px", 
           backgroundSize: "cover", 
           backgroundPosition: "center", 
           borderRadius: "10px", 
           overflow: "hidden", 
-          transition: "transform 0.3s ease", 
-          backgroundImage: `url(${card.image})` 
-        }}>
+          transition: "transform 0.3s ease, box-shadow 0.3s ease", 
+          backgroundImage: `url(${card.image})`,
+          cursor: "pointer"
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+        onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}>
+        
           <div style={{ 
             position: "absolute", 
             bottom: "20px", 
@@ -283,14 +303,24 @@ export default function Kitchen() {
       </p>
       <button 
         onClick={() => navigate("/kitchen-form")} 
-        style={{ fontSize: "1.2rem", padding: "12px 24px", color: "white", border: "none", cursor: "pointer" }}
+        style={{ 
+          fontSize: "1.2rem", 
+          padding: "12px 24px", 
+          backgroundColor: "#28a745", 
+          color: "white", 
+          border: "none", 
+          borderRadius: "8px", 
+          cursor: "pointer", 
+          transition: "background 0.3s ease" 
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#218838"}
+        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#28a745"}
       >
         Design Your Dream Kitchen
       </button>
     </div>
-  </div>
+</div>
 </>
-
 
       <div className="last-section">
         <div className="last-text">

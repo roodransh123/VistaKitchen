@@ -109,10 +109,11 @@ export default function Vanities() {
   flexDirection: "column", 
   alignItems: "center", 
   justifyContent: "center", 
-  textAlign: "center" 
+  textAlign: "center", 
+  backgroundColor: "#f5f5f5"
 }}>
   <div>
-    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center" }}>Transform your interiors with stunning vanities</h2>
+    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center"}}>Transform Your Space with Elegant Vanities</h2>
     <p>
       Discover vanities that blend style and function, designed to enhance your bathroom space.
     </p>
@@ -120,10 +121,9 @@ export default function Vanities() {
 
   <div style={{ 
     display: "flex", 
-    justifyContent: "space-around", 
-    flexWrap: "wrap", 
     gap: "30px", 
-    marginTop: "30px" 
+    marginTop: "30px", 
+    flexWrap: "wrap" 
   }}>
     <div style={{ 
       display: "flex", 
@@ -178,8 +178,49 @@ export default function Vanities() {
         <p style={{ fontSize: "16px", color: "#666" }}>Design your perfect vanity with our intuitive planner.</p>
       </div>
     </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-calculator"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Vanity Cost Calculator</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Quickly estimate the cost of your new vanity.</p>
+      </div>
+    </div>
+  </div>
+  <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <span style={{ color: "#8491a3", fontSize: "20px" }}>and many more..</span>
   </div>
 </div>
+  <style>
+    {`
+      .inspiration-card:hover {
+        transform: scale(1.02);
+      }
+
+      @media (max-width: 768px) {
+        .inspiration-grid {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .inspiration-card {
+          width: 80%;
+          height: 250px;
+        }
+      }
+    `}
+  </style>
 
       <div className="kitchen-inspiration-section">
     <h2>Get Inspired by Our Stunning Vanity Designs</h2>

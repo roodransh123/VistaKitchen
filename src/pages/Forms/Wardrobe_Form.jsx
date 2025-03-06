@@ -35,30 +35,26 @@ const WardrobeForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const url = "https://script.google.com/macros/s/AKfycbygVi-sHJSgteIXnLCvaL_2BWmmKW2ft19KYE7JKwZUvqMJO1Fj6bAeXW8msLoAKKZn9w/exec"; // Replace with your Apps Script Web App URL
-
+    const url = "https://script.google.com/macros/s/AKfycbzLBbXErio1BECV2AdC6Wwlm201wfMIjDBJ2Zipqc-8nQrb56Y7BuwKrtcDnh3DuFVqwg/exec";
     try {
+      // First attempt with regular CORS (ideal solution)
       const response = await fetch(url, {
-          method: "POST",
-          mode: "cors",  // Ensures CORS is respected
-          credentials: "omit",  // Prevents unnecessary credential sharing
-          headers: {
-              "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-
+      
       const result = await response.json();
-      if (result.success) {
-          alert("Form submitted successfully!");
-      } else {
-          alert("Submission failed. Please try again.");
-      }
-  } catch (error) {
+      alert("Form submitted successfully!");
+      // Process result as needed
+      
+    } catch (error) {
       console.error("Error submitting form:", error);
       alert("Error submitting form. Please check console for details.");
-  }
-};
+    }
+  };
 
 
   return (

@@ -42,9 +42,14 @@ const WardrobeForm = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
             },
             body: JSON.stringify(formData),
         });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
         const result = await response.json();
         if (result.success) {
@@ -57,6 +62,7 @@ const WardrobeForm = () => {
         alert("Error submitting form. Please check console for details.");
     }
 };
+
 
   return (
     <div style={{ marginTop: '200px', textAlign: 'center' }}>

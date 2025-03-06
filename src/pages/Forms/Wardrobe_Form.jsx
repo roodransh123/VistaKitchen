@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import '../../styles/Wardrobe_Form.css';
 import "../../style.css";
+
 const WardrobeForm = () => {
   const [formData, setFormData] = useState({
     length: '',
     type: '',
-    finish: '',
     material: '',
-    accessories: [],
+    name: '',
+    email: '',
+    phone: '',
+    propertyName: '',
   });
 
   const [currentStep, setCurrentStep] = useState(1);
@@ -29,11 +32,31 @@ const WardrobeForm = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
-  const handleSubmit = async () => {
-    console.log('Final Data:', formData);
-    alert('Form submitted successfully!');
-    // Send formData to Google Apps Script or backend here
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const url = "https://script.google.com/macros/s/AKfycbzuqTK7uHWcAd62GMNj0X219KSymVRrhXXJcEV2RBMMbv00tSm92YROquzx4_-dWsG-/exec"; // Replace with your Apps Script Web App URL
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert("Form submitted successfully!");
+        } else {
+            alert("Submission failed. Please try again.");
+        }
+    } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("Error submitting form. Please check console for details.");
+    }
+};
 
   return (
     <div style={{ marginTop: '200px', textAlign: 'center' }}>
@@ -81,7 +104,6 @@ const WardrobeStep1 = ({ currentData, onNext }) => {
   );
 };
 
-
 const WardrobeStep2 = ({ currentData, onNext, onBack }) => {
   const [type, setType] = useState(currentData.type || '');
 
@@ -110,9 +132,8 @@ const WardrobeStep2 = ({ currentData, onNext, onBack }) => {
   );
 };
 
-
-const WardrobeStep3 = ({ onNext, onBack }) => {
-  const [material, setMaterial] = useState('');
+const WardrobeStep3 = ({ currentData, onNext, onBack }) => {
+  const [material, setMaterial] = useState(currentData.finish || '');
 
   return (
     <div className="step-container" style={{ backgroundColor: 'white' }}>
@@ -145,10 +166,10 @@ const WardrobeStep3 = ({ onNext, onBack }) => {
 };
 
 const WardrobeStep4 = ({ currentData, onNext, onBack }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [propertyName, setPropertyName] = useState('');
+  const [name, setName] = useState(currentData.name || '');
+  const [email, setEmail] = useState(currentData.email || '');
+  const [phone, setPhone] = useState(currentData.phone || '');
+  const [propertyName, setPropertyName] = useState(currentData.propertyName || '');
 
   return (
     <div className="step-container" style={{ backgroundColor: 'white' }}>

@@ -2,17 +2,24 @@ import React, { useState } from 'react';
 import "../../style.css";
 
 const BuildYourOwnPackage = () => {
-    const [formData, setFormData] = useState({
-        layout: '',
-        length: 8,
-        width: 8,
-        height: 8,
-        package: '',
-        name: '',
-        email: '',
-        phone: '',
-        propertyName: '',
-  });
+  const [formData, setFormData] = useState({
+    layout: '',
+    length: 8,
+    width: 8,
+    height: 8,
+    material: '',  // Step 2
+    countertop: '', // Step 3
+    loft: '', // Step 4
+    finish: '', // Step 5
+    accessory: '', // Step 6
+    services: [], // Step 7
+    appliances: [], // Step 8
+    name: '',
+    email: '',
+    phone: '',
+    propertyName: '',
+});
+
 
   const materialsData = [
     {
@@ -59,9 +66,45 @@ const BuildYourOwnPackage = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
-  const handleSubmit = async () => {
-    console.log('Final Data:', formData);
-    alert('Build Your Own Package form submitted successfully!');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      "entry.754906207": formData.layout,
+      "entry.11872600": formData.length,
+      "entry.277659435": formData.width,
+      "entry.1529365998": formData.height,
+      "entry.683450520": formData.material,  // Step 2
+      "entry.297310611": formData.countertop, // Step 3
+      "entry.285760108": formData.loft, // Step 4
+      "entry.109896009": formData.finish, // Step 5
+      "entry.718690491": formData.accessory, // Step 6
+      "entry.234650607": formData.services.join(', '), // Step 7 (comma-separated list)
+      "entry.1497035564": formData.appliances.join(', '), // Step 8 (comma-separated list)
+      "entry.1120160558": formData.name,
+      "entry.1956720581": formData.email,
+      "entry.676288473": formData.phone,
+      "entry.208994100": formData.propertyName
+  };
+
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdiKTzMgwLx1EpdWOfUWLT_7dSDVTfpJwha8Js2kK0Ys1rTMg/formResponse";
+
+    try {
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      alert("Form submitted successfully!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit the form.");
+    }
   };
 
   return (
@@ -674,7 +717,9 @@ const Step10 = ({ onSubmit }) => {
     <div className="step-container">
       <h2>Thank You!</h2>
       <p>Your kitchen design is almost ready. We will get back to you soon.</p>
-      <button onClick={onSubmit}>Finish</button>
+      <form onSubmit={onSubmit}>
+        <button type="submit">Finish</button>
+      </form>
     </div>
   );
 };

@@ -81,12 +81,36 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Message sent successfully!");
-    // Here, you can integrate an API or email service
-  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
+    const data = {
+      "entry.66992238": formData.name,
+      "entry.2087886000": formData.email,
+      "entry.1517615390": formData.phone,
+      "entry.1868683707": formData.message
+    };
+
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdRx0mqRHpBHwGQcFUfZGSREOXJTShGe43lDS68YhPb1xgqVw/formResponse";
+
+    try {
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      alert("Form submitted successfully!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit the form.");
+    }
+  };
+  
   return (
     <ContactPage>
       <ContactHeader>

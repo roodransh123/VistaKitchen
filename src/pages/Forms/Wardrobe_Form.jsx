@@ -32,30 +32,38 @@ const WardrobeForm = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    const url = "https://script.google.com/macros/s/AKfycbzLBbXErio1BECV2AdC6Wwlm201wfMIjDBJ2Zipqc-8nQrb56Y7BuwKrtcDnh3DuFVqwg/exec";
-    try {
-      // First attempt with regular CORS (ideal solution)
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      const result = await response.json();
-      alert("Form submitted successfully!");
-      // Process result as needed
-      
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Error submitting form. Please check console for details.");
-    }
-  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
+    const data = {
+        "entry.362866878": formData.length,
+        "entry.922557057": formData.type,
+        "entry.935091605": formData.material,
+        "entry.1222525993": formData.name,
+        "entry.1567207954": formData.email,  
+        "entry.469889829": formData.phone,
+        "entry.1464337213": formData.propertyName
+    };
+
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScrfq2xZyZ1nGJDiX41hhjcPcYZvFw_nVA0wGjiYXa90r0KGQ/formResponse";
+
+    try {
+        await fetch(formUrl, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams(data).toString()
+        });
+
+        alert("Form submitted successfully!");
+        navigate("/");
+    } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("Failed to submit the form.");
+    }
+};
 
   return (
     <div style={{ marginTop: '200px', textAlign: 'center' }}>
@@ -214,10 +222,13 @@ const WardrobeStep5 = ({ onSubmit }) => {
     <div className="step-container">
       <h2>Thank You!</h2>
       <p>We will get back to you soon.</p>
-      <button onClick={onSubmit}>Finish</button>
+      <form onSubmit={onSubmit}>
+        <button type="submit">Finish</button>
+      </form>
     </div>
   );
 };
+
 
 export default WardrobeForm;
 

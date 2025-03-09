@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/Vanity_Form.css';
 import "../../style.css";
+
 const VanitiesForm = () => {
   const [formData, setFormData] = useState({
     style: '',
@@ -28,11 +29,41 @@ const VanitiesForm = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
-  const handleSubmit = async () => {
-    console.log('Final Data:', formData);
-    alert('Form submitted successfully!');
-    // Send formData to backend or external service here
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      "entry.1423154573": formData.style,
+      "entry.440456193": formData.length,
+      "entry.1148288126": formData.width,
+      "entry.144670188": formData.height,
+      "entry.923742742": formData.material,
+      "entry.1797394805": formData.name,
+      "entry.590795316": formData.email,
+      "entry.34484213": formData.phone,
+      "entry.934286388": formData.propertyName
+    };
+
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfUJuBtbUG1IjBiPrH7ThdO77cPCOo9G5fg6aYumXDArn1fdg/formResponse";
+
+    try {
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      alert("Form submitted successfully!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit the form.");
+    }
   };
+  
 
   return (
     <div>
@@ -198,9 +229,12 @@ const Step4 = ({ onSubmit }) => {
     <div className="step-container">
       <h2 style={{ color: 'black' }}>Thank You!</h2>
       <p style={{ color: 'black' }}>Your vanity design is almost ready. We will contact you soon with the details.</p>
-      <button onClick={onSubmit}>Finish</button>
+      <form onSubmit={onSubmit}>
+        <button type="submit">Finish</button>
+      </form>
     </div>
   );
 };
+
 
 export default VanitiesForm;

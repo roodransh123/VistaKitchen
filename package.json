@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
+    "axios": "^1.8.1",
     "clsx": "^2.1.1",
     "font-awesome": "^4.7.0",
     "framer-motion": "^11.17.0",

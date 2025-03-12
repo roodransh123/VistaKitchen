@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/Ceiling_Form.css';
+import "../../style.css";
+
 
 const CeilingForm = () => {
   const [formData, setFormData] = useState({
@@ -26,10 +28,39 @@ const CeilingForm = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
-  const handleSubmit = async () => {
-    console.log('Final Data:', formData);
-    alert('Ceiling form submitted successfully!');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      "entry.616990643": formData.roomType,
+      "entry.1301441335": formData.length,
+      "entry.1560640222": formData.width,
+      "entry.312838550": formData.ceilingType,
+      "entry.485697170": formData.name,
+      "entry.289363434": formData.email,
+      "entry.2130304329": formData.phone
+    };
+
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdPyXm4mflJuuMmiTZjZsNuWttzZuGS8XLXFUmezvZGV3ZZSg/formResponse";
+
+    try {
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      alert("Form submitted successfully!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit the form.");
+    }
   };
+  
 
   return (
     <div>
@@ -180,7 +211,9 @@ const Step4 = ({ currentData, onSubmit, onBack }) => {
       <h2 style={{ color: 'black' }}>Thank You!</h2>
       <p style={{ color: 'black' }}>Your ceiling installation request has been submitted. We will get back to you shortly!</p>
       <button onClick={onBack}>Back</button>
-      <button onClick={onSubmit}>Finish</button>
+      <form onSubmit={onSubmit}>
+        <button type="submit">Finish</button>
+      </form>
     </div>
   );
 };

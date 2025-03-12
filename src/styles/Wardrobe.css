@@ -190,4 +190,24 @@
     font-size: 0.8rem;
   }
 }
+#layout-container {
+  padding: 18px;
+  background: linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8));
+}
 
+#grid-heading {
+  text-align: center;
+  margin: 45px 0 27px;
+}
+
+#grid-heading h2 {
+  font-size: 1.8rem;
+  color: #214f4b;
+  margin-bottom: 9px;
+}
+
+#grid-heading p {
+  font-size: 0.9rem;
+  color: #8491a3;
+  line-height: 1.44;
+}

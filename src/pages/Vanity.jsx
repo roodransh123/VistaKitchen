@@ -103,81 +103,190 @@ export default function Vanities() {
         </div>
       </div>
 
-      <div className="vanity-layout-container">
-        <div className="grid-heading">
-          <h2 style={{ fontSize: "40px" }}>Transform your interiors with stunning vanities</h2>
-          <p>
-            Discover vanities that blend style and function, designed to enhance your bathroom space.
-          </p>
-        </div>
+      <div style={{ 
+  padding: "40px", 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "center", 
+  justifyContent: "center", 
+  textAlign: "center", 
+  backgroundColor: "#f5f5f5"
+}}>
+  <div>
+    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center"}}>Transform Your Space with Elegant Vanities</h2>
+    <p>
+      Discover vanities that blend style and function, designed to enhance your bathroom space.
+    </p>
+  </div>
 
-        <div id="layout-grid">
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-sink" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Custom Vanity Designs</h3>
-              <p>Create vanities that suit your space and style.</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-draw-polygon" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Space Optimization</h3>
-              <p>Innovative solutions to maximize your bathroom space.</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-pencil-ruler" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Vanity Planner</h3>
-              <p>Design your perfect vanity with our intuitive planner.</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <div className="card-icon">
-              <i className="fas fa-calculator" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-            </div>
-            <div className="card-content">
-              <h3>Vanity Cost Calculator</h3>
-              <p>Quickly estimate the cost of your new vanity.</p>
-            </div>
-          </div>
-        </div>
+  <div style={{ 
+    display: "flex", 
+    gap: "30px", 
+    marginTop: "30px", 
+    flexWrap: "wrap" 
+  }}>
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-sink"></i>
       </div>
-      <div className="kitchen-inspiration-section">
-    <h2>Get Inspired by Our Stunning Vanity Designs</h2>
-    <p>Discover modern, elegant, and functional vanity designs that elevate your bathroom space.</p>
-
-  <div className="inspiration-grid">
-    <div className="inspiration-card" style={{ backgroundImage: "url(/others/vanity1.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Floating Vanity</h3>
-        <p>Modern and sleek floating vanities that create a sense of openness.</p>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Custom Vanity Designs</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Create vanities that suit your space and style.</p>
       </div>
     </div>
-    <div className="inspiration-card" style={{ backgroundImage: "url(/others/vanity2.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Modular Vanity</h3>
-        <p>Modular vanity designs that offer flexibility and customization options.</p>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-draw-polygon"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Space Optimization</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Innovative solutions to maximize your bathroom space.</p>
       </div>
     </div>
-    <div className="inspiration-card" style={{ backgroundImage: "url(/others/vanity3.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Wall-mounted Vanity</h3>
-        <p>Wall-mounted vanities that create a clean and minimalist look.</p>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-pencil-ruler"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Vanity Planner</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Design your perfect vanity with our intuitive planner.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-calculator"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Vanity Cost Calculator</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Quickly estimate the cost of your new vanity.</p>
       </div>
     </div>
   </div>
+  <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+    <span style={{ color: "#8491a3", fontSize: "20px" }}>and many more..</span>
+  </div>
+</div>
+  <style>
+    {`
+      .inspiration-card:hover {
+        transform: scale(1.02);
+      }
 
+      @media (max-width: 768px) {
+        .inspiration-grid {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .inspiration-card {
+          width: 80%;
+          height: 250px;
+        }
+      }
+    `}
+  </style>
+
+  <div style={{ 
+    padding: "60px 20px", 
+    background: "linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8))", 
+    textAlign: "center" 
+  }}>
+    <h2 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "20px" }}>
+      Get Inspired by Our Stunning Vanity Designs
+    </h2>
+    <p style={{ fontSize: "1.2rem", color: "#555", marginBottom: "40px" }}>
+      Discover modern, elegant, and functional vanity designs that elevate your bathroom space.
+    </p>
+
+    <div style={{ 
+      display: "flex", 
+      justifyContent: "center", 
+      gap: "40px", 
+      flexWrap: "wrap", 
+      maxWidth: "1200px", 
+      margin: "0 auto" 
+    }}>
+      {[ 
+        { image: "/others/vanity1.jpg", title: "Floating Vanity", gradient: "rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7)", desc: "Modern and sleek floating vanities that create a sense of openness." },
+        { image: "/others/vanity2.jpg", title: "Modular Vanity", gradient: "rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7)", desc: "Modular vanity designs that offer flexibility and customization options." },
+        { image: "/others/vanity3.jpg", title: "Wall-mounted Vanity", gradient: "rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7)", desc: "Wall-mounted vanities that create a clean and minimalist look." }
+      ].map((card, index) => (
+        <div key={index} style={{ 
+          position: "relative", 
+          width: "100%",  
+          maxWidth: "350px",  
+          height: "300px", 
+          backgroundSize: "cover", 
+          backgroundPosition: "center", 
+          borderRadius: "10px", 
+          overflow: "hidden", 
+          transition: "transform 0.3s ease, box-shadow 0.3s ease", 
+          backgroundImage: `url(${card.image})`,
+          cursor: "pointer"
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+        onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}>
+        
+          <div style={{ 
+            position: "absolute", 
+            bottom: "20px", 
+            left: "20px", 
+            right: "20px", 
+            backgroundColor: "rgba(0, 0, 0, 0.4)", 
+            padding: "20px", 
+            borderRadius: "10px" 
+          }}>
+            <h3 style={{ 
+              fontSize: "1.8rem", 
+              background: `linear-gradient(90deg, ${card.gradient})`, 
+              WebkitBackgroundClip: "text", 
+              WebkitTextFillColor: "transparent" 
+            }}>
+              {card.title}
+            </h3>
+            <p style={{ fontSize: "1.1rem", color: "white", marginTop: "10px" }}>
+              {card.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
 </div>
 
 

@@ -107,9 +107,18 @@ export default function Kitchen() {
           ))}
         </div>
       </div>
-      <div className="kitchen-layout-container">
-  <div className="grid-heading">
-    <h2 style={{ fontSize: "40px" }}>Your Kitchen, Your Style</h2>
+
+      <div style={{ 
+  padding: "40px", 
+  display: "flex", 
+  flexDirection: "column", 
+  alignItems: "center", 
+  justifyContent: "center", 
+  textAlign: "center", 
+  backgroundColor: "#f5f5f5",
+}}>
+  <div>
+    <h2 style={{ fontSize: "40px", marginBottom: "20px", textAlign: "center"}}>Your Kitchen, Your Style</h2>
     <p>
       Be it end-to-end interiors, renovation, or modular solutions, we have it
       all for your home or office. With a wide range of furniture & decor, we
@@ -117,84 +126,201 @@ export default function Kitchen() {
     </p>
   </div>
 
-  <div id="layout-grid">
-  <div className="grid-item">
-    <div className="card-icon">
-      <i className="fas fa-utensils" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
+  <div style={{ 
+    display: "flex", 
+    gap: "30px", 
+    marginTop: "30px", 
+    flexWrap: "wrap" 
+  }}>
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-utensils"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Kitchen Essentials</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Discover the essential tools and appliances for your kitchen.</p>
+      </div>
     </div>
-    <div className="card-content">
-      <h3>Kitchen Essentials</h3>
-      <p>Discover the essential tools and appliances for your kitchen.</p>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-blender"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Appliances</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Explore top-quality appliances for a functional kitchen.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-cogs"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Custom Design</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Design your dream kitchen with tailored features.</p>
+      </div>
+    </div>
+
+    <div style={{ 
+      display: "flex", 
+      alignItems: "center", 
+      justifyContent: "center", 
+      flexDirection: "column", 
+      textAlign: "center", 
+      maxWidth: "300px", 
+      margin: "0 auto" 
+    }}>
+      <div style={{ marginBottom: "20px" }}>
+        <i style={{ fontSize: "50px", color: "#3dff95", display: "block" }} className="fas fa-archive"></i>
+      </div>
+      <div>
+        <h3 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Storage Solutions</h3>
+        <p style={{ fontSize: "16px", color: "#666" }}>Maximize space with innovative storage options.</p>
+      </div>
     </div>
   </div>
-
-  <div className="grid-item">
-    <div className="card-icon">
-      <i className="fas fa-blender" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-    </div>
-    <div className="card-content">
-      <h3>Appliances</h3>
-      <p>Explore top-quality appliances for a functional kitchen.</p>
-    </div>
-  </div>
-
-  <div className="grid-item">
-    <div className="card-icon">
-      <i className="fas fa-cogs" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-    </div>
-    <div className="card-content">
-      <h3>Custom Design</h3>
-      <p>Design your dream kitchen with tailored features.</p>
-    </div>
-  </div>
-
-  <div className="grid-item">
-    <div className="card-icon">
-      <i className="fas fa-archive" style={{ fontSize: "50px", color: "#3dff95", display: "block" }}></i>
-    </div>
-    <div className="card-content">
-      <h3>Storage Solutions</h3>
-      <p>Maximize space with innovative storage options.</p>
-    </div>
-  </div>
-</div>
-
   <div style={{ marginTop: "20px", display: "flex", justifyContent: "center", alignItems: "center" }}>
     <span style={{ color: "#8491a3", fontSize: "20px" }}>and many more..</span>
   </div>
 </div>
 
-      <div className="kitchen-inspiration-section">
-    <h2>Get Inspired by Our Stunning Kitchen Designs</h2>
-    <p>Discover modern, elegant, and functional kitchen designs that elevate your space.</p>
+<>
+  <style>
+    {`
+      .inspiration-card:hover {
+        transform: scale(1.02);
+      }
 
-  <div className="inspiration-grid">
-    <div className="inspiration-card" style={{ backgroundImage: "url(/kitchen/kitchen4.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Minimalist Charm</h3>
-        <p>Clean, sleek, and functional designs that focus on simplicity and style.</p>
-      </div>
-    </div>
-    <div className="inspiration-card" style={{ backgroundImage: "url(/kitchen/kitchen5.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Modern Luxury</h3>
-        <p>Luxury meets functionality in our most elegant kitchen designs.</p>
-      </div>
-    </div>
-    <div className="inspiration-card" style={{ backgroundImage: "url(/kitchen/kitchen6.jpg)" }}>
-      <div className="inspiration-overlay">
-        <h3 style={{ background: "linear-gradient(90deg, rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Cozy & Inviting</h3>
-        <p>Transform your kitchen into a welcoming space for family and friends.</p>
-      </div>
-    </div>
-  </div>
+      @media (max-width: 768px) {
+        .inspiration-grid {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
 
-  <div className="inspiration-footer">
-    <p>Get inspired and start creating your perfect kitchen today.</p>
-    <button onClick={() => navigate("/kitchen-form")}>Design Your Dream Kitchen
-    </button>
-  </div>
+        .inspiration-card {
+          width: 80%;
+          height: 250px;
+        }
+      }
+    `}
+  </style>
+
+  <div style={{ 
+    padding: "60px 20px", 
+    background: "linear-gradient(90deg, rgba(174, 255, 205, 0.8), rgba(159, 255, 195, 0.8), rgba(144, 250, 175, 0.8))", 
+    textAlign: "center" 
+  }}>
+    <h2 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "20px" }}>
+      Get Inspired by Our Stunning Kitchen Designs
+    </h2>
+    <p style={{ fontSize: "1.2rem", color: "#555", marginBottom: "40px" }}>
+      Discover modern, elegant, and functional kitchen designs that elevate your space.
+    </p>
+
+    <div className="inspiration-grid" style={{ 
+      display: "flex", 
+      justifyContent: "center", 
+      gap: "40px", 
+      flexWrap: "wrap", 
+      maxWidth: "1200px", 
+      margin: "0 auto"
+    }}>
+      {[
+        { image: "/kitchen/kitchen4.jpg", title: "Minimalist Charm", gradient: "rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7)", desc: "Clean, sleek, and functional designs that focus on simplicity and style." },
+        { image: "/kitchen/kitchen5.jpg", title: "Modern Luxury", gradient: "rgba(174, 255, 205, 0.7), rgba(159, 255, 195, 0.7)", desc: "Luxury meets functionality in our most elegant kitchen designs." },
+        { image: "/kitchen/kitchen6.jpg", title: "Cozy & Inviting", gradient: "rgba(103, 255, 161, 0.7), rgba(159, 255, 195, 0.7)", desc: "Transform your kitchen into a welcoming space for family and friends." }
+      ].map((card, index) => (
+        <div key={index} className="inspiration-card" style={{ 
+          position: "relative", 
+          width: "100%",  
+          maxWidth: "350px",  
+          height: "300px", 
+          backgroundSize: "cover", 
+          backgroundPosition: "center", 
+          borderRadius: "10px", 
+          overflow: "hidden", 
+          transition: "transform 0.3s ease, box-shadow 0.3s ease", 
+          backgroundImage: `url(${card.image})`,
+          cursor: "pointer"
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.05)"}
+        onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}>
+        
+          <div style={{ 
+            position: "absolute", 
+            bottom: "20px", 
+            left: "20px", 
+            right: "20px", 
+            backgroundColor: "rgba(0, 0, 0, 0.4)", 
+            padding: "20px", 
+            borderRadius: "10px" 
+          }}>
+            <h3 style={{ 
+              fontSize: "1.8rem", 
+              background: `linear-gradient(90deg, ${card.gradient})`, 
+              WebkitBackgroundClip: "text", 
+              WebkitTextFillColor: "transparent" 
+            }}>
+              {card.title}
+            </h3>
+            <p style={{ fontSize: "1.1rem", color: "white", marginTop: "10px" }}>
+              {card.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style={{ marginTop: "40px" }}>
+      <p style={{ fontSize: "1.2rem", color: "#555", marginBottom: "20px" }}>
+        Get inspired and start creating your perfect kitchen today.
+      </p>
+      <button 
+        onClick={() => navigate("/kitchen-form")} 
+        style={{ 
+          fontSize: "1.2rem", 
+          padding: "12px 24px", 
+          backgroundColor: "#28a745", 
+          color: "white", 
+          border: "none", 
+          borderRadius: "8px", 
+          cursor: "pointer", 
+          transition: "background 0.3s ease" 
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#218838"}
+        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "#28a745"}
+      >
+        Design Your Dream Kitchen
+      </button>
+    </div>
 </div>
+</>
 
       <div className="last-section">
         <div className="last-text">

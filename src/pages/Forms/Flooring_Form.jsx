@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/Flooring_Form.css';
+import "../../style.css";
 
 const FlooringForm = () => {
   const [formData, setFormData] = useState({
@@ -26,10 +27,39 @@ const FlooringForm = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
-  const handleSubmit = async () => {
-    console.log('Final Data:', formData);
-    alert('Flooring form submitted successfully!');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      "entry.669313087": formData.roomType,
+      "entry.1607149849": formData.length,
+      "entry.1547604735": formData.width,
+      "entry.230705502": formData.flooringType,
+      "entry.2141720405": formData.name,
+      "entry.1992257453": formData.email,
+      "entry.1287005256": formData.phone
+    };
+
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSecfMxHRpyjtHf2KTv4nNOVFaljdprsFr4_mVUTa7jawaoV0w/formResponse";
+
+    try {
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      alert("Form submitted successfully!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit the form.");
+    }
   };
+  
 
   return (
     <div>
@@ -180,7 +210,9 @@ const Step4 = ({ currentData, onSubmit, onBack }) => {
       <h2 style={{ color: 'black' }}>Thank You!</h2>
       <p style={{ color: 'black' }}>Your flooring request has been submitted. We will get back to you shortly!</p>
       <button onClick={onBack}>Back</button>
-      <button onClick={onSubmit}>Finish</button>
+      <form onSubmit={onSubmit}>
+        <button type="submit">Finish</button>
+      </form>
     </div>
   );
 };

@@ -1,34 +1,167 @@
-import React from "react";
-import "../styles/Contact.css";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import styled from "styled-components";
+
+const ContactPage = styled.div`
+  margin-top: 6rem;
+  text-align: center;
+`;
+
+const ContactHeader = styled.div`
+  h2 {
+    color: black;
+    font-size: 2.5rem;
+  }
+  p {
+    text-align: center;
+    font-size: 1rem;
+    color: #8491a3;
+    margin-bottom: 30px;
+  }
+`;
+
+const ContactContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ContactForm = styled.form`
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    height: 150px;
+    resize: none;
+  }
+  
+  button {
+    width: 100%;
+    padding: 14px;
+    color: white;
+    background-color: #214f4b;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #16c172;
+  }
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 20px;
+  }
+`;
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      "entry.66992238": formData.name,
+      "entry.2087886000": formData.email,
+      "entry.1517615390": formData.phone,
+      "entry.1868683707": formData.message
+    };
+
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdRx0mqRHpBHwGQcFUfZGSREOXJTShGe43lDS68YhPb1xgqVw/formResponse";
+
+    try {
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      alert("Form submitted successfully!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit the form.");
+    }
+  };
+  
   return (
-    <div className="contact-page" style={{ marginTop: "6rem" }}>
-      <div className="contact-header">
-        <h2 style={{ color: "black", fontSize: "2.5rem" }}>Get in Touch</h2>
-        <p style={{ textAlign: "center" }}>We'd love to hear from you! Fill out the form below or reach out directly.</p>
-      </div>
+    <ContactPage>
+      <ContactHeader>
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you! Fill out the form below or reach out directly.</p>
+      </ContactHeader>
 
-      <div className="contact-container">
-        <div className="contact-form">
-          <form>
-            <label>Name</label>
-            <input type="text" placeholder="Enter your name" required />
+      <ContactContainer>
+        <ContactForm onSubmit={handleSubmit}>
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
-            <label>Email</label>
-            <input type="email" placeholder="Enter your email" required />
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
-            <label>Phone</label>
-            <input type="tel" placeholder="Enter your phone number" required />
+          <label>Phone</label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your phone number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
 
-            <label>Message</label>
-            <textarea placeholder="Write your message..." required></textarea>
+          <label>Message</label>
+          <textarea
+            name="message"
+            placeholder="Write your message..."
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
 
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </div> 
-    </div>
+          <button type="submit">Send Message</button>
+        </ContactForm>
+      </ContactContainer>
+    </ContactPage>
   );
 }

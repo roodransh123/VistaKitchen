@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/Kitchen_Form.css';
+import "../../style.css";
+
 const KitchenForm = () => {
   const [formData, setFormData] = useState({
     layout: '',
@@ -13,7 +16,8 @@ const KitchenForm = () => {
     propertyName: '',
   });
 
-  const [currentStep, setCurrentStep] = useState(0); // Start at Step 0
+  const [currentStep, setCurrentStep] = useState(0);
+  const navigate = useNavigate();
   
   const handleNext = (stepData) => {
     setFormData((prevData) => ({
@@ -27,19 +31,49 @@ const KitchenForm = () => {
     setCurrentStep((prev) => prev - 1);
   };
 
-  const handleSubmit = async () => {
-    console.log('Final Data:', formData);
-    alert('Form submitted successfully!');
-    // Send formData to backend or external service here
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      "entry.2063857810": formData.layout,
+      "entry.1491872240": formData.length,
+      "entry.622765093": formData.width,
+      "entry.1561618339": formData.height,
+      "entry.2145306408": formData.package,
+      "entry.1517116296": formData.name,
+      "entry.275462525": formData.email,
+      "entry.678316538": formData.phone,
+      "entry.1150015661": formData.propertyName
+    };
+
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfDlVNEIFnShpj4ejIU8YOEkE2sCSWuDH2mv8FVpA5F9qhb7w/formResponse";
+
+    try {
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data).toString(),
+      });
+
+      alert("Form submitted successfully!");
+      navigate("/");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit the form.");
+    }
   };
 
   const handlePackageChoice = (choice) => {
     if (choice === 'catalogue') {
-      setCurrentStep(1); // Proceed with regular form flow
+      setCurrentStep(1);
     } else if (choice === 'build-your-own') {
-      window.location.href = '/Build-Your-Own-Package'; // Navigate to Build Your Own Package form
+      navigate('/Build-Your-Own-Package');
     }
   };
+
 
   return (
     <div>
@@ -412,7 +446,9 @@ const Step5 = ({ onSubmit }) => {
     <div className="step-container">
       <h2 style={{color: 'black'}}>Thank You!</h2>
       <p  style={{color: 'black'}}>Your kitchen design is almost ready. We will get back to you soon.</p>
-      <button onClick={onSubmit}>Finish</button>
+      <form onSubmit={onSubmit}>
+        <button type="submit">Finish</button>
+      </form>
     </div>
   );
 };

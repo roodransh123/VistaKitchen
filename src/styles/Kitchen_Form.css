@@ -91,6 +91,12 @@
   border-radius: 8px;
 }
 
+.card.selected {
+  border: 3px solid green;
+  box-shadow: 0px 0px 10px rgba(193, 255, 193, 0.7);
+  transform: scale(1.05);
+}
+
 .card h3 {
   font-size: 14px;
   font-weight: bold;

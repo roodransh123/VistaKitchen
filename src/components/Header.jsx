@@ -48,7 +48,7 @@ function Header() {
           <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
             <li><Link to="/wardrobes">Wardrobes</Link></li>
             <li><Link to="/kitchen">Kitchens</Link></li>
-            <li><Link to="/vanities">Vanities</Link></li>
+            <li><Link to="/vanities">Smart Furniture</Link></li>
             <li><Link to="/floorings">Floorings</Link></li>
             <li><Link to="/ceilings">Ceilings</Link></li>
           </ul>

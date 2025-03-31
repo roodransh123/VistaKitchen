@@ -59,7 +59,6 @@ const KitchenForm = () => {
       });
 
       alert("Form submitted successfully!");
-      navigate("/");
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to submit the form.");
@@ -179,7 +178,7 @@ const Step1 = ({ currentData, onNext }) => {
               cursor: 'pointer',
               color: 'black',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              boxShadow: layout === option ? '0px 4px 10px rgba(0, 0, 0, 0.2)' : 'none'
+              boxShadow: layout === option ? '0px 4px 10px rgb(70, 255, 73)' : 'none'
             }}
             onClick={() => {
               setLayout(option);
@@ -345,7 +344,7 @@ const Step3 = ({ currentData, onNext, onBack }) => {
               cursor: 'pointer',
               color: 'black',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              boxShadow: selectedPackage === option ? '0px 4px 10px rgba(0, 0, 0, 0.2)' : 'none'
+              boxShadow: selectedPackage === option ? '0px 4px 10px rgb(70, 255, 73)' : 'none'
             }}
             onClick={() => {
               setSelectedPackage(option);

@@ -7,13 +7,13 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-left">
-          <p>&copy; 2025 My Kitchen Design</p>
-          <p>Crafting your dreams.</p>
+          <p>&copy; All rights reserved</p>
+          <p>by Roodransh Mehta and team</p>
         </div>
 
         <div className="footer-links">
           <ul>
-            <li><a href="/contact-us">Contact Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
           </ul>
         </div>
 

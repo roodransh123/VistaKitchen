@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-left">
           <p>&copy; All rights reserved</p>
-          <p>by Roodransh Mehta and team</p>
+          <p style = {{fontSize: "0.9rem"}}>Roodransh Mehta and team</p>
         </div>
 
         <div className="footer-links">

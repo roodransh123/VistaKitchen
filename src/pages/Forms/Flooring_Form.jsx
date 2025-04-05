@@ -53,7 +53,6 @@ const FlooringForm = () => {
       });
 
       alert("Form submitted successfully!");
-      navigate("/");
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to submit the form.");

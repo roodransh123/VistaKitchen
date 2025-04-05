@@ -34,6 +34,7 @@ header {
   padding-right: 40px;
   padding-left: 40px;
   width: 100%;
+  gap: 30px; /* Increase the gap between the logo and the navigation links */
   justify-content: space-between; /* Send the profile to the right */
 }
 
@@ -64,7 +65,7 @@ h2 {
   display: flex;
   align-items: center; /* Align items to the bottom */
   width: auto;
-  gap: 70px;
+  gap: 100px;
   margin-left: 100px;
 }
 

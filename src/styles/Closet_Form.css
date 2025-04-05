@@ -10,9 +10,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0faff;
+    background-color: #f9f9f9;
   }
-  
+
+  .options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
   .options button,
   .card-container .card {
     margin: 10px;
@@ -21,44 +27,37 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: center;
-    width: 180px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 200px;
+    transition: transform 0.3s ease;
   }
-  
-  .options button.selected,
-  .card-container .card.selected {
-    border-color: #007bff;
-    background-color: #e0f0ff;
-  }
-  
+
   .card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
   }
-  
+
   .card img {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     margin-bottom: 8px;
     border-radius: 8px;
   }
-  
+
   .card h3 {
-    font-size: 16px;
+    font-size: 20px;
     color: #333;
   }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .card p {
+    font-size: 14px;
+    color: #666;
   }
-  
+
   .card.selected {
-    border: 3px solid green;
-    box-shadow: 0px 0px 10px rgba(193, 255, 193, 0.7);
+    border: 3px solid blue;
+    box-shadow: 0px 0px 10px rgba(173, 216, 230, 0.7);
     transform: scale(1.05);
   }
   
@@ -71,22 +70,23 @@
     color: white;
     font-size: 16px;
     cursor: pointer;
+    align-self: center;
     transition: background-color 0.3s ease;
   }
-  
+
   button:hover {
     background-color: #0056b3;
   }
-  
+
   button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }
-  
-  input[type="number"],
+
   input[type="text"],
   input[type="email"],
-  input[type="tel"] {
+  input[type="tel"],
+  select {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -94,30 +94,42 @@
     border-radius: 4px;
     font-size: 14px;
   }
-  
+
+  select {
+    width: 240px;
+  }
+
   label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
     color: #555;
+    font-size: 14px;
   }
-  
+
   h2 {
     font-size: 26px;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
   }
-  
+
   p {
     font-size: 16px;
     color: #555;
     margin-bottom: 20px;
   }
-  
-  input:focus {
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  select:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
   }
-  
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }

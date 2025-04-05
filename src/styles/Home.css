@@ -321,15 +321,19 @@
 }
 
 .brand-container {
-  margin-top: 50px;
   display: flex;
   gap: 30px;
-  justify-content: flex-start; /* Align items to the left to enable scrolling */
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  overflow: hidden; /* Hide overflow */
+  width: max-content; /* Makes the container as wide as needed */
+  overflow: hidden;
   position: relative;
-  animation: scrollLeftToRight 20s linear infinite; /* Apply scrolling animation */
+  animation: scrollLeftToRight 20s linear infinite;
+  white-space: nowrap;
+}
+
+.brand-container:hover {
+  animation-play-state: paused;
 }
 
 .brand-card {
@@ -442,6 +446,7 @@
   .brand-card {
     width: calc(33.33% - 10px); /* Three cards per row with gap */
     height: 200px;
+    max-width: 300px; /* Prevent excessive stretching */
     margin-bottom: 20px; /* Add margin to separate rows */
   }
 
@@ -496,8 +501,9 @@
   }
 
   .brand-card {
-    width: calc(50% - 10px); /* Two cards per row with gap */
+    width: calc(33.33% - 10px); /* Three cards per row with gap */
     height: 200px;
+    max-width: 300px; /* Prevent excessive stretching */
     margin-bottom: 20px; /* Add margin to separate rows */
   }
 

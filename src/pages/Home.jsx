@@ -86,13 +86,28 @@ export default function Home() {
               <span className="carousel-text">
                 {index === 1 && (
                   <>
+                    <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white"}}>Premium modular interiors in Himachal Pradesh</p>
+                    <button
+                      onClick={() => {
+                      document.querySelector('.estimate-div').scrollIntoView({
+                       behavior: 'smooth',
+                      block: 'start',
+                      });
+                    }}
+                  >
+                    Open for Dealership enquiry
+                  </button>
+                  </>
+                )}
+                {index === 2 && (
+                  <>
                     <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white" }}>Home to Beautiful Interiors</p>
                     <button onClick={() => navigate("/contact")}>
                       Book Free Consultation
                     </button>
                   </>
                 )}
-                {index === 2 && (
+                {index === 3 && (
                   <>
                     <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px", color: "white"}}>Estimate the cost hassle-free</p>
                     <button
@@ -107,11 +122,11 @@ export default function Home() {
                   </button>
                   </>
                 )}
-                {index === 3 && (
+                {index === 4 && (
                   <>
-                    <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px"}}>Come say hi to a new life</p>
+                    <p style={{ backgroundColor: "rgba(0, 0, 0, 0.3)",borderRadius: "20px"}}>Come Say high to a new life</p>
                     <button onClick={() => navigate("/contact")}>
-                      Visit Us
+                      Contact Us
                     </button>
                   </>
                 )}
@@ -179,8 +194,23 @@ export default function Home() {
       <img src="/brands/hecttic.jpg" alt="Hatic Brand" />
       </a>
     </div>
-  </div>
-</div>
+    <div class="brand-card">
+      <a href="https://ebco.in/" target="_blank" rel="noopener noreferrer">
+        <img src="/brands/ebco.jpg" alt="Ebco Brand" style={{ borderRadius: "50%" }} />
+      </a>
+    </div>
+    <div class="brand-card">
+      <a href="https://www.sunflame.com/" target="_blank" rel="noopener noreferrer">
+        <img src="/brands/sunflame.jpg" alt="Sunflame Brand" />
+      </a>
+    </div>
+    <div class="brand-card">
+      <a href="https://www.kentrosystems.com/water-purifiers/ro/kent-grand-star.php" target="_blank" rel="noopener noreferrer">
+        <img src="/brands/kent.jpg" alt="Kent RO" />
+      </a>
+    </div>
+      </div>
+    </div>
 
       <div className="layout-container">
         <div className="grid-heading">

@@ -15,6 +15,9 @@ import Contact from './pages/Contact';
 import BuildYourOwnPackage from './pages/Forms/Build_Your_Own_Package';
 import Vanities from './pages/Vanity';
 import Kitchen from './pages/Kitchen';
+import ClosetsForm from './pages/Forms/Closets-Form';
+import DressingUnitsForm from './pages/Forms/Dressing-Units-Form';
+import LEDPanelsForm from './pages/Forms/LED_Panels_Form';
 
 
 function App() {
@@ -36,6 +39,9 @@ function App() {
           <Route path="/flooring-form" element={<FlooringForm />} />
           <Route path="/ceiling-form" element={<CeilingForm />} />
           <Route path="/Build-Your-Own-Package" element={<BuildYourOwnPackage />} />
+          <Route path="/closets-form" element={<ClosetsForm />} />
+          <Route path="/dressing-units-form" element={<DressingUnitsForm />} />
+          <Route path="/LED-panels-form" element={<LEDPanelsForm />} />
         </Routes>
       </main>
       <Footer />

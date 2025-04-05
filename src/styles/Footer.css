@@ -25,6 +25,9 @@ footer {
     gap: 40px; /* Added space between sections */
   }
   
+  .footer-left {
+    margin-left: 50px;
+  }
   /* Footer sections */
   .footer-left, .footer-links, .footer-socials, .footer-contact {
     margin-bottom: 40px; /* Increased margin for more space between sections */

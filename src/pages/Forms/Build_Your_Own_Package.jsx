@@ -100,7 +100,6 @@ const BuildYourOwnPackage = () => {
       });
 
       alert("Form submitted successfully!");
-      navigate("/");
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to submit the form.");
@@ -158,7 +157,7 @@ const Step0 = ({ currentData, onNext }) => {
       <h2 style={{ fontSize: '30px', color: 'black', textAlign: 'center' }}>Select Kitchen Layout</h2>
       <p style={{ fontSize: '16px', color: 'grey', textAlign: 'center' }}>Choose the layout for your kitchen:</p>
       <div className="options" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
-        {['L-Shaped', 'Straight', 'U-Shaped', 'Parallel'].map((option) => (
+        {['L-Shaped', 'Straight', 'U-Shaped', 'Parallel', 'Island', 'G-Shaped', 'J-Shaped'].map((option) => (
           <div
             key={option}
             style={{
@@ -175,7 +174,7 @@ const Step0 = ({ currentData, onNext }) => {
               cursor: 'pointer',
               color: 'black',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              boxShadow: layout === option ? '0px 4px 10px rgba(0, 0, 0, 0.2)' : 'none'
+              boxShadow: layout === option ? '0px 4px 10px rgb(70, 255, 73)' : 'none'
             }}
             onClick={() => {
               setLayout(option);
@@ -208,8 +207,14 @@ const Step1 = ({ currentData, onNext, onBack }) => {
   const [width, setWidth] = useState(currentData.layout === 'U-Shaped' ? 10 : 8);
   const [height, setHeight] = useState(currentData.layout === 'U-Shaped' ? 10 : 8);
 
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * Returns JSX for the dropdowns based on the current layout
+ * @returns {JSX.Element} JSX for the dropdowns
+ */
+/******  40da1a0b-386d-4526-9b14-bd9be7e72228  *******/
   const getDropdowns = () => {
-    if (currentData.layout === 'U-Shaped') {
+    if (['U-Shaped', 'G-Shaped'].includes(currentData.layout)) {
       return (
         <>
           <div>
@@ -249,7 +254,7 @@ const Step1 = ({ currentData, onNext, onBack }) => {
           </select>
         </div>
       );
-    } else if (['L-Shaped', 'Parallel'].includes(currentData.layout)) {
+    } else if (['L-Shaped', 'Parallel', 'J-Shaped'].includes(currentData.layout)) {
       return (
         <>
           <div>
@@ -270,24 +275,46 @@ const Step1 = ({ currentData, onNext, onBack }) => {
           </div>
         </>
       );
+    } else if (currentData.layout === 'Island') {
+      return (
+        <>
+          <div>
+            <label>Island Length (ft)</label>
+            <select value={length} onChange={(e) => setLength(e.target.value)}>
+              {[...Array(10).keys()].map((i) => (
+                <option key={i} value={i + 3}>{i + 3}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label>Island Width (ft)</label>
+            <select value={width} onChange={(e) => setWidth(e.target.value)}>
+              {[...Array(10).keys()].map((i) => (
+                <option key={i} value={i + 3}>{i + 3}</option>
+              ))}
+            </select>
+          </div>
+        </>
+      );
     }
   };
 
   return (
-    <div className="step-container">
+    <div className="step-container" style={{ backgroundColor: 'white' }}>
       <h2 style={{ color: 'black' }}>Review Measurements for Accuracy (in feet)</h2>
-      <p style={{ color: 'grey' }}>Please review and update your kitchen dimensions:</p>
+      <p style={{ color: 'black' }}>Please review and update your kitchen dimensions:</p>
       {getDropdowns()}
       <button onClick={onBack}>Back</button>
       <button
         onClick={() => onNext({ length, width, height })}
-        disabled={!length || !width || (currentData.layout === 'U-Shaped' && !height)}
+        disabled={!length || !width || (['U-Shaped', 'G-Shaped'].includes(currentData.layout) && !height)}
       >
         Next
       </button>
     </div>
   );
 };
+
 
 const Step2 = ({ currentData, materialsData, onNext, onBack }) => {
   const [selectedMaterial, setSelectedMaterial] = useState(currentData.material || '');

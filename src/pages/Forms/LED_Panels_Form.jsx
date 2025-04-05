@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import '../../styles/LED_Panels_Form.css';
 import "../../style.css";
 
-const LEDPanelsForm = () => {
+const LEDCabinetForm = () => {
   const [formData, setFormData] = useState({
-    panelType: '',
-    length: 2,
+    panelMaterial: '',
+    length: 4,
     width: 2,
-    brightness: '',
-    colorTemperature: '',
+    height: 6,
+    finishType: '',
     name: '',
     email: '',
     phone: '',
@@ -33,11 +33,11 @@ const LEDPanelsForm = () => {
     event.preventDefault();
 
     const data = {
-      "entry.1423154573": formData.panelType,
-      "entry.440456193": formData.length,
+      "entry.1423154573": formData.panelMaterial,
+      "entry.2345678901": formData.length,
       "entry.1148288126": formData.width,
-      "entry.144670188": formData.brightness,
-      "entry.923742742": formData.colorTemperature,
+      "entry.144670188": formData.height,
+      "entry.923742742": formData.finishType,
       "entry.1797394805": formData.name,
       "entry.590795316": formData.email,
       "entry.34484213": formData.phone,
@@ -56,45 +56,55 @@ const LEDPanelsForm = () => {
         body: new URLSearchParams(data).toString(),
       });
 
-      alert("Form submitted successfully!");
+      alert("Submitted successfully!");
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Failed to submit the form.");
+      console.error("Submit error:", error);
+      alert("Submission failed.");
     }
   };
-  
 
   return (
     <div>
       {currentStep === 0 && <Step0 onNext={handleNext} />}
-      {currentStep === 1 && <Step1 currentData={formData} onNext={handleNext} onBack={handleBack} />}
-      {currentStep === 2 && <Step2 currentData={formData} onNext={handleNext} onBack={handleBack} />}
-      {currentStep === 3 && <Step3 currentData={formData} onNext={handleNext} onBack={handleBack} />}
-      {currentStep === 4 && <Step4 onSubmit={handleSubmit} />}
+      {currentStep === 1 && <Step1 formData={formData} setFormData={setFormData} onNext={handleNext} onBack={handleBack} />}
+      {currentStep === 2 && <Step2 formData={formData} setFormData={setFormData} onNext={handleNext} onBack={handleBack} />}
+      {currentStep === 3 && <Step3 onSubmit={handleSubmit} onBack={handleBack} />}
     </div>
   );
 };
 
+// Step 0 – Panel Material
 const Step0 = ({ onNext }) => {
-  const [panelType, setPanelType] = useState('');
+  const [panelMaterial, setPanelMaterial] = useState('');
 
   return (
     <div className="step-container">
-      <h2>Select LED Panel Type</h2>
-      <div className="options">
-        {['EdgeLit LED', 'Backlit LED', 'Surface Mounted LED', 'Recesssed LED'].map((option) => (
+      <h2>Select Material</h2>
+      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "20px" }}>
+        {["Acrylic", "PolyCarbonate", "Glass", "Wood"].map(option => (
           <button
             key={option}
-            onClick={() => {
-              setPanelType(option);
-              onNext({ panelType: option });
+            onClick={() => { setPanelMaterial(option); onNext({ panelMaterial: option }); }}
+            style={{
+              margin: "10px",
+              padding: "10px",
+              cursor: "pointer",
+              border: panelMaterial === option ? "3px solid #007bff" : "1px solid #ddd",
+              borderRadius: "8px",
+              textAlign: "center",
+              width: "180px",
+              color: "black",
+              backgroundColor: panelMaterial === option ? "#e6f0ff" : "#fff",
+              boxShadow: panelMaterial === option ? "0px 0px 10px rgba(0, 123, 255, 0.5)" : "none",
             }}
-            className={`option-btn ${panelType === option ? 'selected' : ''}`}
           >
-            <img
-              src={`/others/${option}.jpg`}
-              alt={option}
-            />
+            <img src={`/others/${option}.jpg`} alt={option} style={{
+              width: "120px",
+              height: "120px",
+              objectFit: "cover",
+              marginBottom: "8px",
+              borderRadius: "8px",
+            }} />
             {option}
           </button>
         ))}
@@ -103,139 +113,84 @@ const Step0 = ({ onNext }) => {
   );
 };
 
-const Step1 = ({ currentData, onNext, onBack }) => {
-  const [length, setLength] = useState(currentData.length);
-  const [width, setWidth] = useState(currentData.width);
-
-  return (
-    <div style={{
-      margin: "20px auto",
-      marginTop: "100px",
-      width: "800px",
-      height: "700px",
-      padding: "20px",
-      border: "1px solid #ddd",
-      borderRadius: "8px",
-      overflowY: "auto",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      backgroundColor: "#f4f4f4",
-    }}>
-      <h2>Set Dimensions (in feet)</h2>
-
-      <label style={{ fontWeight: "bold", marginBottom: "8px", color: "#555" }}>Length</label>
-      <select value={length} onChange={(e) => setLength(e.target.value)} style={{
-        width: "220px",
-        padding: "12px",
-        marginBottom: "15px",
-        border: "1px solid #ddd",
-        borderRadius: "4px",
-        fontSize: "14px",
-      }}>
-        {[...Array(6).keys()].map((i) => (
-          <option key={i} value={i + 1}>{i + 1}</option>
-        ))}
-      </select>
-
-      <label style={{ fontWeight: "bold", marginBottom: "8px", color: "#555" }}>Width</label>
-      <select value={width} onChange={(e) => setWidth(e.target.value)} style={{
-        width: "220px",
-        padding: "12px",
-        marginBottom: "15px",
-        border: "1px solid #ddd",
-        borderRadius: "4px",
-        fontSize: "14px",
-      }}>
-        {[...Array(6).keys()].map((i) => (
-          <option key={i} value={i + 1}>{i + 1}</option>
-        ))}
-      </select>
-
-      <button onClick={onBack}>Back</button>
-      <button onClick={() => onNext({ length, width })}>Next</button>
-    </div>
-  );
-};
-
-
-const Step2 = ({ currentData, onNext, onBack }) => {
-  const [brightness, setBrightness] = useState(currentData.brightness);
-  const [colorTemperature, setColorTemperature] = useState(currentData.colorTemperature);
-
-  return (
-    <div style={{
-      margin: "20px auto",
-      marginTop: "100px",
-      width: "800px",
-      height: "700px",
-      padding: "20px",
-      border: "1px solid #ddd",
-      borderRadius: "8px",
-      overflowY: "auto",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      backgroundColor: "#f4f4f4",
-    }}>
-      <h2>Lighting Preferences</h2>
-
-      <label style={{ fontWeight: "bold", marginBottom: "8px", color: "#555" }}>Brightness (Lumens)</label>
-      <input type="number" value={brightness} onChange={(e) => setBrightness(e.target.value)} style={{
-        width: "220px",
-        padding: "12px",
-        marginBottom: "15px",
-        border: "1px solid #ddd",
-        borderRadius: "4px",
-        fontSize: "14px",
-      }}/>
-
-      <label style={{ fontWeight: "bold", marginBottom: "8px", color: "#555" }}>Color Temperature (K)</label>
-      <input type="number" value={colorTemperature} onChange={(e) => setColorTemperature(e.target.value)} style={{
-        width: "220px",
-        padding: "12px",
-        marginBottom: "15px",
-        border: "1px solid #ddd",
-        borderRadius: "4px",
-        fontSize: "14px",
-      }}/>
-
-      <button onClick={onBack}>Back</button>
-      <button onClick={() => onNext({ brightness, colorTemperature })}>Next</button>
-    </div>
-  );
-};
-
-
-const Step3 = ({ currentData, onNext, onBack }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [projectName, setProjectName] = useState('');
+// Step 1 – Dimensions & Finish
+const Step1 = ({ formData, setFormData, onNext, onBack }) => {
+  const { length, width, height, finishType } = formData;
 
   return (
     <div className="step-container">
-      <h2>Contact Information</h2>
-      <input type="text" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} />
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
-      <input type="text" placeholder="Property Name" value={projectName} onChange={(e) => setProjectName(e.target.value)} />
-      <button onClick={onBack}>Back</button>
-      <button onClick={() => onNext({ name, email, phone, projectName })} disabled={!name || !email || !phone || !projectName}>Next</button>
+      <h2>Panel Details</h2>
+      <div>
+        <label>Length (ft)</label>
+        <input type="number" value={length} onChange={(e) => setFormData({ ...formData, length: e.target.value })} />
+      </div>
+      <div>
+        <label>Width (ft)</label>
+        <input type="number" value={width} onChange={(e) => setFormData({ ...formData, width: e.target.value })} />
+      </div>
+      <div>
+        <label>Height (ft)</label>
+        <input type="number" value={height} onChange={(e) => setFormData({ ...formData, height: e.target.value })} />
+      </div>
+      <div>
+        <label>Finish</label>
+        <select
+          value={finishType}
+          onChange={(e) => setFormData({ ...formData, finishType: e.target.value })}
+          style={{
+            width: "220px",
+            padding: "10px",
+            margin: "10px 0",
+            border: "1px solid #ddd",
+            borderRadius: "4px",
+            fontSize: "14px",
+          }}
+        >
+          <option value="">Select Finish</option>
+          <option value="Matte">Matte</option>
+          <option value="Glossy">Glossy</option>
+          <option value="Textured">Textured</option>
+        </select>
+      </div>
+      <div className="btn-group">
+        <button onClick={onBack}>Back</button>
+        <button onClick={() => onNext({})} disabled={!length || !width || !height || !finishType}>Next</button>
+      </div>
     </div>
   );
 };
 
-const Step4 = ({ onSubmit }) => {
+// Step 2 – Project Info
+const Step2 = ({ formData, setFormData, onNext, onBack }) => {
+  const { name, email, phone, projectName } = formData;
+
   return (
     <div className="step-container">
-      <h2>Thank You!</h2>
-      <p>Your LED panel selection has been submitted. We will contact you soon.</p>
+      <h2>Provide Your Details</h2>
+      <input type="text" placeholder="Project Name" value={projectName} onChange={(e) => setFormData({ ...formData, projectName: e.target.value })} />
+      <input type="text" placeholder="Your Name" value={name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+      <input type="email" placeholder="Email" value={email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
+      <input type="tel" placeholder="Phone" value={phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+      <div className="btn-group">
+        <button onClick={onBack}>Back</button>
+        <button onClick={() => onNext({})} disabled={!projectName || !name || !email || !phone}>Next</button>
+      </div>
+    </div>
+  );
+};
+
+// Step 3 – Final Submit
+const Step3 = ({ onSubmit, onBack }) => {
+  return (
+    <div className="step-container">
+      <h2>Review & Submit</h2>
+      <p>Please confirm your details and click Submit.</p>
       <form onSubmit={onSubmit}>
-        <button type="submit">Finish</button>
+        <button type="button" onClick={onBack}>Back</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
 };
 
-export default LEDPanelsForm;
+export default LEDCabinetForm;

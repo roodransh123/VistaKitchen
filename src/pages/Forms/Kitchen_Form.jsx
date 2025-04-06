@@ -59,7 +59,6 @@ const KitchenForm = () => {
       });
 
       alert("Form submitted successfully!");
-      navigate("/");
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to submit the form.");
@@ -162,7 +161,7 @@ const Step1 = ({ currentData, onNext }) => {
       <h2 style={{ fontSize: '30px', color: 'black', textAlign: 'center' }}>Select Kitchen Layout</h2>
       <p style={{ fontSize: '16px', color: 'black', textAlign: 'center' }}>Choose the layout for your kitchen:</p>
       <div className="options" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
-        {['L-Shaped', 'Straight', 'U-Shaped', 'Parallel'].map((option) => (
+      {['L-Shaped', 'Straight', 'U-Shaped', 'Parallel', 'Island', 'G-Shaped', 'J-Shaped'].map((option) => (
           <div
             key={option}
             style={{
@@ -179,7 +178,7 @@ const Step1 = ({ currentData, onNext }) => {
               cursor: 'pointer',
               color: 'black',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              boxShadow: layout === option ? '0px 4px 10px rgba(0, 0, 0, 0.2)' : 'none'
+              boxShadow: layout === option ? '0px 4px 10px rgb(70, 255, 73)' : 'none'
             }}
             onClick={() => {
               setLayout(option);
@@ -215,7 +214,7 @@ const Step2 = ({ currentData, onNext, onBack }) => {
   const [height, setHeight] = useState(currentData.layout === 'U-Shaped' ? 10 : 8);
 
   const getDropdowns = () => {
-    if (currentData.layout === 'U-Shaped') {
+    if (['U-Shaped', 'G-Shaped'].includes(currentData.layout)) {
       return (
         <>
           <div>
@@ -255,7 +254,7 @@ const Step2 = ({ currentData, onNext, onBack }) => {
           </select>
         </div>
       );
-    } else if (['L-Shaped', 'Parallel'].includes(currentData.layout)) {
+    } else if (['L-Shaped', 'Parallel', 'J-Shaped'].includes(currentData.layout)) {
       return (
         <>
           <div>
@@ -276,6 +275,27 @@ const Step2 = ({ currentData, onNext, onBack }) => {
           </div>
         </>
       );
+    } else if (currentData.layout === 'Island') {
+      return (
+        <>
+          <div>
+            <label>Island Length (ft)</label>
+            <select value={length} onChange={(e) => setLength(e.target.value)}>
+              {[...Array(10).keys()].map((i) => (
+                <option key={i} value={i + 3}>{i + 3}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label>Island Width (ft)</label>
+            <select value={width} onChange={(e) => setWidth(e.target.value)}>
+              {[...Array(10).keys()].map((i) => (
+                <option key={i} value={i + 3}>{i + 3}</option>
+              ))}
+            </select>
+          </div>
+        </>
+      );
     }
   };
 
@@ -287,7 +307,7 @@ const Step2 = ({ currentData, onNext, onBack }) => {
       <button onClick={onBack}>Back</button>
       <button
         onClick={() => onNext({ length, width, height })}
-        disabled={!length || !width || (currentData.layout === 'U-Shaped' && !height)}
+        disabled={!length || !width || (['U-Shaped', 'G-Shaped'].includes(currentData.layout) && !height)}
       >
         Next
       </button>
@@ -345,7 +365,7 @@ const Step3 = ({ currentData, onNext, onBack }) => {
               cursor: 'pointer',
               color: 'black',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              boxShadow: selectedPackage === option ? '0px 4px 10px rgba(0, 0, 0, 0.2)' : 'none'
+              boxShadow: selectedPackage === option ? '0px 4px 10px rgb(70, 255, 73)' : 'none'
             }}
             onClick={() => {
               setSelectedPackage(option);

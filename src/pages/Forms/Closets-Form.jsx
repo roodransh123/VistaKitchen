@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import '../../styles/Vanity_Form.css';
+import '../../styles/Closet_Form.css';
 import "../../style.css";
 
-const VanitiesForm = () => {
+const ClosetsForm = () => {
   const [formData, setFormData] = useState({
     style: '',
     length: 4,
     width: 2,
-    height: 3,
+    height: 6,
     material: '',
     name: '',
     email: '',
@@ -57,6 +57,7 @@ const VanitiesForm = () => {
       });
 
       alert("Form submitted successfully!");
+     
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to submit the form.");
@@ -75,26 +76,25 @@ const VanitiesForm = () => {
   );
 };
 
-// Step 0: Choose Vanity Style
+// Step 0: Choose Closet Style
 const Step0 = ({ onNext }) => {
   const [style, setStyle] = useState('');
 
   return (
     <div className="step-container">
-      <h2 style={{ color: 'black' }}>Select Your Vanity Style</h2>
-      <p style={{ color: 'grey' }}>Choose from our range of vanity styles:</p>
+      <h2>Select Your Closet Style</h2>
       <div className="options">
-        {['Modern Vanity', 'Traditional Vanity', 'Rustic Vanity', 'Minimalist Vanity'].map((option) => (
+        {["WalkIn Closet", "Sliding Closet", "Hinged Closet", "Open Closet"]?.map((option) => (
           <button
             key={option}
             onClick={() => {
               setStyle(option);
               onNext({ style: option });
             }}
-            className={`option-btn ${style === option ? 'selected' : ''}`}
+            className={`option-btn ${style === option ? "selected" : ""}`}
           >
             <img
-              src={`/others/${option}.webp`}
+              src={`/others/${option}.jpg`}
               alt={option}
             />
             {option}
@@ -113,31 +113,18 @@ const Step1 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2 style={{ color: 'black' }}>Specify Vanity Dimensions (in feet)</h2>
-      <p style={{ color: 'grey' }}>Set the dimensions for your vanity:</p>
+      <h2>Specify Closet Dimensions (in feet)</h2>
       <div>
         <label>Length</label>
-        <select value={length} onChange={(e) => setLength(e.target.value)}>
-          {[...Array(10).keys()].map((i) => (
-            <option key={i} value={i + 3}>{i + 3}</option>
-          ))}
-        </select>
+        <input type="number" value={length} onChange={(e) => setLength(e.target.value)} />
       </div>
       <div>
         <label>Width</label>
-        <select value={width} onChange={(e) => setWidth(e.target.value)}>
-          {[...Array(6).keys()].map((i) => (
-            <option key={i} value={i + 2}>{i + 2}</option>
-          ))}
-        </select>
+        <input type="number" value={width} onChange={(e) => setWidth(e.target.value)} />
       </div>
       <div>
         <label>Height</label>
-        <select value={height} onChange={(e) => setHeight(e.target.value)}>
-          {[...Array(6).keys()].map((i) => (
-            <option key={i} value={i + 3}>{i + 3}</option>
-          ))}
-        </select>
+        <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} />
       </div>
       <button onClick={onBack}>Back</button>
       <button onClick={() => onNext({ length, width, height })}>Next</button>
@@ -151,20 +138,19 @@ const Step2 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2 style={{ color: 'black' }}>Select Material</h2>
-      <p style={{ color: 'grey' }}>Pick the material for your vanity:</p>
+      <h2>Select Material</h2>
       <div className="options">
-        {['marblev', 'woodv' , 'granitev'].map((option) => (
+        {["Wood", "Glass", "Laminate", "Metal"]?.map((option) => (
           <button
             key={option}
             onClick={() => {
               setMaterial(option);
               onNext({ material: option });
             }}
-            className={`option-btn ${material === option ? 'selected' : ''}`}
+            className={`option-btn ${material === option ? "selected" : ""}`}
           >
             <img
-              src={`others/${option}.webp`}
+              src={`/others/${option}.jpg`}
               alt={option}
             />
             {option}
@@ -185,32 +171,11 @@ const Step3 = ({ currentData, onNext, onBack }) => {
 
   return (
     <div className="step-container">
-      <h2 style={{ color: 'black' }}>Provide Your Details</h2>
-      <p style={{ color: 'grey' }}>Fill out your contact information:</p>
-      <input
-        type="text"
-        placeholder="Full Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="email"
-        placeholder="Email Address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="tel"
-        placeholder="Phone Number"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Property Name"
-        value={propertyName}
-        onChange={(e) => setPropertyName(e.target.value)}
-      />
+      <h2>Provide Your Details</h2>
+      <input type="text" placeholder="Full Name" value={name} onChange={(e) => setName(e.target.value)} />
+      <input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
+      <input type="text" placeholder="Property Name" value={propertyName} onChange={(e) => setPropertyName(e.target.value)} />
       <button onClick={onBack}>Back</button>
       <button
         onClick={() => onNext({ name, email, phone, propertyName })}
@@ -226,8 +191,8 @@ const Step3 = ({ currentData, onNext, onBack }) => {
 const Step4 = ({ onSubmit }) => {
   return (
     <div className="step-container">
-      <h2 style={{ color: 'black' }}>Thank You!</h2>
-      <p style={{ color: 'black' }}>Your vanity design is almost ready. We will contact you soon with the details.</p>
+      <h2>Thank You!</h2>
+      <p>Your closet design is almost ready. We will contact you soon with the details.</p>
       <form onSubmit={onSubmit}>
         <button type="submit">Finish</button>
       </form>
@@ -235,5 +200,4 @@ const Step4 = ({ onSubmit }) => {
   );
 };
 
-
-export default VanitiesForm;
+export default ClosetsForm;

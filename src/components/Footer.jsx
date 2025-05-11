@@ -1,34 +1,52 @@
 import React from 'react';
-import "../styles/Footer.css";  // Assuming you have a separate CSS file for footer styles
-import "../style.css";
+import '../styles/Footer.css';
+ 
 
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-left">
-          <p>&copy; All rights reserved</p>
-          <p style = {{fontSize: "0.9rem"}}>Roodransh Mehta and team</p>
+      <div className="footer-container">
+
+        {/* Left: Branding */}
+        <div className="footer-section footer-left">
+          <h3>Kitchen Design</h3>
+          <p>&copy; {new Date().getFullYear()} All rights reserved</p>
+          <p>Roodransh Mehta and team</p>
         </div>
 
-        <div className="footer-links">
+        {/* Center: Links */}
+        <div className="footer-section footer-links">
+          <h4>Quick Links</h4>
           <ul>
             <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/kitchen">Kitchens</a></li>
+            <li><a href="/wardrobes">Wardrobes</a></li>
           </ul>
         </div>
 
-        <div className="footer-socials">
-          <ul>
-            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i> Facebook</a></li>
-            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i> Twitter</a></li>            
-          </ul>
+        {/* Right: Contact */}
+        <div className="footer-section footer-contact">
+          <h4>Contact</h4>
+          <p><i className="fas fa-phone-alt"></i> (123) 456-7890</p>
+          <p><i className="fas fa-envelope"></i> info@kitchendesign.com</p>
         </div>
 
-        <div className="footer-contact">
-          <p>Phone: (123) 456-7890</p>
-          <p>Email: info@kitchendesign.com</p>
+        {/* Social */}
+        <div className="footer-section footer-socials">
+          <h4>Follow Us</h4>
+          <div className="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+              <i className="fab fa-twitter"></i>
+            </a>
+          </div>
         </div>
+
       </div>
     </footer>
   );

@@ -34,7 +34,7 @@ const LEDCabinetForm = () => {
 
     const data = {
       "entry.1423154573": formData.panelMaterial,
-      "entry.2345678901": formData.length,
+      "entry.440456193": formData.length,
       "entry.1148288126": formData.width,
       "entry.144670188": formData.height,
       "entry.923742742": formData.finishType,
@@ -64,7 +64,15 @@ const LEDCabinetForm = () => {
   };
 
   return (
-    <div>
+    <div style={{ 
+      marginTop: '200px', 
+      textAlign: 'center',
+      width: '100%',
+      maxWidth: '800px',
+      margin: '200px auto 0',
+      padding: '0 15px',
+      boxSizing: 'border-box'
+    }}>
       {currentStep === 0 && <Step0 onNext={handleNext} />}
       {currentStep === 1 && <Step1 formData={formData} setFormData={setFormData} onNext={handleNext} onBack={handleBack} />}
       {currentStep === 2 && <Step2 formData={formData} setFormData={setFormData} onNext={handleNext} onBack={handleBack} />}

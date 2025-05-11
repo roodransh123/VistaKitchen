@@ -107,7 +107,15 @@ const BuildYourOwnPackage = () => {
   };
 
   return (
-    <div>
+    <div style={{ 
+      marginTop: '200px', 
+      textAlign: 'center',
+      width: '100%',
+      maxWidth: '800px',
+      margin: '200px auto 0',
+      padding: '0 15px',
+      boxSizing: 'border-box'
+    }}>
       {currentStep === 0 && (
       <Step0 currentData={formData} onNext={handleNext} />
       )}

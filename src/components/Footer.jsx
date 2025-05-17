@@ -28,7 +28,7 @@ function Footer() {
         <div className="footer-section footer-contact">
           <h4>Contact</h4>
           <p><i className="fas fa-phone-alt"></i> +91 94180 57711</p>
-          <p><i className="fas fa-envelope"></i> info@kitchendesign.com</p>
+          <p><i className="fas fa-envelope"></i> contactvistakitchens@gmail.com</p>
         </div>
 
         {/* Social */}

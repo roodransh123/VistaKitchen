@@ -156,7 +156,7 @@ export default function Home() {
           alt="whatsapp"
           style={{ width: "60px", height: "60px", borderRadius: "40%", cursor: "pointer" }}
           onClick={() => {
-            navigator.clipboard.writeText("1234567890");
+            navigator.clipboard.writeText("+91 94180 57711");
             alert("Phone number copied! Please open WhatsApp and start a new chat with the number.");
           }}
         />
